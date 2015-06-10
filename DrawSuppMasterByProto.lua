@@ -189,20 +189,7 @@ function ScriptUpdate:DownloadUpdate()
     end
 end
 
-function OnLoad()
-    local ToUpdate = {}
-    ToUpdate.Version = 1
-    ToUpdate.UseHttps = true
-    ToUpdate.Host = "raw.githubusercontent.com"
-    ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
-    ToUpdate.ScriptPath =  "/Prot0o/Scripts/master/DrawSuppMasterByProto.lua"
-    ToUpdate.SavePath = SCRIPT_PATH.._ENV.FILE_NAME
-    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Updated to "..NewVersion..". </b></font>") end
-    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">No Updates Found</b></font>") end
-    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">New Version found ("..NewVersion.."). Please wait until its downloaded</b></font>") end
-    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Error while Downloading. Please try again.</b></font>") end
-    ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
-end
+
 
 
 
@@ -223,6 +210,20 @@ function SayHello()
 end
 
 function OnLoad()
+	
+    local ToUpdate = {}
+    ToUpdate.Version = 1
+    ToUpdate.UseHttps = true
+    ToUpdate.Host = "raw.githubusercontent.com"
+    ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
+    ToUpdate.ScriptPath =  "/Prot0o/Scripts/master/DrawSuppMasterByProto.lua"
+    ToUpdate.SavePath = SCRIPT_PATH.._ENV.FILE_NAME
+    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Updated to "..NewVersion..". </b></font>") end
+    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">No Updates Found</b></font>") end
+    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">New Version found ("..NewVersion.."). Please wait until its downloaded</b></font>") end
+    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Error while Downloading. Please try again.</b></font>") end
+    ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
+end
 
 	if myHero.charName == 'Leona' then 
 
