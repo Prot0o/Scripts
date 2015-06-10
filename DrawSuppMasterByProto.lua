@@ -236,7 +236,9 @@ end
 end
 end
 end
-Update()-- V 1.0: Start do script wiht Leona & Blitz
+Update()
+
+-- V 1.0: Start do script wiht Leona & Blitz
 -- V 1.1: Added Color draws & Alistar, Blitz, Soraka, Tresh, Taric, Zilean 
 -- V 1.1.1: Added Nidalee
 
