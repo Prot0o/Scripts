@@ -205,40 +205,8 @@ function OnLoad()
 end
 
 
-function UpdateCallback()
-file = io.open(UPDATE_TMP_FILE, "rb")
-if file ~= nil then
-content = file:read("*all")
-file:close()
-os.remove(UPDATE_TMP_FILE)
-if content then
-tmp, sstart = string.find(content, "local version = \"")
-if sstart then
-send, tmp = string.find(content, "\"", sstart+1)
-end
-if send then
-Version = tonumber(string.sub(content, sstart+1, send-1))
-end
-if (Version ~= nil) and (Version > tonumber(version)) then
-file = io.open(SELF, "w")
-if file then
-file:write(content)
-file:flush()
-file:close()
-print("<font color='#00FF00'>[Kitty Kat Katarina] Kitty Kat Katarina updated to version: "..Version)
-print("<font color='#FF0000'>[Kitty Kat Katarina] Please press F9 twice to reload.</font>")
-else
-print("<font color='#FF0000'>[Kitty Kat Katarina] Error updating the script, some features will not work.</font>")
-end
-else
-print("<font color='#FF9900'>[Kitty Kat Katarina] is up to date.</font>")
-end
-end
-end
-end
-Update()
 
--- V 1.0: Start do script wiht Leona & Blitz
+-- V 1.	0: Start do script wiht Leona & Blitz
 -- V 1.1: Added Color draws & Alistar, Blitz, Soraka, Tresh, Taric, Zilean 
 -- V 1.1.1: Added Nidalee
 
