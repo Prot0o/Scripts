@@ -191,7 +191,7 @@ end
 
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1
+    ToUpdate.Version = 1.3
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
@@ -204,9 +204,8 @@ function OnLoad()
     ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
 
 
--- V 1.	0: Start do script wiht Leona & Blitz
--- V 1.1: Added Color draws & Alistar, Blitz, Soraka, Tresh, Taric, Zilean 
--- V 1.1.1: Added Nidalee
+--More
+--More
 
 
 	if myHero.charName == 'Leona' then 
@@ -271,6 +270,28 @@ elseif myHero.charName == 'Taric' then
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		elseif myHero.charName == 'Nautilus' then 
+	SayHello()
+	  Config = scriptConfig("SUPPORT Draws", "configname")
+		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+	elseif myHero.charName == 'Nunu' then 
+	SayHello()
+	  Config = scriptConfig("SUPPORT Draws", "configname")
+		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+			elseif myHero.charName == 'Morgana' then 
+	SayHello()
+	  Config = scriptConfig("SUPPORT Draws", "configname")
+		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
+		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
 	end
 end
@@ -299,7 +320,7 @@ function OnDraw()
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 800, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 800, 0xFFFF00)
 
 		end
 
@@ -319,7 +340,7 @@ function OnDraw()
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0xFFFF00)
 
 		end
 
@@ -344,7 +365,7 @@ elseif myHero.charName == 'Soraka' then
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0xFFFF00)
 
 		end
 elseif myHero.charName == 'Alistar' then 
@@ -362,7 +383,7 @@ elseif myHero.charName == 'Alistar' then
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 580, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 580, 0xFFFF00)
 
 		end
 elseif myHero.charName == 'Taric' then 
@@ -380,7 +401,7 @@ elseif myHero.charName == 'Taric' then
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 620, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 620, 0xFFFF00)
 
 		end
 	if Config.Drawings.drawCircleR then
@@ -399,7 +420,7 @@ elseif myHero.charName == 'Taric' then
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0xFFFF00)
 
 		end
 	if Config.Drawings.drawCircleR then
@@ -422,7 +443,7 @@ elseif myHero.charName == 'Taric' then
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0xFFFF00)
 
 		end
 	if Config.Drawings.drawCircleR then
@@ -439,16 +460,80 @@ elseif myHero.charName == 'Taric' then
 		end
 		if Config.Drawings.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0x131343)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0x131343)
 
 		end
 
 		if Config.Drawings.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0x999999)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xFFFF00)
+
+		end
+				elseif myHero.charName == 'Nautilus' then 
+
+		if Config.Drawings.drawCircleQ then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0x233432)
 
 		end
 
+		if Config.Drawings.drawCircleE then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xFFFF00)
+
+		end
+	if Config.Drawings.drawCircleR then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 820, 0xd62d20)
+
+		end
+						elseif myHero.charName == 'Nunu' then 
+
+		if Config.Drawings.drawCircleQ then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 200, 0x233432)
+
+		end
+		if Config.Drawings.drawCircleW then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0x131343)
+
+		end
+
+		if Config.Drawings.drawCircleE then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0xFFFF00)
+
+		end
+	if Config.Drawings.drawCircleR then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 650, 0xd62d20)
+
+		end
+								elseif myHero.charName == 'Morgana' then 
+
+		
+		if Config.Drawings.drawCircleQ then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1170, 0x233432)
+
+		end
+		if Config.Drawings.drawCircleW then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0x131343)
+
+		end
+
+		if Config.Drawings.drawCircleE then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 750, 0xFFFF00)
+
+		end
+	if Config.Drawings.drawCircleR then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, 630, 0xd62d20)
+
+		end
 	end
 
 end
@@ -457,8 +542,8 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION 1.2 - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.3 </font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar |  Leona | Blitzcrank | Nidalee | Soraka | Thresh | Taric | Zilean </font> ")
-	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\">Morgana | Braum | Bardo | Annie | Janna | Karma | Lulu | Nami | Nautilus | Nunu | Sona | Zyra  </font>")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar |  Leona | Blitzcrank | Morgana | Nautilus | Nidalee| Nunu | Soraka | Thresh | Taric | Zilean </font> ")
+	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\"> Braum | Bardo | Annie | Janna | Karma | Lulu | Nami  | Sona | Zyra  </font>")
 end
