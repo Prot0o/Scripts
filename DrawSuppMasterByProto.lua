@@ -439,7 +439,7 @@ elseif myHero.charName == 'Taric' then
 		end
 		if Config.Drawings.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0x131343)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0x131343)
 
 		end
 
@@ -448,11 +448,7 @@ elseif myHero.charName == 'Taric' then
 			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0x999999)
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 400, 0xd62d20)
-
-		end
 	end
 
 end
