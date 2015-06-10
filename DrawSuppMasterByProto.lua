@@ -189,28 +189,7 @@ function ScriptUpdate:DownloadUpdate()
     end
 end
 
-
-
-
-
--- V 1.	0: Start do script wiht Leona & Blitz
--- V 1.1: Added Color draws & Alistar, Blitz, Soraka, Tresh, Taric, Zilean 
--- V 1.1.1: Added Nidalee
-
-
-function SayHello()
-
-	-- Print to the chat area
-
-
-  PrintChat("<font color=\"#FFFFFF\">VERSION 1.1.1 - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
-  PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar |  Leona | Blitzcrank | Nidalee | Soraka | Thresh | Taric | Zilean </font> ")
-	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\">Morgana | Braum | Janna | Bardo | Annie | Karma | Lulu | Nami | Nautilus | Nunu | Sona | Zyra  </font>")
-end
-
 function OnLoad()
-	
     local ToUpdate = {}
     ToUpdate.Version = 1
     ToUpdate.UseHttps = true
@@ -223,7 +202,12 @@ function OnLoad()
     ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">New Version found ("..NewVersion.."). Please wait until its downloaded</b></font>") end
     ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Error while Downloading. Please try again.</b></font>") end
     ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
-end
+
+
+-- V 1.	0: Start do script wiht Leona & Blitz
+-- V 1.1: Added Color draws & Alistar, Blitz, Soraka, Tresh, Taric, Zilean 
+-- V 1.1.1: Added Nidalee
+
 
 	if myHero.charName == 'Leona' then 
 
@@ -471,4 +455,14 @@ elseif myHero.charName == 'Taric' then
 		end
 	end
 
+end
+function SayHello()
+
+	-- Print to the chat area
+
+
+  PrintChat("<font color=\"#FFFFFF\">VERSION 1.1 - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar |  Leona | Blitzcrank | Nidalee | Soraka | Thresh | Taric | Zilean </font> ")
+	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\">Morgana | Braum | Bardo | Annie | Karma | Lulu | Nami | Nautilus | Nunu | Sona | Zyra  </font>")
 end
