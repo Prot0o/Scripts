@@ -191,7 +191,7 @@ end
 
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.3
+    ToUpdate.Version = 1.4
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
@@ -213,6 +213,7 @@ function OnLoad()
 		SayHello()
 		Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -222,6 +223,7 @@ function OnLoad()
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
@@ -230,6 +232,7 @@ function OnLoad()
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -237,6 +240,7 @@ elseif myHero.charName == 'Alistar' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -244,6 +248,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -252,6 +257,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
@@ -259,6 +265,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -267,6 +274,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -274,6 +282,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
@@ -281,6 +290,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -289,6 +299,7 @@ elseif myHero.charName == 'Taric' then
 	SayHello()
 	  Config = scriptConfig("SUPPORT Draws", "configname")
 		Config:addSubMenu("Individual Draws", "Drawings")
+		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
 		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
@@ -305,10 +316,16 @@ function OnDraw()
 --Draw circles only if activated on menu
 
 	if myHero.charName == 'Leona' then 
+	
+	if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 		
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0xFFFFFF)
 
 		end
 
@@ -332,9 +349,14 @@ function OnDraw()
 
 	elseif myHero.charName == 'Blitzcrank' then 
 
+	  if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0xFFFFFF)
 
 		end
 
@@ -352,9 +374,14 @@ function OnDraw()
 
 elseif myHero.charName == 'Soraka' then 
 
+		if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -370,9 +397,15 @@ elseif myHero.charName == 'Soraka' then
 		end
 elseif myHero.charName == 'Alistar' then 
 
+	  if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
+
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 370, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 370, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -388,9 +421,15 @@ elseif myHero.charName == 'Alistar' then
 		end
 elseif myHero.charName == 'Taric' then 
 
+	if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
+
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 750, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 750, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -411,9 +450,14 @@ elseif myHero.charName == 'Taric' then
 		end
 		elseif myHero.charName == 'Zilean' then 
 
+	if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0xFFFFFF)
 
 		end
 		
@@ -428,11 +472,17 @@ elseif myHero.charName == 'Taric' then
 			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0xd62d20)
 
 		end
-				elseif myHero.charName == 'Thresh' then 
+				elseif myHero.charName == 'Thresh' then
+			
+			if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end	
 
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1100, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1100, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -452,10 +502,16 @@ elseif myHero.charName == 'Taric' then
 
 		end
 						elseif myHero.charName == 'Nidalee' then 
+						
+	  if Config.Drawings.drawCircleAA then
 
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
+		
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1500, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1500, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -470,10 +526,16 @@ elseif myHero.charName == 'Taric' then
 
 		end
 				elseif myHero.charName == 'Nautilus' then 
+				
+					if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0xFFFFFF)
 
 		end
 
@@ -488,10 +550,16 @@ elseif myHero.charName == 'Taric' then
 
 		end
 						elseif myHero.charName == 'Nunu' then 
+						
+							if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 200, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 200, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
@@ -511,11 +579,17 @@ elseif myHero.charName == 'Taric' then
 
 		end
 								elseif myHero.charName == 'Morgana' then 
+								
+									if Config.Drawings.drawCircleAA then
+
+			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+
+		end
 
 		
 		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1170, 0x233432)
+			DrawCircle(myHero.x, myHero.y, myHero.z, 1170, 0xFFFFFF)
 
 		end
 		if Config.Drawings.drawCircleW then
