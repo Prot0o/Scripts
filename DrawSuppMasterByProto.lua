@@ -191,7 +191,7 @@ end
 
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.41
+    ToUpdate.Version = 1.5
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
@@ -211,116 +211,186 @@ function OnLoad()
 	if myHero.charName == 'Leona' then 
 
 		SayHello()
-		Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 
 	elseif myHero.charName == 'Blitzcrank' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 		
 		elseif myHero.charName == 'Soraka' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+					Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
 elseif myHero.charName == 'Alistar' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+			Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 elseif myHero.charName == 'Taric' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 		elseif myHero.charName == 'Zilean' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 	elseif myHero.charName == 'Thresh' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 	elseif myHero.charName == 'Nidalee' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
 		elseif myHero.charName == 'Nautilus' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 	elseif myHero.charName == 'Nunu' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 			elseif myHero.charName == 'Morgana' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 				elseif myHero.charName == 'Annie' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 						elseif myHero.charName == 'Janna' then 
 	SayHello()
-	  Config = scriptConfig("SUPPORT Draws", "configname")
-		Config:addSubMenu("Individual Draws", "Drawings")
-		Config.Drawings:addParam("drawCircleAA", "AA", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleQ", "Q", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleW", "W ", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleE", "E", SCRIPT_PARAM_ONOFF, true)
-		Config.Drawings:addParam("drawCircleR", "R", SCRIPT_PARAM_ONOFF, true)
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 	end
 end
 
@@ -334,350 +404,355 @@ function OnDraw()
 
 	if myHero.charName == 'Leona' then 
 	
-	if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
 		
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0xFFFFFF)
-
-		end
-
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 450, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 150, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 800, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 450, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
 
-		if Config.Drawings.drawCircleR then
+		if Config.draws.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1200, 0xd62d20)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 800, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1200, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 
 	elseif myHero.charName == 'Blitzcrank' then 
 
-	  if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-		if Config.Drawings.drawCircleQ then
+		
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0xFFFFFF)
-
-		end
-
-		if Config.Drawings.drawCircleE then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 150, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 950, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xd62d20)
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 150, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 
 elseif myHero.charName == 'Soraka' then 
 
-		if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-		if Config.Drawings.drawCircleQ then
+		
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 950, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 550, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
+
+		end
+
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 920, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
 
 		end
 elseif myHero.charName == 'Alistar' then 
 
-	  if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 370, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 370, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 650, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 650, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 580, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 580, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
 
 		end
 elseif myHero.charName == 'Taric' then 
 
-	if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 750, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 750, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 420, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 420, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 620, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 620, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 400, 0xd62d20)
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 400, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 		elseif myHero.charName == 'Zilean' then 
 
-	if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
-		end
-		if Config.Drawings.drawCircleQ then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 920, 0xFFFFFF)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
 		
+		if Config.draws.drawCircleQ then
 
-		if Config.Drawings.drawCircleE then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 920, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0xd62d20)
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 700, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 900, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 				elseif myHero.charName == 'Thresh' then
 			
-			if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
-		end	
-
-		if Config.Drawings.drawCircleQ then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1100, 0xFFFFFF)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-		if Config.Drawings.drawCircleW then
+		
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 950, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1100, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 950, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 400, 0xd62d20)
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 550, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 400, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 						elseif myHero.charName == 'Nidalee' then 
 						
-	  if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
 		
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1500, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1500, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 900, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
+
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
 				elseif myHero.charName == 'Nautilus' then 
 				
-					if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1000, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1000, 0xFFFFFF)
+		if Config.draws.drawCircleE then
 
-		end
-
-		if Config.Drawings.drawCircleE then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 820, 0xd62d20)
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 820, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 						elseif myHero.charName == 'Nunu' then 
 						
-							if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 200, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 200, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 700, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleE then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 550, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 550, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 650, 0xd62d20)
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 650, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 								elseif myHero.charName == 'Morgana' then 
 								
-									if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-
 		
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1170, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 900, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1170, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-		if Config.Drawings.drawCircleE then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 750, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 900, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
 
 		end
-	if Config.Drawings.drawCircleR then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 630, 0xd62d20)
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 750, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 630, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 								elseif myHero.charName == 'Annie' then 
 								
-									if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-
 		
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 700, 0x131343)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-	if Config.Drawings.drawCircleR then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0xd62d20)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 700, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 										elseif myHero.charName == 'Janna' then 
 								
-									if Config.Drawings.drawCircleAA then
+	if Config.draws.drawCircleAA then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, 0xFF0040)
-
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
 		end
-
 		
-		if Config.Drawings.drawCircleQ then
+		if Config.draws.drawCircleQ then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 1900, 0xFFFFFF)
-
-		end
-		if Config.Drawings.drawCircleW then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 600, 0x131343)
-
-		end
-if Config.Drawings.drawCircleE then
-
-			DrawCircle(myHero.x, myHero.y, myHero.z, 800, 0xFFFF00)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1900, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
 
 		end
 
-	if Config.Drawings.drawCircleR then
+		if Config.draws.drawCircleW then
 
-			DrawCircle(myHero.x, myHero.y, myHero.z, 720, 0xd62d20)
+				DrawCircle(myHero.x, myHero.y, myHero.z, 600, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
+
+		end
+
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 800, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 720, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
 	end
@@ -688,7 +763,7 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.41</font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.5</font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar | Annie |  Leona | Blitzcrank | Morgana | Nautilus | Nidalee| Nunu | Soraka | Janna | Thresh | Taric | Zilean </font> ")
 	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\"> Braum | Bardo |  Karma | Lulu | Nami  | Sona | Zyra  </font>")
