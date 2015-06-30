@@ -191,7 +191,7 @@ end
 
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.55
+    ToUpdate.Version = 1.6
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
