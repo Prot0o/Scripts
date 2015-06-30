@@ -846,7 +846,7 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.6</font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.61</font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar | Annie |  Leona | Braum | Blitzcrank | Morgana | Nautilus | Nidalee | Nunu | Sona | Soraka | Janna | Thresh | Taric | Zilean </font> ")
 	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\"> Bardo |  Karma | Lulu | Nami | Zyra  </font>")
