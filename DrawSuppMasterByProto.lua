@@ -191,7 +191,7 @@ end
 
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.5
+    ToUpdate.Version = 1.55
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/DrawSuppMasterByProto.version"
@@ -391,7 +391,36 @@ elseif myHero.charName == 'Taric' then
 
 		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
 		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+							elseif myHero.charName == 'Sona' then 
+	SayHello()
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleE", "E Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleEE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+									elseif myHero.charName == 'Braum' then 
+	SayHello()
+		Config = scriptConfig(" - > SUPPORT DRAWS <- ", "configname")
+		Config:addSubMenu("Customizable DRAWS & COLORS", "draws")
+		Config.draws:addParam("drawCircleAA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleAAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleQ", "Q Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleQQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+		Config.draws:addParam("drawCircleW", "W Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleWW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+		Config.draws:addParam("drawCircleR", "R Status", SCRIPT_PARAM_ONOFF, true)
+		Config.draws:addParam("drawCircleRR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
 	end
+	
 end
 
 
@@ -755,6 +784,60 @@ elseif myHero.charName == 'Taric' then
 				DrawCircle(myHero.x, myHero.y, myHero.z, 720, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
 
 		end
+												elseif myHero.charName == 'Sona' then 
+								
+	if Config.draws.drawCircleAA then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 850, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
+
+		end
+
+		if Config.draws.drawCircleW then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1000, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
+
+		end
+
+		if Config.draws.drawCircleE then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 350, ARGB(Config.draws.drawCircleEE[1], Config.draws.drawCircleEE[2], Config.draws.drawCircleEE[3], Config.draws.drawCircleEE[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 950, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
+
+		end
+												elseif myHero.charName == 'Braum' then 
+								
+	if Config.draws.drawCircleAA then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draws.drawCircleAAA[1], Config.draws.drawCircleAAA[2], Config.draws.drawCircleAAA[3], Config.draws.drawCircleAAA[4]))
+		end
+		
+		if Config.draws.drawCircleQ then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1050, ARGB(Config.draws.drawCircleQQ[1], Config.draws.drawCircleQQ[2], Config.draws.drawCircleQQ[3], Config.draws.drawCircleQQ[4]))
+
+		end
+
+		if Config.draws.drawCircleW then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 650, ARGB(Config.draws.drawCircleWW[1], Config.draws.drawCircleWW[2], Config.draws.drawCircleWW[3], Config.draws.drawCircleWW[4]))
+
+		end
+
+		if Config.draws.drawCircleR then
+
+				DrawCircle(myHero.x, myHero.y, myHero.z, 1250, ARGB(Config.draws.drawCircleRR[1], Config.draws.drawCircleRR[2], Config.draws.drawCircleRR[3], Config.draws.drawCircleRR[4]))
+
+		end
 	end
 
 end
@@ -765,6 +848,6 @@ function SayHello()
 
   PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.5</font> - SUPP DRAWS </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar | Annie |  Leona | Blitzcrank | Morgana | Nautilus | Nidalee| Nunu | Soraka | Janna | Thresh | Taric | Zilean </font> ")
-	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\"> Braum | Bardo |  Karma | Lulu | Nami  | Sona | Zyra  </font>")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> Alistar | Annie |  Leona | Braum | Blitzcrank | Morgana | Nautilus | Nidalee | Nunu | Sona | Soraka | Janna | Thresh | Taric | Zilean </font> ")
+	 PrintChat("<font color=\"#FF0000\">Soon: </font><font color=\"#FFFF00\"> Bardo |  Karma | Lulu | Nami | Zyra  </font>")
 end
