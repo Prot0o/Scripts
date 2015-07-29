@@ -192,6 +192,16 @@ end
 --TOP/JUNGLE Champs---------------------------------------
 if myHero.charName == 'Shyvana' then
   levelSequence =  { 2,1,3,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
+	elseif myHero.charName == 'Gragas' then
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'JarvanIV' then
+  levelSequence =  { 3,1,2,1,1,4,2,3,1,3,4,1,2,2,3,4,3,2}
+	elseif myHero.charName == 'Irelia' then
+  levelSequence =  { 2,3,1,2,2,4,3,3,2,1,4,2,3,1,1,4,3,1}
+	elseif myHero.charName == 'Garen' then
+  levelSequence =  { 1,3,3,2,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
+	elseif myHero.charName == 'Gnar' then
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
 	elseif myHero.charName == 'Aatrox' then
   levelSequence =  { 2,1,2,3,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
 	elseif myHero.charName == 'Amumu' then
@@ -216,6 +226,12 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 2,3,1,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
 	elseif myHero.charName == 'Gangplank' then
   levelSequence =  { 1,2,2,3,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
+	elseif myHero.charName == 'Hecarim' then
+  levelSequence =  { 1,2,3,1,1,4,3,1,3,1,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Jax' then
+  levelSequence =  { 2,3,1,1,1,4,3,2,3,2,4,2,1,1,3,4,2,3}
+	elseif myHero.charName == 'Jayce' then
+  levelSequence =  { 1,3,1,2,1,2,1,2,1,2,1,2,2,3,3,3,3,3}
 
 --MID Champs----------------------------------------------
 	elseif myHero.charName == 'Ahri' then
@@ -246,6 +262,8 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 2,1,3,2,2,4,3,2,1,2,4,1,1,3,1,4,3,3}
 	elseif myHero.charName == 'Galio' then
   levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,3,2,3,4,3,3}
+	elseif myHero.charName == 'Heimerdinger' then
+  levelSequence =  { 1,2,3,1,1,4,2,2,2,1,4,1,2,3,3,4,3,3}
 --ADC Champs----------------------------------------------
 	elseif myHero.charName == 'Ashe' then
   levelSequence =  { 2,1,3,2,2,4,1,2,1,2,4,1,1,3,3,4,3,3}
@@ -263,6 +281,8 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 1,2,3,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
 	elseif myHero.charName == 'Draven' then
   levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Jinx' then
+  levelSequence =  { 1,2,3,1,1,4,2,1,2,1,4,2,2,3,3,4,3,3}
 --SUPP Champs---------------------------------------------
 	elseif myHero.charName == 'Leona' then
   levelSequence =  { 1,3,2,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
@@ -284,7 +304,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.2
+    ToUpdate.Version = 0.3
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -317,9 +337,9 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.2</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.3</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 42 / 126 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 52 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
 
 end
