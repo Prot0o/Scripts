@@ -349,7 +349,7 @@ function SayHello()
 
   PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.4</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 52 / 126 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 59 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
 
 end
