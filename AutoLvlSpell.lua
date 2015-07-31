@@ -308,13 +308,30 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 3,2,1,3,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
 	elseif myHero.charName == 'Kennen' then
   levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
-	
+	elseif myHero.charName == 'KhaZix' then
+  levelSequence =  { 1,3,2,1,1,4,1,1,3,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'KogMaw' then
+  levelSequence =  { 2,3,3,1,3,4,3,2,3,2,4,2,2,1,1,4,1,1}
+	elseif myHero.charName == 'LeBlanc' then
+  levelSequence =  { 2,1,3,2,1,4,2,2,1,3,4,2,1,1,3,4,3,3}
+	elseif myHero.charName == 'LeeSin' then
+  levelSequence =  { 1,2,3,1,1,4,1,3,1,3,4,2,2,2,2,4,3,3}
+	elseif myHero.charName == 'Riven' then
+  levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Viktor' then
+  levelSequence =  { 1,3,3,2,3,4,3,1,3,1,4,1,2,1,2,4,2,2}
+	elseif myHero.charName == 'Lissandra' then
+  levelSequence =  { 1,3,2,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Lucian' then
+  levelSequence =  { 1,3,2,1,1,4,1,2,1,3,4,3,2,3,2,4,2,3}
+	elseif myHero.charName == 'Lulu' then
+  levelSequence =  { 1,3,2,1,1,4,1,1,3,3,4,3,3,2,2,4,2,2}
 
 end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.4
+    ToUpdate.Version = 0.5
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -347,9 +364,9 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.4</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.5</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 59 / 126 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 68 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
 
 end
