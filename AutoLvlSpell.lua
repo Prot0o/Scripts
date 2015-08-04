@@ -346,13 +346,32 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 1,3,2,1,1,4,3,1,1,3,4,3,3,2,2,4,2,2}
 	elseif myHero.charName == 'Nocturne' then
   levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
-
+  elseif myHero.charName == 'Olaf' then
+  levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Pantheon' then
+  levelSequence =  { 1,2,3,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Poppy' then
+  levelSequence =  { 1,3,2,1,1,4,2,1,3,1,4,2,2,2,3,4,3,3}
+	elseif myHero.charName == 'Quinn' then
+  levelSequence =  { 1,3,2,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Rammus' then
+  levelSequence =  { 2,1,3,3,2,4,3,3,3,2,4,2,2,1,1,4,1,1}
+	elseif myHero.charName == 'RekSai' then
+  levelSequence =  { 2,1,3,2,1,4,1,1,2,1,4,3,2,2,3,4,2,3}
+	elseif myHero.charName == 'Renekton' then
+  levelSequence =  { 2,3,1,1,1,4,1,3,1,3,4,3,2,3,2,4,2,2}
+	elseif myHero.charName == 'Rengar' then
+  levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Rumble' then
+  levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Ryze' then
+  levelSequence =  { 1,2,3,1,1,4,2,1,2,1,4,3,2,3,2,4,3,3}
 
 end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.6
+    ToUpdate.Version = 0.7
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -368,14 +387,16 @@ local ToUpdate = {}
   Config:addSubMenu("Activate / Deactivate", "NF")
   Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, true)
   Config.NF.levelSequence = true 
+	Last_LevelSpell = 0
 	SayHello()
   
 end
 
 function OnTick()
 
-  if Config.NF.levelSequence then
+ if Config.NF.levelSequence and os.clock()-Last_LevelSpell > 0.5 then
     autoLevelSetSequence(levelSequence)
+    Last_LevelSpell = os.clock()
   end
   
 end
@@ -385,7 +406,7 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.6</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.7</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 78 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
