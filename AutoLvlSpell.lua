@@ -366,12 +366,36 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
 	elseif myHero.charName == 'Ryze' then
   levelSequence =  { 1,2,3,1,1,4,2,1,2,1,4,3,2,3,2,4,3,3}
+	
+	--
+	
+	elseif myHero.charName == 'Sejuani' then
+  levelSequence =  { 2,3,1,2,2,4,2,3,2,3,4,3,3,1,1,4,1,1}
+	elseif myHero.charName == 'Shaco' then
+  levelSequence =  { 2,3,1,3,3,4,3,2,3,2,4,2,2,1,1,4,1,1}
+	elseif myHero.charName == 'Shen' then
+  levelSequence =  { 1,3,1,2,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Singed' then
+  levelSequence =  { 1,3,1,3,1,4,1,2,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Sion' then
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Sivir' then
+  levelSequence =  { 1,3,2,1,1,4,3,2,1,2,4,1,2,2,3,4,3,3}
+	elseif myHero.charName == 'Skarner' then
+  levelSequence =  { 1,2,1,3,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Sona' then
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Swain' then
+  levelSequence =  { 2,3,3,1,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
+	elseif myHero.charName == 'Syndra' then
+  levelSequence =  { 1,3,1,2,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	
 
 end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.7
+    ToUpdate.Version = 0.8 
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -383,7 +407,7 @@ local ToUpdate = {}
     ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Error while Downloading. Please try again.</b></font>") end
     ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
  
-  Config = scriptConfig(" AutoLvlSpell Manage ", "configname")
+  Config = scriptConfig("AutoLvlSpell Manage ", "configname")
   Config:addSubMenu("Activate / Deactivate", "NF")
   Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, true)
   Config.NF.levelSequence = true 
@@ -406,9 +430,10 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.7</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.8 - Patch 5.15</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 78 / 126 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 98 / 126 CHAMPS , Have fun. Enjoy</font> ")
+
 
 
 end
