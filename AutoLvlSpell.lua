@@ -366,9 +366,6 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
 	elseif myHero.charName == 'Ryze' then
   levelSequence =  { 1,2,3,1,1,4,2,1,2,1,4,3,2,3,2,4,3,3}
-	
-	--
-	
 	elseif myHero.charName == 'Sejuani' then
   levelSequence =  { 2,3,1,2,2,4,2,3,2,3,4,3,3,1,1,4,1,1}
 	elseif myHero.charName == 'Shaco' then
@@ -389,13 +386,37 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 2,3,3,1,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
 	elseif myHero.charName == 'Syndra' then
   levelSequence =  { 1,3,1,2,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
-	
+	--
+	elseif myHero.charName == 'TahmKench' then
+  levelSequence =  { 1,2,3,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
+	elseif myHero.charName == 'Talon' then
+  levelSequence =  { 2,3,2,1,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
+  elseif myHero.charName == 'Taric' then
+  levelSequence =  { 3,1,2,3,3,4,3,2,3,2,4,2,2,1,1,4,1,1}
+  elseif myHero.charName == 'Teemo' then
+  levelSequence =  { 3,1,2,1,3,4,1,3,1,3,4,3,1,2,2,4,2,2}
+	elseif myHero.charName == 'Thresh' then
+  levelSequence =  { 3,1,2,3,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
+	elseif myHero.charName == 'Tristana' then
+  levelSequence =  { 3,1,2,1,1,4,3,1,3,1,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Trundle' then
+  levelSequence =  { 1,2,1,3,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Tryndamere' then
+  levelSequence =  { 3,1,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'TwistedFate' then
+  levelSequence =  { 2,1,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+	elseif myHero.charName == 'Twitch' then
+  levelSequence =  { 3,2,3,1,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
+	elseif myHero.charName == 'Udyr' then
+	levelSequence =  { 4,2,4,3,4,2,4,2,4,3,2,3,2,3,3,1,1,1}
+	elseif myHero.charName == 'Urgot' then
+  levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
 
 end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.8 
+    ToUpdate.Version = 0.9 
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -409,8 +430,9 @@ local ToUpdate = {}
  
   Config = scriptConfig("AutoLvlSpell Manage ", "configname")
   Config:addSubMenu("Activate / Deactivate", "NF")
+
   Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, true)
-  Config.NF.levelSequence = true 
+  Config.NF.levelSequence = true
 	Last_LevelSpell = 0
 	SayHello()
   
@@ -430,8 +452,9 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.8 - Patch 5.15</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
-  PrintChat("<font color=\"#40FF00\">WELCOME:</b> "..myHero.charName)
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.9 - Patch 5.15</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#40FF00\">Welcome & Good Luck!</b> "..myHero.charName)
+
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 98 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
 
