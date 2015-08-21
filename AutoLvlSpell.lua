@@ -386,7 +386,6 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 2,3,3,1,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
 	elseif myHero.charName == 'Syndra' then
   levelSequence =  { 1,3,1,2,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
-	--
 	elseif myHero.charName == 'TahmKench' then
   levelSequence =  { 1,2,3,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
 	elseif myHero.charName == 'Talon' then
@@ -411,12 +410,31 @@ if myHero.charName == 'Shyvana' then
 	levelSequence =  { 4,2,4,3,4,2,4,2,4,3,2,3,2,3,3,1,1,1}
 	elseif myHero.charName == 'Urgot' then
   levelSequence =  { 1,3,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	-- 1.0 Last Update
+	elseif myHero.charName == 'Zed' then
+  levelSequence =  { 1,2,3,1,1,4,1,3,2,1,4,3,3,2,3,4,2,2}
+	elseif myHero.charName == 'Varus' then
+  levelSequence =  { 1,2,3,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Veigar' then
+  levelSequence =  { 1,2,3,2,2,4,1,2,3,1,4,2,1,1,3,4,3,3}
+	elseif myHero.charName == 'VelKoz' then
+  levelSequence =  { 2,3,1,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}
+	elseif myHero.charName == 'Vi' then
+  levelSequence =  { 2,3,1,1,1,4,1,2,3,1,4,3,2,3,2,4,2,3}
+	elseif myHero.charName == 'Viktor' then
+  levelSequence =  { 1,3,3,2,3,4,3,1,3,1,4,1,2,1,2,4,2,2}
+  elseif myHero.charName == 'Vladimir' then
+  levelSequence =  { 1,2,1,3,1,4,1,3,1,3,4,3,3,2,2,4,2,2}
+	elseif myHero.charName == 'Volibear' then
+  levelSequence =  { 3,2,1,2,2,4,2,3,2,3,4,3,3,1,1,4,1,1}
+
+
 
 end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 0.9 
+    ToUpdate.Version = 1.0
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -452,7 +470,7 @@ function SayHello()
 	-- Print to the chat area
 
 
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">0.9 - Patch 5.15</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.0 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
   PrintChat("<font color=\"#40FF00\">Welcome & Good Luck!</b> "..myHero.charName)
 
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 98 / 126 CHAMPS , Have fun. Enjoy</font> ")
