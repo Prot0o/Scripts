@@ -312,7 +312,7 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 1,3,2,1,1,4,1,1,3,3,4,3,3,2,2,4,2,2}
 	elseif myHero.charName == 'KogMaw' then
   levelSequence =  { 2,3,3,1,3,4,3,2,3,2,4,2,2,1,1,4,1,1}
-	elseif myHero.charName == 'LeBlanc' then
+	elseif myHero.charName == 'Leblanc' then
   levelSequence =  { 2,1,3,2,1,4,2,2,1,3,4,2,1,1,3,4,3,3}
 	elseif myHero.charName == 'LeeSin' then
   levelSequence =  { 1,2,3,1,1,4,1,3,1,3,4,2,2,2,2,4,3,3}
@@ -429,7 +429,7 @@ if myHero.charName == 'Shyvana' then
 	-- 1.1 Last Update
 	elseif myHero.charName == 'Warwick' then
   levelSequence =  { 2,1,3,1,2,4,2,1,2,1,4,2,1,3,3,4,3,3}
-	elseif myHero.charName == 'Wukong' then
+	elseif myHero.charName == 'MonkeyKing' then
   levelSequence =  { 3,1,2,3,3,4,3,1,3,1,4,1,1,2,2,4,2,2}
 	elseif myHero.charName == 'Xerath' then
   levelSequence =  { 1,2,3,1,1,4,2,1,2,1,4,2,2,3,3,4,3,3}
@@ -454,7 +454,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.2
+    ToUpdate.Version = 1.3
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -469,8 +469,8 @@ local ToUpdate = {}
   Config = scriptConfig("AutoLvlSpell Manage ", "configname")
   Config:addSubMenu("Activate / Deactivate", "NF")
 
-  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, true)
-  Config.NF.levelSequence = true
+  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, false)
+  Config.NF.levelSequence = false
 	Last_LevelSpell = 0
 	SayHello()
   
@@ -488,13 +488,16 @@ end
 function SayHello()
 
 	-- Print to the chat area
-
-
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.2 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
+PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.3 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
+	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
+	
   PrintChat("<font color=\"#40FF00\">Welcome & Good Luck!</b> "..myHero.charName)
 
 	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 126 / 126 CHAMPS , Have fun. Enjoy</font> ")
 
-
-
+PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")
+PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
 end
