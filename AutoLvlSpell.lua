@@ -454,7 +454,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.3
+    ToUpdate.Version = 1.4
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -490,7 +490,7 @@ function SayHello()
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.3 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.4 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
