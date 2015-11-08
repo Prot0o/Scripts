@@ -447,6 +447,9 @@ if myHero.charName == 'Shyvana' then
   levelSequence =  { 3,1,2,1,1,4,1,3,1,3,4,3,3,2,2,4,2,2}	
 	elseif myHero.charName == 'Zilean' then
   levelSequence =  { 1,2,1,3,1,4,1,3,1,3,4,3,2,3,2,4,2,2}	
+		elseif myHero.charName == 'Kindred' then
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}	
+
 
 
 
@@ -454,7 +457,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.5
+    ToUpdate.Version = 1.6
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -490,7 +493,7 @@ function SayHello()
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.5 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.6 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
