@@ -454,7 +454,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.4
+    ToUpdate.Version = 1.5
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -469,8 +469,8 @@ local ToUpdate = {}
   Config = scriptConfig("AutoLvlSpell Manage ", "configname")
   Config:addSubMenu("Activate / Deactivate", "NF")
 
-  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, false)
-  Config.NF.levelSequence = false
+  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF,false)
+  Config.NF.levelSequence = true
 	Last_LevelSpell = 0
 	SayHello()
   
@@ -490,7 +490,7 @@ function SayHello()
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.4 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.5 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
@@ -500,4 +500,24 @@ PrintChat("<font color=\"#BF00FF\">---------------------------------------------
 
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")
 PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
+end
+_G.LevelSpell = function(id)
+   local offsets = {
+   [_Q] = 0x85,
+   [_W] = 0x45,
+   [_E] = 0x15,
+   [_R] = 0xC5,
+   }
+   local p
+   p = CLoLPacket(0x130)
+   p.vTable = 0xEDB360
+   p:EncodeF(myHero.networkID)
+   for i = 1, 4 do p:Encode1(0x55) end
+   for i = 1, 4 do p:Encode1(0x74) end
+   p:Encode1(offsets[id])
+   p:Encode1(0xB3)
+   for i = 1, 4 do p:Encode1(0x4F) end
+   p:Encode1(0x01)
+   for i = 1, 3 do p:Encode1(0x00) end
+   SendPacket(p)
 end
