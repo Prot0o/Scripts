@@ -473,7 +473,7 @@ local ToUpdate = {}
   Config:addSubMenu("Activate / Deactivate", "NF")
 
   Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF,false)
-  Config.NF.levelSequence = true
+  Config.NF.levelSequence = false
 	Last_LevelSpell = 0
 	SayHello()
   
