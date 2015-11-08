@@ -472,7 +472,7 @@ local ToUpdate = {}
   Config = scriptConfig("AutoLvlSpell Manage ", "configname")
   Config:addSubMenu("Activate / Deactivate", "NF")
 
-  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF,false)
+  Config.NF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, false)
   Config.NF.levelSequence = false
 	Last_LevelSpell = 0
 	SayHello()
