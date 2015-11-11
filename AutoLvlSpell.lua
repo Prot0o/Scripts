@@ -457,7 +457,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.6
+    ToUpdate.Version = 1.7
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -491,18 +491,17 @@ end
 function SayHello()
 
 	-- Print to the chat area
-PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
-PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.6 - Patch 5.16</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.7 - Patch 5.22</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
   PrintChat("<font color=\"#40FF00\">Welcome & Good Luck!</b> "..myHero.charName)
 
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 126 / 126 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 127 / 127 CHAMPS , Have fun. Enjoy</font> ")
 
-PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")
-PrintChat("<font color=\"#BF00FF\">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></b> ")
+PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")
+
 end
 _G.LevelSpell = function(id)
    local offsets = {
