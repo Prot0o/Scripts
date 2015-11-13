@@ -457,7 +457,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.7
+    ToUpdate.Version = 1.8
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -492,7 +492,7 @@ function SayHello()
 
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.7 - Patch 5.22</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.8 - Patch 5.22</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
@@ -504,22 +504,23 @@ PrintChat("<font color=\"#BF00FF\">:--------------------------------------------
 
 end
 _G.LevelSpell = function(id)
-   local offsets = {
-   [_Q] = 0x85,
-   [_W] = 0x45,
-   [_E] = 0x15,
-   [_R] = 0xC5,
-   }
-   local p
-   p = CLoLPacket(0x130)
-   p.vTable = 0xEDB360
-   p:EncodeF(myHero.networkID)
-   for i = 1, 4 do p:Encode1(0x55) end
-   for i = 1, 4 do p:Encode1(0x74) end
-   p:Encode1(offsets[id])
-   p:Encode1(0xB3)
-   for i = 1, 4 do p:Encode1(0x4F) end
-   p:Encode1(0x01)
-   for i = 1, 3 do p:Encode1(0x00) end
-   SendPacket(p)
+  local offsets = { 
+    [_Q] = 0xB8,
+    [_W] = 0xBA,
+    [_E] = 0x79,
+    [_R] = 0x7B,
+  }
+  local p = CLoLPacket(0x0050)
+  p.vTable = 0xF38DAC
+  p:EncodeF(myHero.networkID)
+  p:Encode1(offsets[id])
+  p:Encode1(0x3C)
+  for i = 1, 4 do p:Encode1(0xF6) end
+  for i = 1, 4 do p:Encode1(0x5E) end
+  for i = 1, 4 do p:Encode1(0xE0) end
+  p:Encode1(0x5C)
+  p:Encode1(0xEE)
+  p:Encode1(0x25)
+  p:Encode1(0x03)
+  SendPacket(p)
 end
