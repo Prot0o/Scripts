@@ -448,7 +448,9 @@ if myHero.charName == 'Shyvana' then
 	elseif myHero.charName == 'Zilean' then
   levelSequence =  { 1,2,1,3,1,4,1,3,1,3,4,3,2,3,2,4,2,2}	
 		elseif myHero.charName == 'Kindred' then
-  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}	
+  levelSequence =  { 1,2,3,1,1,4,1,2,1,2,4,2,2,3,3,4,3,3}
+		elseif myHero.charName == 'Illaoi' then
+  levelSequence =  { 1,2,3,2,2,4,2,1,2,1,4,1,1,3,3,4,3,3}		
 
 
 
@@ -457,7 +459,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.8
+    ToUpdate.Version = 1.9
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -492,35 +494,32 @@ function SayHello()
 
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.8 - Patch 5.22</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.9 - Patch 5.23</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
   PrintChat("<font color=\"#40FF00\">Welcome & Good Luck!</b> "..myHero.charName)
 
-	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 127 / 127 CHAMPS , Have fun. Enjoy</font> ")
+	PrintChat("<font color=\"#01DFD7\"><b>Working with:</font><b><font color=\"#F7D358\"> 128 / 128 CHAMPS , Have fun. Enjoy</font> ")
 
 PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")
 
 end
 _G.LevelSpell = function(id)
   local offsets = { 
-    [_Q] = 0xB8,
-    [_W] = 0xBA,
-    [_E] = 0x79,
-    [_R] = 0x7B,
+    [_Q] = 0x61,
+    [_W] = 0x81,
+    [_E] = 0xA1,
+    [_R] = 0xC1,
   }
-  local p = CLoLPacket(0x0050)
-  p.vTable = 0xF38DAC
+  local p = CLoLPacket(0x0033)
+  p.vTable = 0xEECE14
   p:EncodeF(myHero.networkID)
+  p:Encode1(0x73)
+  for i = 1, 4 do p:Encode1(0xF9) end
+  for i = 1, 4 do p:Encode1(0x1E) end
   p:Encode1(offsets[id])
-  p:Encode1(0x3C)
-  for i = 1, 4 do p:Encode1(0xF6) end
-  for i = 1, 4 do p:Encode1(0x5E) end
-  for i = 1, 4 do p:Encode1(0xE0) end
-  p:Encode1(0x5C)
-  p:Encode1(0xEE)
-  p:Encode1(0x25)
-  p:Encode1(0x03)
+  for i = 1, 4 do p:Encode1(0x99) end
+  for i = 1, 4 do p:Encode1(0x00) end
   SendPacket(p)
 end
