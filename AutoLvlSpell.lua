@@ -459,7 +459,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.9
+    ToUpdate.Version = 1.91
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
