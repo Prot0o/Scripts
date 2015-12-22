@@ -524,3 +524,4 @@ _G.LevelSpell = function(id)
 		for i = 1, 4 do p:Encode1(0x00) end
 		SendPacket(p)
 	end
+end
