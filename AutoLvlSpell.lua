@@ -506,20 +506,21 @@ PrintChat("<font color=\"#BF00FF\">:--------------------------------------------
 
 end
 _G.LevelSpell = function(id)
-  local offsets = { 
-    [_Q] = 0x61,
-    [_W] = 0x81,
-    [_E] = 0xA1,
-    [_R] = 0xC1,
-  }
-  local p = CLoLPacket(0x0033)
-  p.vTable = 0xEECE14
-  p:EncodeF(myHero.networkID)
-  p:Encode1(0x73)
-  for i = 1, 4 do p:Encode1(0xF9) end
-  for i = 1, 4 do p:Encode1(0x1E) end
-  p:Encode1(offsets[id])
-  for i = 1, 4 do p:Encode1(0x99) end
-  for i = 1, 4 do p:Encode1(0x00) end
-  SendPacket(p)
-end
+	if GetGameVersion():sub(1,10) == "5.24.0.249" then
+		local offsets = { 
+		[_Q] = 0x1E,
+		[_W] = 0xD3,
+		[_E] = 0x3A,
+		[_R] = 0xA8,
+		}
+		local p = CLoLPacket(0x00B6)
+		p.vTable = 0xFE3124
+		p:EncodeF(myHero.networkID)
+		p:Encode1(0xC1)
+		p:Encode1(offsets[id])
+		for i = 1, 4 do p:Encode1(0x63) end
+		for i = 1, 4 do p:Encode1(0xC5) end
+		for i = 1, 4 do p:Encode1(0x6A) end
+		for i = 1, 4 do p:Encode1(0x00) end
+		SendPacket(p)
+	end
