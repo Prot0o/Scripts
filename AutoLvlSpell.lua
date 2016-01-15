@@ -459,7 +459,7 @@ end
 
 function OnLoad()
 local ToUpdate = {}
-    ToUpdate.Version = 1.91
+    ToUpdate.Version = 2.00
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/AutoLvlSpell.version"
@@ -494,7 +494,7 @@ function SayHello()
 
 	-- Print to the chat area
 PrintChat("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
-  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">1.9 - Patch 5.23</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
+  PrintChat("<font color=\"#FFFFFF\">VERSION <font color=\"#FFFF00\">2.0 - Patch 6.1</font> - AUTOLVLSPELL </font><font color=\"#FFFF00\">By: Proto </font>")
 PrintChat("<font color=\"#BF00FF\">----------------------------------------------------------------------------------</b> ")	
 	 PrintChat("<font color=\"#FE2E2E\">THE AutoLvlSpell IS OFF, PLEASE TURN IT ON IN THE MENU</b> ")
 	
@@ -506,22 +506,20 @@ PrintChat("<font color=\"#BF00FF\">:--------------------------------------------
 
 end
 _G.LevelSpell = function(id)
-	if GetGameVersion():sub(1,10) == "5.24.0.249" then
-		local offsets = { 
-		[_Q] = 0x1E,
-		[_W] = 0xD3,
-		[_E] = 0x3A,
-		[_R] = 0xA8,
-		}
-		local p = CLoLPacket(0x00B6)
-		p.vTable = 0xFE3124
-		p:EncodeF(myHero.networkID)
-		p:Encode1(0xC1)
-		p:Encode1(offsets[id])
-		for i = 1, 4 do p:Encode1(0x63) end
-		for i = 1, 4 do p:Encode1(0xC5) end
-		for i = 1, 4 do p:Encode1(0x6A) end
-		for i = 1, 4 do p:Encode1(0x00) end
-		SendPacket(p)
-	end
-end
+        local offsets = {
+  [_Q] = 0x71,
+  [_W] = 0xF1,
+  [_E] = 0x31,
+  [_R] = 0xB1,
+  }
+  local p = CLoLPacket(0x00DB)
+  p.vTable = 0xF6D830
+  p:EncodeF(myHero.networkID)
+  for i = 1, 4 do p:Encode1(0x30) end
+  p:Encode1(0x17)
+  for i = 1, 4 do p:Encode1(0x81) end
+  for i = 1, 4 do p:Encode1(0x6A) end
+  p:Encode1(offsets[id])
+  for i = 1, 4 do p:Encode1(0x00) end
+  SendPacket(p)
+    end
