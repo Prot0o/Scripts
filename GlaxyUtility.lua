@@ -269,7 +269,7 @@ if GetGameVersion():sub(1,4) ~= "6.15" then
 else
   print("<font color=\"#33ccff\">-- Script is updated to the latest version --</b>")
 end
-	PrintChat("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.02 - Working 6.15</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
+	PrintChat("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.03 - Working 6.15</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
 
 	PrintChat("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
 
@@ -340,7 +340,7 @@ end
 ----------------------
 function OnLoad()
 
-	local version = "0.02";
+	local version = "0.03";
 	local author = "Prot0o";
 
 	local SCRIPT_NAME = "GlaxyUtility";
