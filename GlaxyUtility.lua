@@ -1,6 +1,928 @@
 -- Script Name: Glaxy Utility
--- Version: 0.4 
+-- Version: 0.5 
 -- Autor: Glaxy
--- Scrypt NO PASSWORD encryption. 
+ 
+-- V0.4 
+-- Glaxy Utility
 
-load(Base64Decode("LS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KLS0tIE1FTlUgLS0tDQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQpmdW5jdGlvbiBPbkxvYWQoKQ0KCWlmIENvbmZpZy5Ta2luQ2hhbmdlci5FbmFibGVlIHRoZW4NCgkJU2V0U2tpbihteUhlcm8sIENvbmZpZy5Ta2luQ2hhbmdlci5za2lucyAtMSkNCgllbmQNCmVuZA0KZnVuY3Rpb24gT25VbmxvYWQoKQ0KDQoJaWYgQ29uZmlnLlNraW5DaGFuZ2VyLkVuYWJsZWUgdGhlbg0KCQlTZXRTa2luKG15SGVybywgLTEpDQoJCQlQcmludENoYXQoIjxmb250IGNvbG9yPVwiI0ZGQTA3QVwiPjxpPiAtLSBVdGlsaXR5IFNjcmlwdCBVbmxvYWQsIEJZRSBCWUUhIDwvaT4iIC4uR2V0VXNlcigpKSANCgllbmQNCgkNCg0KZW5kDQoNCmZ1bmN0aW9uIEN1c3RvbUxvYWQoKQ0KCUNvbmZpZyA9IHNjcmlwdENvbmZpZygiR2xheHkgLSBVdGlsaXR5ICIsICJjb25maWduYW1lIikNCg0KCUNvbmZpZzphZGRTdWJNZW51KCItLSBBdXRvTHZsU3BlbGwiLCAidXBsdmwiKQ0KCUNvbmZpZy51cGx2bDphZGRTdWJNZW51KCJGaXJzdDogU0VMRUNUIE9SREVSIiwgIlByaW9yaXR5IikNCglDb25maWcudXBsdmw6YWRkU3ViTWVudSgiU2Vjb25kOiBUVVJOIElUIE9OIiwgIk9OT0ZGIikNCiAgDQoJQ29uZmlnOmFkZFN1Yk1lbnUoIi0tIEF1dG9CdXlJdGVtIiwgImF1dG9idXkiKQkNCiAgQ29uZmlnLmF1dG9idXk6YWRkUGFyYW0oIkVuYWJsZSIsICJFbmFibGUgQXV0b0J1eSA6IiwgU0NSSVBUX1BBUkFNX09OT0ZGLCB0cnVlKTsgIA0KICBDb25maWcuYXV0b2J1eTphZGRQYXJhbSgiRG9yYW4iLCAiQnV5IGRvcmFuIDoiLCBTQ1JJUFRfUEFSQU1fT05PRkYsIHRydWUpOw0KICBDb25maWcuYXV0b2J1eTphZGRQYXJhbSgiUG90cyIsICJCdXkgcG90cyA6IiwgU0NSSVBUX1BBUkFNX09OT0ZGLCB0cnVlKTsNCiAgQ29uZmlnLmF1dG9idXk6YWRkUGFyYW0oIlRyaW5rZXQiLCAiQnV5IFRyaW5rZXQgOiIsIFNDUklQVF9QQVJBTV9PTk9GRiwgdHJ1ZSkNCgkNCglDb25maWc6YWRkU3ViTWVudSgiLS0gU2tpbiBDaGFuZ2VyIiwgIlNraW5DaGFuZ2VyIikNCg0KCQ0KICBpZiBWSVBfVVNFUiB0aGVuIENvbmZpZy5Ta2luQ2hhbmdlcjphZGRQYXJhbSgiRW5hYmxlZSIsICJFbmFibGUgUy5DOiAiLCBTQ1JJUFRfUEFSQU1fT05PRkYsIGZhbHNlKQ0KDQoJQ29uZmlnLlNraW5DaGFuZ2VyOnNldENhbGxiYWNrKCJFbmFibGVlIiwgZnVuY3Rpb24gKG5WKQ0KCWlmIG5WIHRoZW4NCgkJUHJpbnRDaGF0KCI8Zm9udCBjb2xvcj1cIiNGRkEwN0FcIj48aT4gLS0gU2tpbkNoYW5nZXIgTG9hZGVkIGZvcjogPC9pPiIgLi5teUhlcm8uY2hhck5hbWUpIA0KCVNldFNraW4obXlIZXJvLCBDb25maWcuU2tpbkNoYW5nZXIuc2tpbnMgLTEpDQoJZWxzZQ0KCVNldFNraW4obXlIZXJvLCAtMSkNCgllbmQNCgllbmQpDQoJZW5kDQppZiBWSVBfVVNFUiB0aGVuIENvbmZpZy5Ta2luQ2hhbmdlcjphZGRQYXJhbSgic2tpbnMiLCAnV2hpY2ggU2tpbiA6JywgU0NSSVBUX1BBUkFNX0xJU1QsIDEsIEFsbFNraW5zW215SGVyby5jaGFyTmFtZV0pDQpDb25maWcuU2tpbkNoYW5nZXI6c2V0Q2FsbGJhY2soInNraW5zIiwgZnVuY3Rpb24gKG5WKQ0KaWYgblYgdGhlbiANCmlmIENvbmZpZy5Ta2luQ2hhbmdlci5FbmFibGVlIHRoZW4NCiAgU2V0U2tpbihteUhlcm8sIENvbmZpZy5Ta2luQ2hhbmdlci5za2lucyAtMSkNCmVuZA0KZW5kDQplbmQpDQplbmQNCg0KDQoJQ29uZmlnLnVwbHZsLk9OT0ZGOmFkZFBhcmFtKCJsZXZlbFNlcXVlbmNlIiwgIlN0YXR1cyIsIFNDUklQVF9QQVJBTV9PTk9GRiwgZmFsc2UpDQogIENvbmZpZy51cGx2bC5Qcmlvcml0eTphZGRQYXJhbSgiTW9kIiwgIlNwZWxsIE9yZGVyIDoiLCBTQ1JJUFRfUEFSQU1fTElTVCwgMSwgeyJSLVEtVy1FIiwgIlItUS1FLVciLCAiUi1XLVEtRSIsICJSLVctRS1RIiwgIlItRS1RLVciLCAiUi1FLVctUSJ9KTsNCg0KDQoNCglDb25maWcudXBsdmwuT05PRkYubGV2ZWxTZXF1ZW5jZSA9IGZhbHNlDQoJTGFzdF9MZXZlbFNwZWxsID0gMA0KCVNheUhlbGxvKCkNCglBdXRvQnV5KCk7DQoJQWRkVGlja0NhbGxiYWNrKGZ1bmN0aW9uKCkNCgkJU2VxdWVuY2UoKQ0KCQlpZiBDb25maWcudXBsdmwuT05PRkYubGV2ZWxTZXF1ZW5jZSBhbmQgb3MuY2xvY2soKSAtIExhc3RfTGV2ZWxTcGVsbCA+IDAgdGhlbg0KCQkNCgkJCWF1dG9MZXZlbFNldFNlcXVlbmNlKGxldmVsU2VxdWVuY2UpDQoJCQlMYXN0X0xldmVsU3BlbGwgPSBvcy5jbG9jaygpICsgSHVtYW4oKQ0KCQkJDQoJCWVuZA0KCWVuZCkNCgllbmQNCg0KDQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tDQotLS0gU0tJTiBDSEFOR0VSIC0tLQ0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KDQoNCkFsbFNraW5zID0geyAtLSBVcGRhdGVkIGFsbCBza2lucyBWMC4wNA0KICAgICAgICAgICAgIC0tQWRkZWQgTmV3IFNraW5zOiBBcmNhZGUgc2tpbiwgWWFzbyBTa2luLCArIENIcm9tYQ0KDQoJWyJBYXRyb3giXSA9IHsiQ2xhc3NpYyIsICJKdXN0aWNhciIsICJNZWNoYSIsICJTZWEgSHVudGVyIn0sDQoJWyJBaHJpIl0gPSB7IkNsYXNzaWMiLCAiRHluYXN0eSIsICJNaWRuaWdodCIsICJGb3hmaXJlIiwgIlBvcHN0YXIiLCAiQ2hhbGxlbmdlciIsICJBY2FkZW15IiwgIkFyY2FkZSJ9LA0KCVsiQWthbGkiXSA9IHsiQ2xhc3NpYyIsICJTdGluZ2VyIiwgIkNyaW1zb24iLCAiQWxsLXN0YXIiLCAiTnVyc2UiLCAiQmxvb2QgTW9vbiIsICJTaWx2ZXJmYW5nIiwgIkhlYWRodW50ZXIifSwNCglbIkFsaXN0YXIiXSA9IHsiQ2xhc3NpYyIsICJCbGFjayIsICJHb2xkZW4iLCAiTWF0YWRvciIsICJMb25naG9ybiIsICJVbmNoYWluZWQiLCAiSW5mZXJuYWwiLCAiU3dlZXBlciIsICJNYXJhdWRlciJ9LA0KCVsiQW11bXUiXSA9IHsiQ2xhc3NpYyIsICJQaGFyYW9oIiwgIlZhbmNvdXZlciIsICJFbXVtdSIsICJSZS1HaWZ0ZWQiLCAiQWxtb3N0LVByb20gS2luZyIsICJMaXR0bGUgS25pZ2h0IiwgIlNhZCBSb2JvdCIsICJTdXJwcmlzZSBQYXJ0eSJ9LA0KCVsiQW5pdmlhIl0gPSB7IkNsYXNzaWMiLCAiVGVhbSBTcGlyaXQiLCAiQmlyZCBvZiBQcmV5IiwgIk5veHVzIEh1bnRlciIsICJIZXh0ZWNoIiwgIkJsYWNrZnJvc3QiLCAiUHJlaGlzdG9yaWMifSwNCglbIkFubmllIl0gPSB7IkNsYXNzaWMiLCAiR290aCIsICJSZWQgUmlkaW5nIiwgIkFubmllIGluIFdvbmRlcmxhbmQiLCAiUHJvbSBRdWVlbiIsICJGcm9zdGZpcmUiLCAiUmV2ZXJzZSIsICJGcmFua2VuVGliYmVycyIsICJQYW5kYSIsICJTd2VldGhlYXJ0IiwgIkhleHRlY2gifSwNCglbIkFzaGUiXSA9IHsiQ2xhc3NpYyIsICJGcmVsam9yZCIsICJTaGVyd29vZCBGb3Jlc3QiLCAiV29hZCIsICJRdWVlbiIsICJBbWV0aHlzdCIsICJIZWFydHNlZWtlciIsICJNYXJhdWRlciIsICJQUk9KRUNUIn0sDQoJWyJBemlyIl0gPSB7IkNsYXNzaWMiLCAiR2FsYWN0aWMiLCAiR3JhdmVsb3JkIn0sDQoJWyJBdXJlbGlvblNvbCJdID0geyJDbGFzc2ljIiwgIkFzaGVuIExvcmQifSwNCgktLSBCDQoJWyJCYXJkIl0gPSB7IkNsYXNzaWMiLCAiRWxkZXJ3b29kIiwgIkNocm9tYSBQYWNrOiBNYXJpZ29sZCIsICJDaHJvbWEgUGFjazogSXZ5IiwgIkNocm9tYSBQYWNrOiBTYWdlIn0sDQoJWyJCbGl0emNyYW5rIl0gPSB7IkNsYXNzaWMiLCAiUnVzdHkiLCAiR29hbGtlZXBlciIsICJCb29tIEJvb20iLCAiUGlsdG92ZXIgQ3VzdG9tcyIsICJEZWZpbml0ZWx5IE5vdCIsICJpQmxpdHpjcmFuayIsICJSaW90IiwgIkNocm9tYSBQYWNrOiBNb2x0ZW4iLCAiQ2hyb21hIFBhY2s6IENvYmFsdCIsICJDaHJvbWEgUGFjazogR3VubWV0YWwiLCAiQmF0dGxlIEJvc3MifSwNCglbIkJyYW5kIl0gPSB7IkNsYXNzaWMiLCAiQXBvY2FseXB0aWMiLCAiVmFuZGFsIiwgIkNyeW9jb3JlIiwgIlpvbWJpZSIsICJTcGlyaXQgRmlyZSJ9LA0KCVsiQnJhdW0iXSA9IHsiQ2xhc3NpYyIsICJEcmFnb25zbGF5ZXIiLCAiRWwgVGlncmUiLCAiTGlvbmhlYXJ0In0sDQoJLS0gQw0KCVsiQ2FpdGx5biJdID0geyJDbGFzc2ljIiwgIlJlc2lzdGFuY2UiLCAiU2hlcmlmZiIsICJTYWZhcmkiLCAiQXJjdGljIFdhcmZhcmUiLCAiT2ZmaWNlciIsICJIZWFkaHVudGVyIiwgIkNocm9tYSBQYWNrOiBQaW5rIiwgIkNocm9tYSBQYWNrOiBHcmVlbiIsICJDaHJvbWEgUGFjazogQmx1ZSIsIkx1bmFyIn0sDQoJWyJDYXNzaW9wZWlhIl0gPSB7IkNsYXNzaWMiLCAiRGVzcGVyYWRhIiwgIlNpcmVuIiwgIk15dGhpYyIsICJKYWRlIEZhbmciLCAiQ2hyb21hIFBhY2s6IERheSIsICJDaHJvbWEgUGFjazogRHVzayIsICJDaHJvbWEgUGFjazogTmlnaHQifSwNCglbIkNob2dhdGgiXSA9IHsiQ2xhc3NpYyIsICJOaWdodG1hcmUiLCAiR2VudGxlbWFuIiwgIkxvY2ggTmVzcyIsICJKdXJhc3NpYyIsICJCYXR0bGVjYXN0IFByaW1lIiwgIlByZWhpc3RvcmljIn0sDQoJWyJDb3JraSJdID0geyJDbGFzc2ljIiwgIlVGTyIsICJJY2UgVG9ib2dnYW4iLCAiUmVkIEJhcm9uIiwgIkhvdCBSb2QiLCAiVXJmcmlkZXIiLCAiRHJhZ29ud2luZyIsICJGbmF0aWMiLCAiQXJjYWRlIn0sDQoJLS0gRA0KCVsiRGFyaXVzIl0gPSB7IkNsYXNzaWMiLCAiTG9yZCIsICJCaW9mb3JnZSIsICJXb2FkIEtpbmciLCAiRHVua21hc3RlciIsICJDaHJvbWEgUGFjazogQmxhY2sgSXJvbiIsICJDaHJvbWEgUGFjazogQnJvbnplIiwgIkNocm9tYSBQYWNrOiBDb3BwZXIiLCAiQWNhZGVteSJ9LA0KCVsiRGlhbmEiXSA9IHsiQ2xhc3NpYyIsICJEYXJrIFZhbGt5cmllIiwgIkx1bmFyIEdvZGRlc3MifSwNCglbIkRyTXVuZG8iXSA9IHsiQ2xhc3NpYyIsICJUb3hpYyIsICJNci4gTXVuZG92ZXJzZSIsICJDb3Jwb3JhdGUgTXVuZG8iLCAiTXVuZG8gTXVuZG8iLCAiRXhlY3V0aW9uZXIgTXVuZG8iLCAiUmFnZWJvcm4gTXVuZG8iLCAiVFBBIE11bmRvIiwgIlBvb2wgUGFydHkifSwNCglbIkRyYXZlbiJdID0geyJDbGFzc2ljIiwgIlNvdWwgUmVhdmVyIiwgIkdsYWRpYXRvciIsICJQcmltZXRpbWUiLCAiUG9vbCBQYXJ0eSJ9LA0KCS0tIEUNCglbIkVra28iXSA9IHsiQ2xhc3NpYyIsICJTYW5kc3Rvcm0iLCAiQWNhZGVteSIsICJQUk9KRUNUIn0sDQoJWyJFbGlzZSJdID0geyJDbGFzc2ljIiwgIkRlYXRoIEJsb3Nzb20iLCAiVmljdG9yaW91cyIsICJCbG9vZCBNb29uIn0sDQoJWyJFdmVseW5uIl0gPSB7IkNsYXNzaWMiLCAiU2hhZG93IiwgIk1hc3F1ZXJhZGUiLCAiVGFuZ28iLCAiU2FmZWNyYWNrZXIifSwNCglbIkV6cmVhbCJdID0geyJDbGFzc2ljIiwgIk5vdHRpbmdoYW0iLCAiU3RyaWtlciIsICJGcm9zdGVkIiwgIkV4cGxvcmVyIiwgIlB1bHNlZmlyZSIsICJUUEEiLCAiRGVib25haXIiLCAiQWNlIG9mIFNwYWRlcyIsICJBcmNhZGUifSwNCgktLSBGDQoJWyJGaWRkbGVTdGlja3MiXSA9IHsiQ2xhc3NpYyIsICJTcGVjdHJhbCIsICJVbmlvbiBKYWNrIiwgIkJhbmRpdG8iLCAiUHVtcGtpbmhlYWQiLCAiRmlkZGxlIE1lIFRpbWJlcnMiLCAiU3VycHJpc2UgUGFydHkiLCAiRGFyayBDYW5keSIsICJSaXNlbiJ9LA0KCVsiRmlvcmEiXSA9IHsiQ2xhc3NpYyIsICJSb3lhbCBHdWFyZCIsICJOaWdodHJhdmVuIiwgIkhlYWRtaXN0cmVzcyIsICJQUk9KRUNUIn0sDQoJWyJGaXp6Il0gPSB7IkNsYXNzaWMiLCAiQXRsYW50ZWFuIiwgIlR1bmRyYSIsICJGaXNoZXJtYW4iLCAiVm9pZCIsICJDaHJvbWEgUGFjazogT3JhbmdlIiwgIkNocm9tYSBQYWNrOiBCbGFjayIsICJDaHJvbWEgUGFjazogUmVkIiwgIkNvdHRvbnRhaWwifSwNCgktLSBHDQoJWyJHYWxpbyJdID0geyJDbGFzc2ljIiwgIkVuY2hhbnRlZCIsICJIZXh0ZWNoIiwgIkNvbW1hbmRvIiwgIkdhdGVrZWVwZXIiLCAiRGVib25haXIifSwNCglbIkdhbmdwbGFuayJdID0geyJDbGFzc2ljIiwgIlNwb29reSIsICJNaW51dGVtYW4iLCAiU2FpbG9yIiwgIlRveSBTb2xkaWVyIiwgIlNwZWNpYWwgRm9yY2VzIiwgIlN1bHRhbiIsICJDYXB0YWluIn0sDQoJWyJHYXJlbiJdID0geyJDbGFzc2ljIiwgIlNhbmd1aW5lIiwgIkRlc2VydCBUcm9vcGVyIiwgIkNvbW1hbmRvIiwgIkRyZWFka25pZ2h0IiwgIlJ1Z2dlZCIsICJTdGVlbCBMZWdpb24iLCAiQ2hyb21hIFBhY2s6IEdhcm5ldCIsICJDaHJvbWEgUGFjazogUGx1bSIsICJDaHJvbWEgUGFjazogSXZvcnkiLCAiUm9ndWUgQWRtaXJhbCJ9LA0KCVsiR25hciJdID0geyJDbGFzc2ljIiwgIkRpbm8iLCAiR2VudGxlbWFuIn0sDQoJWyJHcmFnYXMiXSA9IHsiQ2xhc3NpYyIsICJTY3ViYSIsICJIaWxsYmlsbHkiLCAiU2FudGEiLCAiR3JhZ2FzLCBFc3EuIiwgIlZhbmRhbCIsICJPa3RvYmVyZmVzdCIsICJTdXBlcmZhbiIsICJGbmF0aWMiLCAiQ2Fza2JyZWFrZXIifSwNCglbIkdyYXZlcyJdID0geyJDbGFzc2ljIiwgIkhpcmVkIEd1biIsICJKYWlsYnJlYWsiLCAiTWFmaWEiLCAiUmlvdCIsICJQb29sIFBhcnR5IiwgIkN1dHRocm9hdCJ9LA0KCS0tIEgNCglbIkhlY2FyaW0iXSA9IHsiQ2xhc3NpYyIsICJCbG9vZCBLbmlnaHQiLCAiUmVhcGVyIiwgIkhlYWRsZXNzIiwgIkFyY2FkZSIsICJFbGRlcndvb2QifSwNCglbIkhlaW1lcmRpbmdlciJdID0geyJDbGFzc2ljIiwgIkFsaWVuIEludmFkZXIiLCAiQmxhc3QgWm9uZSIsICJQaWx0b3ZlciBDdXN0b21zIiwgIlNub3dtZXJkaW5nZXIiLCAiSGF6bWF0In0sDQoJLS0gSQ0KCVsiSWxsYW9pIl0gPSB7IkNsYXNzaWMiLCAiVm9pZCBCcmluZ2VyIn0sDQoJWyJJcmVsaWEiXSA9IHsiQ2xhc3NpYyIsICJOaWdodGJsYWRlIiwgIkF2aWF0b3IiLCAiSW5maWx0cmF0b3IiLCAiRnJvc3RibGFkZSIsICJPcmRlciBvZiB0aGUgTG90dXMifSwNCgktLSBKDQoJWyJKYW5uYSJdID0geyJDbGFzc2ljIiwgIlRlbXBlc3QiLCAiSGV4dGVjaCIsICJGcm9zdCBRdWVlbiIsICJWaWN0b3Jpb3VzIiwgIkZvcmVjYXN0IiwgIkZuYXRpYyJ9LA0KCVsiSmFydmFuSVYiXSA9IHsiQ2xhc3NpYyIsICJDb21tYW5kbyIsICJEcmFnb25zbGF5ZXIiLCAiRGFya2ZvcmdlIiwgIlZpY3RvcmlvdXMiLCAiV2FycmluZyBLaW5nZG9tcyIsICJGbmF0aWMifSwNCglbIkpheCJdID0geyJDbGFzc2ljIiwgIlRoZSBNaWdodHkiLCAiVmFuZGFsIiwgIkFuZ2xlciIsICJQQVgiLCAiSmF4aW11cyIsICJUZW1wbGUiLCAiTmVtZXNpcyIsICJTS1QgVDEiLCAiQ2hyb21hIFBhY2s6IENyZWFtIiwgIkNocm9tYSBQYWNrOiBBbWJlciIsICJDaHJvbWEgUGFjazogQnJpY2siLCAiV2FyZGVuIn0sDQoJWyJKYXljZSJdID0geyJDbGFzc2ljIiwgIkZ1bGwgTWV0YWwiLCAiRGVib25haXIiLCAiRm9yc2FrZW4ifSwNCglbIkppbngiXSA9IHsiQ2xhc3NpYyIsICJNYWZpYSIsICJGaXJlY3JhY2tlciIsICJTbGF5ZXIifSwNCgktLSBLDQoJWyJLYWxpc3RhIl0gPSB7IkNsYXNzaWMiLCAiQmxvb2QgTW9vbiIsICJDaGFtcGlvbnNoaXAifSwNCglbIkthcm1hIl0gPSB7IkNsYXNzaWMiLCAiU3VuIEdvZGRlc3MiLCAiU2FrdXJhIiwgIlRyYWRpdGlvbmFsIiwgIk9yZGVyIG9mIHRoZSBMb3R1cyIsICJXYXJkZW4ifSwNCglbIkthcnRodXMiXSA9IHsiQ2xhc3NpYyIsICJQaGFudG9tIiwgIlN0YXR1ZSBvZiIsICJHcmltIFJlYXBlciIsICJQZW50YWtpbGwiLCAiRm5hdGljIiwgIkNocm9tYSBQYWNrOiBCdXJuIiwgIkNocm9tYSBQYWNrOiBCbGlnaHQiLCAiQ2hyb21hIFBhY2s6IEZyb3N0Yml0ZSJ9LA0KCVsiS2Fzc2FkaW4iXSA9IHsiQ2xhc3NpYyIsICJGZXN0aXZhbCIsICJEZWVwIE9uZSIsICJQcmUtVm9pZCIsICJIYXJiaW5nZXIiLCAiQ29zbWljIFJlYXZlciJ9LA0KCVsiS2F0YXJpbmEiXSA9IHsiQ2xhc3NpYyIsICJNZXJjZW5hcnkiLCAiUmVkIENhcmQiLCAiQmlsZ2V3YXRlciIsICJLaXR0eSBDYXQiLCAiSGlnaCBDb21tYW5kIiwgIlNhbmRzdG9ybSIsICJTbGF5IEJlbGxlIiwgIldhcnJpbmcgS2luZ2RvbXMiLCAiUFJPSkVDVCJ9LA0KCVsiS2F5bGUiXSA9IHsiQ2xhc3NpYyIsICJTaWx2ZXIiLCAiVmlyaWRpYW4iLCAiVW5tYXNrZWQiLCAiQmF0dGxlYm9ybiIsICJKdWRnbWVudCIsICJBZXRoZXIgV2luZyIsICJSaW90In0sDQoJWyJLZW5uZW4iXSA9IHsiQ2xhc3NpYyIsICJEZWFkbHkiLCAiU3dhbXAgTWFzdGVyIiwgIkthcmF0ZSIsICJLZW5uZW4gTS5ELiIsICJBcmN0aWMgT3BzIn0sDQoJWyJLaGF6aXgiXSA9IHsiQ2xhc3NpYyIsICJNZWNoYSIsICJHdWFyZGlhbiBvZiB0aGUgU2FuZHMifSwNCglbIktpbmRyZWQiXSA9IHsiQ2xhc3NpYyIsICJTaGFkb3dmaXJlIn0sDQoJWyJLb2dNYXciXSA9IHsiQ2xhc3NpYyIsICJDYXRlcnBpbGxhciIsICJTb25vcmFuIiwgIk1vbmFyY2giLCAiUmVpbmRlZXIiLCAiTGlvbiBEYW5jZSIsICJEZWVwIFNlYSIsICJKdXJhc3NpYyIsICJCYXR0bGVjYXN0In0sDQoJWyJLbGVkIl0gPSB7IkNsYXNzaWMiLCAiU2lyIn0sDQoJLS0gTA0KCVsiTGVibGFuYyJdID0geyJDbGFzc2ljIiwgIldpY2tlZCIsICJQcmVzdGlnaW91cyIsICJNaXN0bGV0b2UiLCAiUmF2ZW5ib3JuIn0sDQoJWyJMZWVTaW4iXSA9IHsiQ2xhc3NpYyIsICJUcmFkaXRpb25hbCIsICJBY29seXRlIiwgIkRyYWdvbiBGaXN0IiwgIk11YXkgVGhhaSIsICJQb29sIFBhcnR5IiwgIlNLVCBUMSIsICJDaHJvbWEgUGFjazogQmxhY2siLCAiQ2hyb21hIFBhY2s6IEJsdWUiLCAiQ2hyb21hIFBhY2s6IFllbGxvdyIsICJLbm9ja291dCJ9LA0KCVsiTGVvbmEiXSA9IHsiQ2xhc3NpYyIsICJWYWxreXJpZSIsICJEZWZlbmRlciIsICJJcm9uIFNvbGFyaSIsICJQb29sIFBhcnR5IiwgIkNocm9tYSBQYWNrOiBQaW5rIiwgIkNocm9tYSBQYWNrOiBBenVyZSIsICJDaHJvbWEgUGFjazogTGVtb24iLCAiUFJPSkVDVCJ9LA0KCVsiTGlzc2FuZHJhIl0gPSB7IkNsYXNzaWMiLCAiQmxvb2RzdG9uZSIsICJCbGFkZSBRdWVlbiJ9LA0KCVsiTHVjaWFuIl0gPSB7IkNsYXNzaWMiLCAiSGlyZWQgR3VuIiwgIlN0cmlrZXIiLCAiQ2hyb21hIFBhY2s6IFllbGxvdyIsICJDaHJvbWEgUGFjazogUmVkIiwgIkNocm9tYSBQYWNrOiBCbHVlIiwgIlBST0pFQ1QifSwNCglbIkx1bHUiXSA9IHsiQ2xhc3NpYyIsICJCaXR0ZXJzd2VldCIsICJXaWNrZWQiLCAiRHJhZ29uIFRyYWluZXIiLCAiV2ludGVyIFdvbmRlciIsICJQb29sIFBhcnR5In0sDQoJWyJMdXgiXSA9IHsiQ2xhc3NpYyIsICJTb3JjZXJlc3MiLCAiU3BlbGx0aGllZiIsICJDb21tYW5kbyIsICJJbXBlcmlhbCIsICJTdGVlbCBMZWdpb24iLCAiU3RhciBHdWFyZGlhbiJ9LA0KCS0tIE0NCglbIk1hbHBoaXRlIl0gPSB7IkNsYXNzaWMiLCAiU2hhbXJvY2siLCAiQ29yYWwgUmVlZiIsICJNYXJibGUiLCAiT2JzaWRpYW4iLCAiR2xhY2lhbCIsICJNZWNoYSIsICJJcm9uc2lkZSJ9LA0KCVsiTWFsemFoYXIiXSA9IHsiQ2xhc3NpYyIsICJWaXppZXIiLCAiU2hhZG93IFByaW5jZSIsICJEamlubiIsICJPdmVybG9yZCIsICJTbm93IERheSJ9LA0KCVsiTWFva2FpIl0gPSB7IkNsYXNzaWMiLCAiQ2hhcnJlZCIsICJUb3RlbWljIiwgIkZlc3RpdmUiLCAiSGF1bnRlZCIsICJHb2Fsa2VlcGVyIn0sDQoJWyJNYXN0ZXJZaSJdID0geyJDbGFzc2ljIiwgIkFzc2Fzc2luIiwgIkNob3NlbiIsICJJb25pYSIsICJTYW11cmFpIFlpIiwgIkhlYWRodW50ZXIiLCAiQ2hyb21hIFBhY2s6IEdvbGQiLCAiQ2hyb21hIFBhY2s6IEFxdWEiLCAiQ2hyb21hIFBhY2s6IENyaW1zb24iLCAiUFJPSkVDVCJ9LA0KCVsiTWlzc0ZvcnR1bmUiXSA9IHsiQ2xhc3NpYyIsICJDb3dnaXJsIiwgIldhdGVybG9vIiwgIlNlY3JldCBBZ2VudCIsICJDYW5keSBDYW5lIiwgIlJvYWQgV2FycmlvciIsICJNYWZpYSIsICJBcmNhZGUiLCAiQ2FwdGFpbiJ9LA0KCVsiTW9yZGVrYWlzZXIiXSA9IHsiQ2xhc3NpYyIsICJEcmFnb24gS25pZ2h0IiwgIkluZmVybmFsIiwgIlBlbnRha2lsbCIsICJMb3JkIiwgIktpbmcgb2YgQ2x1YnMifSwNCglbIk1vcmdhbmEiXSA9IHsiQ2xhc3NpYyIsICJFeGlsZWQiLCAiU2luZnVsIFN1Y2N1bGVuY2UiLCAiQmxhZGUgTWlzdHJlc3MiLCAiQmxhY2t0aG9ybiIsICJHaG9zdCBCcmlkZSIsICJWaWN0b3Jpb3VzIiwgIkNocm9tYSBQYWNrOiBUb3hpYyIsICJDaHJvbWEgUGFjazogUGFsZSIsICJDaHJvbWEgUGFjazogRWJvbnkiLCJMdW5hciJ9LA0KCS0tIE4NCglbIk5hbWkiXSA9IHsiQ2xhc3NpYyIsICJLb2kiLCAiUml2ZXIgU3Bpcml0IiwgIlVyZiIsICJDaHJvbWEgUGFjazogU3VuYmVhbSIsICJDaHJvbWEgUGFjazogU21va2UiLCAiQ2hyb21hIFBhY2s6IFR3aWxpZ2h0In0sDQoJWyJOYXN1cyJdID0geyJDbGFzc2ljIiwgIkdhbGFjdGljIiwgIlBoYXJhb2giLCAiRHJlYWRrbmlnaHQiLCAiUmlvdCBLLTkiLCAiSW5mZXJuYWwiLCAiQXJjaGR1a2UiLCAiQ2hyb21hIFBhY2s6IEJ1cm4iLCAiQ2hyb21hIFBhY2s6IEJsaWdodCIsICJDaHJvbWEgUGFjazogRnJvc3RiaXRlIix9LA0KCVsiTmF1dGlsdXMiXSA9IHsiQ2xhc3NpYyIsICJBYnlzc2FsIiwgIlN1YnRlcnJhbmVhbiIsICJBc3Ryb05hdXRpbHVzIiwgIldhcmRlbiJ9LA0KCVsiTmlkYWxlZSJdID0geyJDbGFzc2ljIiwgIlNub3cgQnVubnkiLCAiTGVvcGFyZCIsICJGcmVuY2ggTWFpZCIsICJQaGFyYW9oIiwgIkJld2l0Y2hpbmciLCAiSGVhZGh1bnRlciIsICJXYXJyaW5nIEtpbmdkb21zIn0sDQoJWyJOb2N0dXJuZSJdID0geyJDbGFzc2ljIiwgIkZyb3plbiBUZXJyb3IiLCAiVm9pZCIsICJSYXZhZ2VyIiwgIkhhdW50aW5nIiwgIkV0ZXJudW0ifSwNCglbIk51bnUiXSA9IHsiQ2xhc3NpYyIsICJTYXNxdWF0Y2giLCAiV29ya3Nob3AiLCAiR3J1bmd5IiwgIk51bnUgQm90IiwgIkRlbW9saXNoZXIiLCAiVFBBIiwgIlpvbWJpZSJ9LA0KCS0tIE8NCglbIk9sYWYiXSA9IHsiQ2xhc3NpYyIsICJGb3JzYWtlbiIsICJHbGFjaWFsIiwgIkJyb2xhZiIsICJQZW50YWtpbGwiLCAiTWFyYXVkZXIifSwNCglbIk9yaWFubmEiXSA9IHsiQ2xhc3NpYyIsICJHb3RoaWMiLCAiU2V3biBDaGFvcyIsICJCbGFkZWNyYWZ0IiwgIlRQQSIsICJXaW50ZXIgV29uZGVyIn0sDQoJLS0gUA0KCVsiUGFudGhlb24iXSA9IHsiQ2xhc3NpYyIsICJNeXJtaWRvbiIsICJSdXRobGVzcyIsICJQZXJzZXVzIiwgIkZ1bGwgTWV0YWwiLCAiR2xhaXZlIFdhcnJpb3IiLCAiRHJhZ29uc2xheWVyIiwgIlNsYXllciJ9LA0KCVsiUG9wcHkiXSA9IHsiQ2xhc3NpYyIsICJOb3h1cyIsICJMb2xsaXBvcHB5IiwgIkJsYWNrc21pdGgiLCAiUmFnZG9sbCIsICJCYXR0bGUgUmVnYWxpYSIsICJTY2FybGV0IEhhbW1lciJ9LA0KCS0tIFENCglbIlF1aW5uIl0gPSB7IkNsYXNzaWMiLCAiUGhvZW5peCIsICJXb2FkIFNjb3V0IiwgIkNvcnNhaXIifSwNCgktLSBSDQoJWyJSYW1tdXMiXSA9IHsiQ2xhc3NpYyIsICJLaW5nIiwgIkNocm9tZSIsICJNb2x0ZW4iLCAiRnJlbGpvcmQiLCAiTmluamEiLCAiRnVsbCBNZXRhbCIsICJHdWFyZGlhbiBvZiB0aGUgU2FuZHMifSwNCglbIlJla3NhaSJdID0geyJDbGFzc2ljIiwgIkV0ZXJudW0iLCAiUG9vbCBQYXJ0eSJ9LA0KCVsiUmVuZWt0b24iXSA9IHsiQ2xhc3NpYyIsICJHYWxhY3RpYyIsICJPdXRiYWNrIiwgIkJsb29kZnVyeSIsICJSdW5lIFdhcnMiLCAiU2NvcmNoZWQgRWFydGgiLCAiUG9vbCBQYXJ0eSIsICJTY29yY2hlZCBFYXJ0aCIsICJQcmVoaXN0b3JpYyJ9LA0KCVsiUmVuZ2FyIl0gPSB7IkNsYXNzaWMiLCAiSGVhZGh1bnRlciIsICJOaWdodCBIdW50ZXIiLCAiU1NXIn0sDQoJWyJSaXZlbiJdID0geyJDbGFzc2ljIiwgIlJlZGVlbWVkIiwgIkNyaW1zb24gRWxpdGUiLCAiQmF0dGxlIEJ1bm55IiwgIkNoYW1waW9uc2hpcCIsICJEcmFnb25ibGFkZSIsICJBcmNhZGUifSwNCglbIlJ1bWJsZSJdID0geyJDbGFzc2ljIiwgIlJ1bWJsZSBpbiB0aGUgSnVuZ2xlIiwgIkJpbGdlcmF0IiwgIlN1cGVyIEdhbGF4eSJ9LA0KCVsiUnl6ZSJdID0geyJDbGFzc2ljIiwgIkh1bWFuIiwgIlRyaWJhbCIsICJVbmNsZSIsICJUcml1bXBoYW50IiwgIlByb2Zlc3NvciIsICJab21iaWUiLCAiRGFyayBDcnlzdGFsIiwgIlBpcmF0ZSIsICJXaGl0ZWJlYXJkIn0sDQoJLS0gUw0KCVsiU2VqdWFuaSJdID0geyJDbGFzc2ljIiwgIlNhYnJldHVzayIsICJEYXJrcmlkZXIiLCAiVHJhZGl0aW9uYWwiLCAiQmVhciBDYXZhbHJ5IiwgIlBvcm8gUmlkZXIifSwNCglbIlNoYWNvIl0gPSB7IkNsYXNzaWMiLCAiTWFkIEhhdHRlciIsICJSb3lhbCIsICJOdXRjcmFja28iLCAiV29ya3Nob3AiLCAiQXN5bHVtIiwgIk1hc2tlZCIsICJXaWxkIENhcmQifSwNCglbIlNoZW4iXSA9IHsiQ2xhc3NpYyIsICJGcm96ZW4iLCAiWWVsbG93IEphY2tldCIsICJTdXJnZW9uIiwgIkJsb29kIE1vb24iLCAiV2FybG9yZCIsICJUUEEifSwNCglbIlNoeXZhbmEiXSA9IHsiQ2xhc3NpYyIsICJJcm9uc2NhbGUiLCAiQm9uZWNsYXciLCAiRGFya2ZsYW1lIiwgIkljZSBEcmFrZSIsICJDaGFtcGlvbnNoaXAifSwNCglbIlNpbmdlZCJdID0geyJDbGFzc2ljIiwgIlJpb3QgU3F1YWQiLCAiSGV4dGVjaCIsICJTdXJmZXIiLCAiTWFkIFNjaWVudGlzdCIsICJBdWdtZW50ZWQiLCAiU25vdyBEYXkiLCAiU1NXIn0sDQoJWyJTaW9uIl0gPSB7IkNsYXNzaWMiLCAiSGV4dGVjaCIsICJCYXJiYXJpYW4iLCAiTHVtYmVyamFjayIsICJXYXJtb25nZXIifSwNCglbIlNpdmlyIl0gPSB7IkNsYXNzaWMiLCAiV2FycmlvciBQcmluY2VzcyIsICJTcGVjdGFjdWxhciIsICJIdW50cmVzcyIsICJCYW5kaXQiLCAiUEFYIiwgIlNub3dzdG9ybSIsICJXYXJkZW4iLCAiVmljdG9yaW91cyJ9LA0KCVsiU2thcm5lciJdID0geyJDbGFzc2ljIiwgIlNhbmRzY291cmdlIiwgIkVhcnRocnVuZSIsICJCYXR0bGVjYXN0IEFscGhhIiwgIkd1YXJkaWFuIG9mIHRoZSBTYW5kcyJ9LA0KCVsiU29uYSJdID0geyJDbGFzc2ljIiwgIk11c2UiLCAiUGVudGFraWxsIiwgIlNpbGVudCBOaWdodCIsICJHdXFpbiIsICJBcmNhZGUiLCAiREoifSwNCglbIlNvcmFrYSJdID0geyJDbGFzc2ljIiwgIkRyeWFkIiwgIkRpdmluZSIsICJDZWxlc3RpbmUiLCAiUmVhcGVyIiwgIk9yZGVyIG9mIHRoZSBCYW5hbmEifSwNCglbIlN3YWluIl0gPSB7IkNsYXNzaWMiLCAiTm9ydGhlcm4gRnJvbnQiLCAiQmlsZ2V3YXRlciIsICJUeXJhbnQifSwNCglbIlN5bmRyYSJdID0geyJDbGFzc2ljIiwgIkp1c3RpY2FyIiwgIkF0bGFudGVhbiIsICJRdWVlbiBvZiBEaWFtb25kcyJ9LA0KCS0tIFQNCglbIlRhaG1LZW5jaCJdID0geyJDbGFzc2ljIiwgIk1hc3RlciBDaGVmIn0sDQoJWyJUYWxpeWFoIl0gPSB7IkNsYXNzaWMiLCAiRnJlbGpvcmQifSwNCglbIlRhbG9uIl0gPSB7IkNsYXNzaWMiLCAiUmVuZWdhZGUiLCAiQ3JpbXNvbiBFbGl0ZSIsICJEcmFnb25ibGFkZSIsICJTU1cifSwNCglbIlRhcmljIl0gPSB7IkNsYXNzaWMiLCAiRW1lcmFsZCIsICJBcm1vciBvZiB0aGUgRmlmdGggQWdlIiwgIkJsb29kc3RvbmUifSwNCglbIlRlZW1vIl0gPSB7IkNsYXNzaWMiLCAiSGFwcHkgRWxmIiwgIlJlY29uIiwgIkJhZGdlciIsICJBc3Ryb25hdXQiLCAiQ290dG9udGFpbCIsICJTdXBlciIsICJQYW5kYSIsICJPbWVnYSBTcXVhZCJ9LA0KCVsiVGhyZXNoIl0gPSB7IkNsYXNzaWMiLCAiRGVlcCBUZXJyb3IiLCAiQ2hhbXBpb25zaGlwIiwgIkJsb29kIE1vb24iLCAiU1NXIn0sDQoJWyJUcmlzdGFuYSJdID0geyJDbGFzc2ljIiwgIlJpb3QgR2lybCIsICJFYXJuZXN0IEVsZiIsICJGaXJlZmlnaHRlciIsICJHdWVyaWxsYSIsICJCdWNjYW5lZXIiLCAiUm9ja2V0IEdpcmwiLCAiQ2hyb21hIFBhY2s6IE5hdnkiLCAiQ2hyb21hIFBhY2s6IFB1cnBsZSIsICJDaHJvbWEgUGFjazogT3JhbmdlIiwgIkRyYWdvbiBUcmFpbmVyIn0sDQoJWyJUcnVuZGxlIl0gPSB7IkNsYXNzaWMiLCAiTGlsJyBTbHVnZ2VyIiwgIkp1bmt5YXJkIiwgIlRyYWRpdGlvbmFsIiwgIkNvbnN0YWJsZSJ9LA0KCVsiVHJ5bmRhbWVyZSJdID0geyJDbGFzc2ljIiwgIkhpZ2hsYW5kIiwgIktpbmciLCAiVmlraW5nIiwgIkRlbW9uYmxhZGUiLCAiU3VsdGFuIiwgIldhcnJpbmcgS2luZ2RvbXMiLCAiTmlnaHRtYXJlIn0sDQoJWyJUd2lzdGVkRmF0ZSJdID0geyJDbGFzc2ljIiwgIlBBWCIsICJKYWNrIG9mIEhlYXJ0cyIsICJUaGUgTWFnbmlmaWNlbnQiLCAiVGFuZ28iLCAiSGlnaCBOb29uIiwgIk11c2tldGVlciIsICJVbmRlcndvcmxkIiwgIlJlZCBDYXJkIiwgIkN1dHB1cnNlIn0sDQoJWyJUd2l0Y2giXSA9IHsiQ2xhc3NpYyIsICJLaW5ncGluIiwgIldoaXN0bGVyIFZpbGxhZ2UiLCAiTWVkaWV2YWwiLCAiR2FuZ3N0ZXIiLCAiVmFuZGFsIiwgIlBpY2twb2NrZXQiLCAiU1NXIn0sDQoJLS0gVQ0KCVsiVWR5ciJdID0geyJDbGFzc2ljIiwgIkJsYWNrIEJlbHQiLCAiUHJpbWFsIiwgIlNwaXJpdCBHdWFyZCIsICJEZWZpbml0ZWx5IE5vdCJ9LA0KCVsiVXJnb3QiXSA9IHsiQ2xhc3NpYyIsICJHaWFudCBFbmVteSBDcmFiZ290IiwgIkJ1dGNoZXIiLCAiQmF0dGxlY2FzdCJ9LA0KCS0tIFYNCglbIlZhcnVzIl0gPSB7IkNsYXNzaWMiLCAiQmxpZ2h0IENyeXN0YWwiLCAiQXJjbGlnaHQiLCAiQXJjdGljIE9wcyIsICJIZWFydHNlZWtlciIsICJTd2lmdGJvbHQifSwNCglbIlZheW5lIl0gPSB7IkNsYXNzaWMiLCAiVmluZGljYXRvciIsICJBcmlzdG9jcmF0IiwgIkRyYWdvbnNsYXllciIsICJIZWFydHNlZWtlciIsICJTS1QgVDEiLCAiQXJjbGlnaHQiLCAiQ2hyb21hIFBhY2s6IEdyZWVuIiwgIkNocm9tYSBQYWNrOiBSZWQiLCAiQ2hyb21hIFBhY2s6IFNpbHZlciIsICJIZXh0ZWNoIn0sDQoJWyJWZWlnYXIiXSA9IHsiQ2xhc3NpYyIsICJXaGl0ZSBNYWdlIiwgIkN1cmxpbmciLCAiVmVpZ2FyIEdyZXliZWFyZCIsICJMZXByZWNoYXVuIiwgIkJhcm9uIFZvbiIsICJTdXBlcmIgVmlsbGFpbiIsICJCYWQgU2FudGEiLCAiRmluYWwgQm9zcyJ9LA0KCVsiVmVsa296Il0gPSB7IkNsYXNzaWMiLCAiQmF0dGxlY2FzdCIsICJBcmNsaWdodCJ9LA0KCVsiVmkiXSA9IHsiQ2xhc3NpYyIsICJOZW9uIFN0cmlrZSIsICJPZmZpY2VyIiwgIkRlYm9uYWlyIiwgIkRlbW9uIn0sDQoJWyJWaWt0b3IiXSA9IHsiQ2xhc3NpYyIsICJGdWxsIE1hY2hpbmUiLCAiUHJvdG90eXBlIiwgIkNyZWF0b3IifSwNCglbIlZsYWRpbWlyIl0gPSB7IkNsYXNzaWMiLCAiQ291bnQiLCAiTWFycXVpcyIsICJOb3NmZXJhdHUiLCAiVmFuZGFsIiwgIkJsb29kIExvcmQiLCAiU291bHN0ZWFsZXIiLCAiQWNhZGVteSJ9LA0KCVsiVm9saWJlYXIiXSA9IHsiQ2xhc3NpYyIsICJUaHVuZGVyIExvcmQiLCAiTm9ydGhlcm4gU3Rvcm0iLCAiUnVuZWd1YXJkIiwgIkNhcHRhaW4ifSwNCgktLSBXDQoJWyJXYXJ3aWNrIl0gPSB7IkNsYXNzaWMiLCAiR3JleSIsICJVcmYgdGhlIE1hbmF0ZWUiLCAiQmlnIEJhZCIsICJUdW5kcmEgSHVudGVyIiwgIkZlcmFsIiwgIkZpcmVmYW5nIiwgIkh5ZW5hIiwgIk1hcmF1ZGVyIn0sDQoJWyJNb25rZXlLaW5nIl0gPSB7IkNsYXNzaWMiLCAiVm9sY2FuaWMiLCAiR2VuZXJhbCIsICJKYWRlIERyYWdvbiIsICJVbmRlcndvcmxkIiwiUmFkaWFudCJ9LA0KCS0tIFgNCglbIlhlcmF0aCJdID0geyJDbGFzc2ljIiwgIlJ1bmVib3JuIiwgIkJhdHRsZWNhc3QiLCAiU2NvcmNoZWQgRWFydGgiLCAiR3VhcmRpYW4gb2YgdGhlIFNhbmRzIn0sDQoJWyJYaW5aaGFvIl0gPSB7IkNsYXNzaWMiLCAiQ29tbWFuZG8iLCAiSW1wZXJpYWwiLCAiVmlzY2VybyIsICJXaW5nZWQgSHVzc2FyIiwgIldhcnJpbmcgS2luZ2RvbXMiLCAiU2VjcmV0IEFnZW50In0sDQoJLS0gWQ0KCVsiWWFzdW8iXSA9IHsiQ2xhc3NpYyIsICJIaWdoIE5vb24iLCAiUFJPSkVDVCJ9LA0KCVsiWW9yaWNrIl0gPSB7IkNsYXNzaWMiLCAiVW5kZXJ0YWtlciIsICJQZW50YWtpbGwifSwNCgktLSBaDQoJWyJaYWMiXSA9IHsiQ2xhc3NpYyIsICJTcGVjaWFsIFdlYXBvbiIsICJQb29sIFBhcnR5IiwgIkNocm9tYSBQYWNrOiBPcmFuZ2UiLCAiQ2hyb21hIFBhY2s6IEJ1YmJsZWd1bSIsICJDaHJvbWEgUGFjazogSG9uZXkifSwNCglbIlplZCJdID0geyJDbGFzc2ljIiwgIlNob2NrYmxhZGUiLCAiU0tUIFQxIiwgIlBST0pFQ1QifSwNCglbIlppZ2dzIl0gPSB7IkNsYXNzaWMiLCAiTWFkIFNjaWVudGlzdCIsICJNYWpvciIsICJQb29sIFBhcnR5IiwgIlNub3cgRGF5IiwgIk1hc3RlciBBcmNhbmlzdCJ9LA0KCVsiWmlsZWFuIl0gPSB7IkNsYXNzaWMiLCAiT2xkIFNhaW50IiwgIkdyb292eSIsICJTaHVyaW1hIERlc2VydCIsICJUaW1lIE1hY2hpbmUiLCAiQmxvb2QgTW9vbiJ9LA0KCVsiWnlyYSJdID0geyJDbGFzc2ljIiwgIldpbGRmaXJlIiwgIkhhdW50ZWQiLCAiU0tUIFQxIn0sDQp9DQoNCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCi0tLSBBVVRPIExWTCBTUEVMTCAtLS0NCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCmZ1bmN0aW9uIFNlcXVlbmNlKCkNCg0KCWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gMSB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSAgezEsIDIsIDMsIDEsIDEsIDQsIDEsIDIsIDEsIDIsIDQsIDIsIDIsIDMsIDMsIDQsIDMsIDN9DQoJZWxzZWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gMiB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSAgezEsIDMsIDIsIDEsIDEsIDQsIDEsIDMsIDEsIDMsIDQsIDMsIDMsIDIsIDIsIDQsIDIsIDJ9DQoJZWxzZWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gMyB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSAgezIsIDEsIDMsIDIsIDIsIDQsIDIsIDEsIDIsIDEsIDQsIDEsIDEsIDMsIDMsIDQsIDMsIDN9DQoJZWxzZWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gNCB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSAgezIsIDMsIDEsIDIsIDIsIDQsIDIsIDMsIDIsIDMsIDQsIDMsIDMsIDEsIDEsIDQsIDEsIDF9DQoJZWxzZWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gNSB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSAgezMsIDEsIDIsIDMsIDMsIDQsIDMsIDEsIDMsIDEsIDQsIDEsIDEsIDIsIDIsIDQsIDIsIDJ9DQoJZWxzZWlmIENvbmZpZy51cGx2bC5Qcmlvcml0eS5Nb2QgPT0gNiB0aGVuDQoJCWxldmVsU2VxdWVuY2UgPSB7MywgMiwgMSwgMywgMywgNCwgMywgMiwgMywgMiwgNCwgMiwgMiwgMSwgMSwgNCwgMSwgMX0NCgllbmQNCgkNCmVuZA0KDQoNCmZ1bmN0aW9uIFNheUhlbGxvKCkNCglQcmludENoYXQoIjxmb250IGNvbG9yPVwiI0JGMDBGRlwiPjotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tOjwvYj4gIikJDQppZiBHZXRHYW1lVmVyc2lvbigpOnN1YigxLDQpIH49ICI2LjE2IiB0aGVuDQogIHByaW50KCI8Zm9udCBjb2xvcj1cIiMzM2NjZmZcIj4gLS0gU2NyaXB0IGlzIG91dGRhdGVkLCBCZSBjYXJlZnVsIC0tIDwvYj4iKQ0KZWxzZQ0KICBwcmludCgiPGZvbnQgY29sb3I9XCIjMzNjY2ZmXCI+LS0gU2NyaXB0IGlzIHVwZGF0ZWQgdG8gdGhlIGxhdGVzdCB2ZXJzaW9uIC0tPC9iPiIpDQplbmQNCglQcmludENoYXQoIjxmb250IGNvbG9yPVwiI0ZGRkZGRlwiPlZlcjogPGZvbnQgY29sb3I9XCIjRkZGRjAwXCI+MC4wNCAtIFdvcmtpbmcgNi4xNjwvZm9udD4gLSBVdGlsaXR5IDwvZm9udD48Zm9udCBjb2xvcj1cIiNGRkZGMDBcIj5CeTogR2xheHkgPC9mb250PiIpDQoNCglQcmludENoYXQoIjxmb250IGNvbG9yPVwiIzQwRkYwMFwiPldlbGNvbWUgJiBHTCE8L2I+OiA8Zm9udCBjb2xvcj1cIiNGRUZFRTJcIj4iLi5HZXRVc2VyKCkuLiI8L2ZvbnQ+IHRoYW5rcyBmb3IgYmVlbiB1c2luZyB0aGlzIHNjcmlwdC4iKQ0KDQoNCglQcmludENoYXQoIjxmb250IGNvbG9yPVwiI0JGMDBGRlwiPjotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tOjwvYj4gIikNCmVuZA0KDQoNCg0KDQpmdW5jdGlvbiBIdW1hbigpDQoJcmV0dXJuIG1hdGgucmFuZG9tKDAuMiwgMC42KQ0KZW5kDQoNCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCi0tLSBBVVRPQlVZIC0tLS0tLS0tLS0NCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCg0KZnVuY3Rpb24gQXV0b0J1eSgpIC0tIEFEICsgQVAgY2hhbXAgc3VwcG9ydAkNCglsb2NhbCBUYWJsZSA9IHtbIiJdID0gdHJ1ZSwgWyJZYXN1byJdID0gdHJ1ZSxbIktsZWQiXSA9IHRydWUsIFsiV3Vrb25nIl0gPSB0cnVlLCBbIlVyZ290Il0gPSB0cnVlLCBbIlZhcnVzIl0gPSB0cnVlLCBbIlRhbG9uIl0gPSB0cnVlLCBbIlZheW5lIl0gPSB0cnVlLCBbIlRydW5kbGUiXSA9IHRydWUsIFsiVHdpdGNoIl0gPSB0cnVlLCBbIlRyaXN0YW5hIl0gPSB0cnVlLCBbIlNoeXZhbmEiXSA9IHRydWUsIFsiUml2ZW4iXSA9IHRydWUsIFsiUmVuZ2FyIl0gPSB0cnVlLCBbIlJlbmVrdG9uIl0gPSB0cnVlLCBbIlF1aW5uIl0gPSB0cnVlLCBbIlBhbnRoZW9uIl0gPSB0cnVlLCBbIkx1Y2lhbiJdID0gdHJ1ZSwgWyJMZWVTaW4iXSA9IHRydWUsIFsiS29nTWF3Il0gPSB0cnVlLCBbIkppbngiXSA9IHRydWUsIFsiSmhpbiJdID0gdHJ1ZSwgWyJKYXljZSJdID0gdHJ1ZSwgWyJKYXgiXSA9IHRydWUsIFsiSXJlbGlhIl0gPSB0cnVlLCBbIkdyYXZlcyJdID0gdHJ1ZSwgWyJHbmFyIl0gPSB0cnVlLCBbIkdhbmdwbGFuayJdID0gdHJ1ZSwgWyJGaW9yYSJdID0gdHJ1ZSwgWyJFenJlYWwiXSA9IHRydWUsIFsiRHJhdmVuIl0gPSB0cnVlLCBbIkFhdHJveCJdID0gdHJ1ZSwgWyJBc2hlIl0gPSB0cnVlLCBbIkNvcmtpIl0gPSB0cnVlLCBbIkthbGlzdGEiXSA9IHRydWUsIFsiQ2FpdGx5biJdID0gdHJ1ZSwgWyJaeXJhIl0gPSBmYWxzZSwgWyJYZXJhdGgiXSA9IGZhbHNlLCBbIlppZ2dzIl0gPSBmYWxzZSwgWyJaaWxlYW4iXSA9IGZhbHNlLCBbIlZpa3RvciJdID0gZmFsc2UsIFsiVmVsS296Il0gPSBmYWxzZSwgWyJWZWlnYXIiXSA9IGZhbHNlLCBbIlRhbGl5YWgiXSA9IGZhbHNlLCBbIlR3aXN0ZWRGYXRlIl0gPSBmYWxzZSwgWyJTeW5kcmEiXSA9IGZhbHNlLCBbIlN3YWluIl0gPSBmYWxzZSwgWyJSeXplIl0gPSBmYWxzZSwgWyJPcmlhbm5hIl0gPSBmYWxzZSwgWyJNb3JnYW5hIl0gPSBmYWxzZSwgWyJNYWx6YWhhciJdID0gZmFsc2UsIFsiTHV4Il0gPSBmYWxzZSwgWyJMdWx1Il0gPSBmYWxzZSwgWyJLYXlsZSJdID0gZmFsc2UsIFsiTGVCbGFuYyJdID0gZmFsc2UsIFsiTGlzc2FuZHJhIl0gPSBmYWxzZSwgWyJLYXNzYWRpbiJdID0gZmFsc2UsIFsiS2FydGh1cyJdID0gZmFsc2UsIFsiS2FybWEiXSA9IGZhbHNlLCBbIkhlaW1lcmRpbmdlciJdID0gZmFsc2UsIFsiR2FsaW8iXSA9IGZhbHNlLCBbIkZpenoiXSA9IGZhbHNlLCBbIkZpZGRsZXN0aWNrcyJdID0gZmFsc2UsIFsiRWtrbyJdID0gZmFsc2UsIFsiRGlhbmEiXSA9IGZhbHNlLCBbIkNhc3Npb3BlaWEiXSA9IGZhbHNlLCBbIkJyYW5kIl0gPSBmYWxzZSwgWyJBaHJpIl0gPSBmYWxzZSwgWyJBbm5pZSJdID0gZmFsc2UsIFsiQXppciJdID0gZmFsc2UsIFsiQXVyZWxpb25Tb2wiXSA9IGZhbHNlLCBbIkFuaXZpYSJdID0gZmFsc2V9Ow0KCWxvY2FsIGZ1bmN0aW9uIFR5cGUoKQ0KCQlyZXR1cm4gVGFibGVbbXlIZXJvLmNoYXJOYW1lXQ0KCWVuZA0KCWlmIFZJUF9VU0VSIHRoZW4NCgkJaWYgQ29uZmlnLmF1dG9idXkuRG9yYW4gdGhlbg0KCQkJaWYgQ29uZmlnLmF1dG9idXkuRG9yYW4gdGhlbg0KCQkJCURlbGF5QWN0aW9uKGZ1bmN0aW9uKCkNCgkJCQkJaWYgVHlwZSgpIHRoZW4NCgkJCQkJCUJ1eUl0ZW0oMTA1NSk7DQpQcmludENoYXQoIjxmb250IGNvbG9yPVwiI0ZGQTA3QVwiPjxpPiAtLSBBdXRvQnV5IExvYWRlZCBmb3I6IDwvaT4iIC4ubXlIZXJvLmNoYXJOYW1lKSANCgkJCQkJZWxzZQ0KCQkJCQkJQnV5SXRlbSgxMDU2KQ0KCQkJCQkJUHJpbnRDaGF0KCI8Zm9udCBjb2xvcj1cIiNGRkEwN0FcIj48aT4gLS0gQXV0b0J1eSBMb2FkZWQgZm9yOiA8L2k+IiAuLm15SGVyby5jaGFyTmFtZSkgDQoJCQkJCWVuZA0KCQkJCQlpZiBDb25maWcuYXV0b2J1eS5Qb3RzIHRoZW4NCgkJCQkJCURlbGF5QWN0aW9uKGZ1bmN0aW9uKCkNCgkJCQkJCQlCdXlJdGVtKDIwMDMpOw0KCQkJCQkJZW5kLCAxKTsNCgkJCQkJZW5kDQoJCQkJCWlmIENvbmZpZy5hdXRvYnV5LlBvdHMgdGhlbg0KCQkJCQkJRGVsYXlBY3Rpb24oZnVuY3Rpb24oKQ0KCQkJCQkJCWlmIG5vdCBUeXBlKCkgdGhlbg0KCQkJCQkJCQlCdXlJdGVtKDIwMDMpOw0KCQkJCQkJCWVuZA0KCQkJCQkJZW5kLCAxKTsNCgkJCQkJCWlmIENvbmZpZy5hdXRvYnV5LlRyaW5rZXQgdGhlbg0KCQkJCQkJCURlbGF5QWN0aW9uKGZ1bmN0aW9uKCkNCgkJCQkJCQkJQnV5SXRlbSgzMzQwKTsNCgkJCQkJCQllbmQsIDEpOw0KCQkJCQkJZW5kDQoJCQkJCWVuZA0KCQkJCWVuZCwgMSk7DQoJCQllbmQNCgkJZW5kDQoJZW5kDQplbmQNCg0KDQoNCg0KDQoNCg0KDQoNCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCi0tLSBBVXRvIHVwZGF0ZSAtLS0NCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCmZ1bmN0aW9uIE9uTG9hZCgpDQoNCglsb2NhbCB2ZXJzaW9uID0gIjAuMDQiOw0KCWxvY2FsIGF1dGhvciA9ICJQcm90MG8iOw0KDQoJbG9jYWwgU0NSSVBUX05BTUUgPSAiR2xheHlVdGlsaXR5IjsNCglsb2NhbCBVUERBVEVfSE9TVCA9ICJyYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tIjsNCglsb2NhbCBVUERBVEVfUEFUSCA9ICIvUHJvdDBvL1NjcmlwdHMvbWFzdGVyL0dsYXh5VXRpbGl0eS5sdWEiLi4iP3JhbmQ9Ii4ubWF0aC5yYW5kb20oMSwxMDAwMCk7DQoJbG9jYWwgVVBEQVRFX0ZJTEVfUEFUSCA9IFNDUklQVF9QQVRILi5fRU5WLkZJTEVfTkFNRTsNCglsb2NhbCBVUERBVEVfVVJMID0gImh0dHBzOi8vIi4uVVBEQVRFX0hPU1QuLlVQREFURV9QQVRIOw0KCWxvY2FsIFNlcnZlckRhdGEgPSBHZXRXZWJSZXN1bHQoVVBEQVRFX0hPU1QsICIvUHJvdDBvL1NjcmlwdHMvbWFzdGVyL0dsYXh5VXRpbGl0eS52ZXJzaW9uIik7DQoJaWYgU2VydmVyRGF0YSB0aGVuDQoJCVNlcnZlclZlcnNpb24gPSB0eXBlKHRvbnVtYmVyKFNlcnZlckRhdGEpKSA9PSAibnVtYmVyIiBhbmQgdG9udW1iZXIoU2VydmVyRGF0YSkgb3IgbmlsOw0KCQlpZiBTZXJ2ZXJWZXJzaW9uIHRoZW4NCgkJCWlmIHRvbnVtYmVyKHZlcnNpb24pIDwgU2VydmVyVmVyc2lvbiB0aGVuDQoJCQkJUHJpbnRDaGF0KCJOZXcgdmVyc2lvbiBhdmFpbGFibGUgIi4uU2VydmVyVmVyc2lvbik7DQoJCQkJUHJpbnRDaGF0KCI+PlVwZGF0aW5nLCBwbGVhc2UgZG9uJ3QgcHJlc3MgRjk8PCIpOw0KCQkJCURlbGF5QWN0aW9uKGZ1bmN0aW9uKCkgRG93bmxvYWRGaWxlKFVQREFURV9VUkwsIFVQREFURV9GSUxFX1BBVEgsIGZ1bmN0aW9uICgpIFByaW50Q2hhdCgiU3VjY2Vzc2Z1bGx5IHVwZGF0ZWQuICgiLi52ZXJzaW9uLi4iID0+ICIuLlNlcnZlclZlcnNpb24uLiIpLCBwcmVzcyBGOSB0d2ljZSB0byBsb2FkIHRoZSB1cGRhdGVkIHZlcnNpb24uIikgZW5kKSBlbmQsIDMpOw0KCQkJZWxzZQ0KCQkJCUN1c3RvbUxvYWQoKTsNCgkJCWVuZA0KCQllbHNlDQoJCQlQcmludENoYXQoIkVycm9yIHdoaWxlIGRvd25sb2FkaW5nIHZlcnNpb24gaW5mbyIpOw0KCQllbmQNCgllbmQNCmVuZA=="), nil, "bt", _ENV)()
+
+----------------------
+--- MENU ---
+----------------------
+
+function OnLoad()
+	if Config.SkinChanger.Enablee then
+		SetSkin(myHero, Config.SkinChanger.skins -1)
+	end
+end
+function OnUnload()
+
+	if Config.SkinChanger.Enablee then
+		SetSkin(myHero, -1)
+			PrintChat("<font color=\"#FFA07A\"><i> -- Utility Script Unload, BYE BYE! </i>" ..GetUser()) 
+	end
+	
+
+end
+
+function CustomLoad()
+	Config = scriptConfig("Glaxy - Utility ", "configname")
+
+	Config:addSubMenu("-- AutoLvlSpell", "uplvl")
+	Config.uplvl:addSubMenu("First: SELECT ORDER", "Priority")
+	Config.uplvl:addSubMenu("Second: TURN IT ON", "ONOFF")
+  
+	Config:addSubMenu("-- AutoBuyItem", "autobuy")	
+  Config.autobuy:addParam("Enable", "Enable AutoBuy :", SCRIPT_PARAM_ONOFF, true);  
+  Config.autobuy:addParam("Doran", "Buy doran :", SCRIPT_PARAM_ONOFF, true);
+  Config.autobuy:addParam("Pots", "Buy pots :", SCRIPT_PARAM_ONOFF, true);
+  Config.autobuy:addParam("Trinket", "Buy Trinket :", SCRIPT_PARAM_ONOFF, true)
+
+  	Config:addSubMenu("-- Q-W-E-R Draws", "draw")	
+  Config.draw:addParam("AA", "AA Status", SCRIPT_PARAM_ONOFF, true)
+  Config.draw:addParam("AAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("Q", "Enable Q", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("QQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("W", "Enable W", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("WW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("E", "Enable E", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("EE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("R", "Enable R", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("RR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+  Config:addSubMenu("-- Skin Changer", "SkinChanger")
+
+	
+  if VIP_USER then Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, false)
+
+	Config.SkinChanger:setCallback("Enablee", function (nV)
+	if nV then
+		PrintChat("<font color=\"#FFA07A\"><i> -- SkinChanger Loaded for: </i>" ..myHero.charName) 
+	SetSkin(myHero, Config.SkinChanger.skins -1)
+	else
+	SetSkin(myHero, -1)
+	end
+	end)
+	end
+if VIP_USER then Config.SkinChanger:addParam("skins", 'Which Skin :', SCRIPT_PARAM_LIST, 1, AllSkins[myHero.charName])
+Config.SkinChanger:setCallback("skins", function (nV)
+if nV then 
+if Config.SkinChanger.Enablee then
+  SetSkin(myHero, Config.SkinChanger.skins -1)
+end
+end
+end)
+end
+
+
+	Config.uplvl.ONOFF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, false)
+  Config.uplvl.Priority:addParam("Mod", "Spell Order :", SCRIPT_PARAM_LIST, 1, {"R-Q-W-E", "R-Q-E-W", "R-W-Q-E", "R-W-E-Q", "R-E-Q-W", "R-E-W-Q"});
+
+
+
+	Config.uplvl.ONOFF.levelSequence = false
+	Last_LevelSpell = 0
+	SayHello()
+	AutoBuy();
+	AddTickCallback(function()
+		Sequence()
+		if Config.uplvl.ONOFF.levelSequence and os.clock() - Last_LevelSpell > 0 then
+		
+			autoLevelSetSequence(levelSequence)
+			Last_LevelSpell = os.clock() + Human()
+			
+		end
+	end)
+	end
+
+
+
+----------------------
+--- DRAW ---
+----------------------
+function OnDraw()
+	if myHero.charName == 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' then 
+-- AA only
+	if Config.draw.AA then
+		        DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draw.AAA[1], Config.draw.AAA[2], Config.draw.AAA[3], Config.draw.AAA[4]))
+		end
+	end
+ i = 1, 4
+--- Q W E R		
+
+		 for i = 1, 4 do
+  if (i == 1 and Config.draw.Q) then   
+
+   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.QQ[1], Config.draw.QQ[2], Config.draw.QQ[3], Config.draw.QQ[4]))
+
+  elseif (i == 2 and Config.draw.W) then
+
+   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.WW[1], Config.draw.WW[2], Config.draw.WW[3], Config.draw.WW[4]))
+  
+  elseif (i == 3 and Config.draw.E) then
+
+    DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.EE[1], Config.draw.EE[2], Config.draw.EE[3], Config.draw.EE[4]))
+    
+  elseif (i == 4 and Config.draw.R) then
+
+   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.RR[1], Config.draw.RR[2], Config.draw.RR[3], Config.draw.RR[4]))
+
+ end
+end
+end
+
+
+
+
+----------------------
+--- SKIN CHANGER ---
+----------------------
+champions = {
+-- AA
+
+
+    ["Aatrox"] = {600, 1, 1000, 550},  
+    ["Ahri"] = {880, 700, 975, 450},  
+    ["Akali"] = {600, 700, 325, 700},  
+    ["Alistar"] = {365, 650, 575, 10},  
+    ["Amumu"] = {1100, 300, 350, 550},
+    ["Anivia"] = {1075, 1000, 650, 625},  
+    ["Annie"] = {625, 560, 0, 600},  
+    ["Ashe"] = {0, 1200, 25000, 20000}, 
+    ["Azir"] = {875, 450, 1100, 250},  
+    ["AurelionSol"] = {1075, 600, 3000, 1500},  
+-- B
+    ["Bard"] = {600, 800, 900, 3400},  
+    ["Blitzcrank"] = {925, 0, 0, 600},  
+    ["Brand"] = {1050, 900, 625, 750},  
+    ["Braum"] = {1000, 650, 150, 1250},  
+--C
+    ["Caitlyn"] = {1250,
+800,
+750,
+3000,},  
+	["Cassiopeia"] = {850,
+850,
+700,
+825,},                                                                                                                                                                                                                                                                                                                              
+	["Chogath"] = {950,
+300,
+0,
+175,},                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+	["Corki"] = {825,
+600,
+600,
+1225,},                                                                                                                                                                                                                                                                                        
+	-- D
+	["Darius"] = {360, --TODO
+0,
+535,
+460,},                                                                                                                                                                                                                                                                                             
+	["Diana"] = {830,
+0,
+450,
+825,},                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+	["DrMundo"] = {975,
+325,
+0,
+0,},                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+	["Draven"] = {0,
+0,
+1050,
+20000,},                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+	-- E
+	["Ekko"] = {1075,
+1600,
+325,
+0,},                                                                                                                                                                                                                                                                                                                                                                                                   
+	["Elise"] = {625,
+950,
+1075,
+0,},                                                                                                                                                                                                                                                                                              
+	["Evelynn"] = {500,
+0,
+225,
+650,},                                                                                                                                                                                                                                                                                                                                                                                                    
+	["Ezreal"] = {1150,
+1000,
+475,
+20000,},                                                                                                                                                                                                                                                                                   
+	-- F
+	["FiddleSticks"] = {575,
+575,
+750,
+800,},                                                                                                                                                                                                                                     
+	["Fiora"] = {400,
+500,
+0,
+500,},                                                                                                                                                                                                                                         
+	["Fizz"] = {550,
+0,
+400,
+1275,},                                                                                                                                                                                                                                                                                                                                                        
+	-- G
+	["Galio"] = {940,
+800,
+1180,
+560,},                                                                                                                                                                                                                                                                                                                                                       
+	["Gangplank"] = {625,
+0,
+1000,
+30000,},                                                                                                                                                                                                                                                                               
+	["Garen"] = {0,
+0,
+325,
+400,},                                                                                                                                                                                                                                                                                                                                                       
+	["Gnar"] = {1100,
+0,
+475,
+800,},                                                                                                                                                                                                                                                                                                                                                        
+	["Gragas"] = {850,
+0,
+600,
+1150,},                                                                                                                                                                                                                                                                                                                                                      
+	["Graves"] = {925,
+950,
+425,
+1000,},                                                                                                                                                                                                                                                                                                                                                      
+	-- H
+	["Hecarim"] = {350,
+525,
+0,
+1000,},                                                                                                                                                                                                                                                                  
+	["Heimerdinger"] = {350,
+1325,
+970,
+0,},                                                                                                                                                                                                                                                                            
+	-- I
+	["Illaoi"] = {850,
+0,
+900,
+500,},                                                                                                                                                                                                                                                                                                                            
+	["Irelia"] = {650,
+0,
+325,
+1000,},                                                                                                                                                                                                                                                                                                                          
+	-- J
+	["Janna"] = {1700,
+600,
+800,
+725,},                                                                                                                                                                                                                                                                                                                           
+	["JarvanIV"] = {770,
+525,
+800,
+650,},                                                                                                                                                                                                                
+	["Jax"] = {700,
+0,
+0,
+0,},                                                                                                                                                                                                                                                                                                                         
+	["Jayce"] = {600,
+285,
+240,
+0,},                                                                                                                                                                                                               
+	["Jinx"] = {0,
+1450,
+900,
+25000,},                                                                                                                                                                                                                                                                                                             
+	-- K                                                                                                                                                                                                                        
+	["Kalista"] = {1150,
+5000,
+1000,
+0,},                                                                                                                                                                                                               
+	["Karma"] = {950,
+675,
+800,
+0,},                                                                                                                                                                                                              
+	["Karthus"] = {875,
+1000,
+550,
+0,},                                                                                                                                                                                                                                                                                                                
+	["Kassadin"] = {650,
+0,
+400,
+500,},                                                                                                                                                                                                               
+	["Katarina"] = {675,
+400,
+700,
+550,},                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+	["Kayle"] = {650,
+900,
+0,
+900,},                                                                                                                                                                                                             
+	["Kennen"] = {950,
+900,
+0,
+550,},                                                                                                                                                                                                                                                                                                                          
+	["Khazix"] = {326,
+1000,
+600,
+0,},                                                                                                                                                                                                                                                                                                                
+	["Kindred"] = {340,
+0,
+500,
+500,},                                                                                                                                                                                                                                                                                                                        
+	["KogMaw"] = {1175,
+0,
+1200,
+1800,},                                                                                                                                                                                                                                                                                                              
+	["Kled"] = {800, 0, 550, 5000},                                                                                                                                                                                                                                                                 
+	-- L                                                                                                                                                                         
+	["Leblanc"] = {700,
+600,
+925,
+0,},                                                                                                                                                                                                                                                                           
+	["LeeSin"] = {1000,
+700,
+425,
+375,},                                                                                                                                                                                                                                                                           
+	["Leona"] = {0,
+450,
+875,
+1200,},                                                                                                                                                                                                                                                                            
+	["Lissandra"] = {725,
+450,
+1050,
+550,},                                                                                                                                                                                                                                                                          
+	["Lucian"] = {500,
+1000,
+445,
+1400,},                                                                                                                                                                                                                                                                            
+	["Lulu"] = {925,
+650,
+650,
+900,},                                                                                                                                                                                                                                                                            
+	["Lux"] = {1175,
+1075,
+1100,
+3340,},                                                                                                                                                                                                                                                                            
+	-- M
+	["Malphite"] = {625,
+0,
+400,
+1000,},                                                                                                                                                                                                                                                                                               
+	["Malzahar"] = {900,
+800,
+650,
+700,},                                                                                                                                                                                                                                                                                               
+	["Maokai"] = {600,
+525,
+1100,
+500,},                                                                                                                                                                                                                                                                                               
+	["MasterYi"] = {600,
+0,
+0,
+0,},                                                                                                                                                                                                                                                                                               
+	["MissFortune"] = {650,
+0,
+1000,
+400,},                                                                                                                                                                                                                                                                                               
+	["Mordekaiser"] = {0,
+1000,
+700,
+650,},                                                                                                                                                                                                                                                                                               
+	["Morgana"] = {1175,
+900,
+750,
+625,},                                                                                                                                                                                                                                                                                               
+	-- N
+	["Nami"] = {875,
+725,
+800,
+2750,},                                                                                                                                                                                                                                                                    
+	["Nasus"] = {0,
+600,
+650,
+0,},                                                                                                                                                                                                                                                                    
+	["Nautilus"] = {950,
+0,
+600,
+825,},                                                                                                                                                                                                                                                                    
+	["Nidalee"] = {1500,
+900,
+600,
+0,},                                                                                                                                                                                                                                                                    
+	["Nocturne"] = {1125,
+0,
+425,
+2500,},                                                                                                                                                                                                                                                                    
+	["Nunu"] = {125,
+700,
+550,
+650,},                                                                                                                                                                                                                                                                    
+	-- O
+	["Olaf"] = {1000,
+0,
+325,
+0,},                                                                                                                                                                                                                                                                    
+	["Orianna"] = {815,
+0,
+1095,
+0,},                                                                                                                                                                                                                                                                    
+	-- P
+	["Pantheon"] = {600,
+600,
+400,
+5500,},                                                                                                                                                                                                                                                                    
+	["Poppy"] = {430,
+400,
+475,
+500,},                                                                                                                                                                                                                                                                    
+	-- Q                                                                                                                                            
+	["Quinn"] = {1025,
+2100,
+675,
+0,},                                                                                                                                                                                                                                                
+	-- R
+	["Rammus"] = {0,
+0,
+325,
+0,},                                                                                                                                                                                                                                                
+	["Reksai"] = {325,
+1650,
+250,
+0,},                                                                                                                                                                                                                                                 
+	["Renekton"] = {325,
+0,
+450,
+0,},                                                                                                                                                                                                                                                
+	["Rengar"] = {0,
+500,
+1000,
+2000,},                                                                                                                                                                                                                                                
+	["Riven"] = {275,
+260,
+250,
+0,},                                                                                                                                                                                                                                                
+	["Rumble"] = {600,
+0,
+850,
+1750,},                                                                                                                                                                                                                                                
+	["Ryze"] = {1000, 615, 615, 1500},                                                                                                                                                                                                                                                
+	-- S
+	["Sejuani"] = {650,
+350,
+1000,
+1175,},                                                                                                                                                                                                                       
+	["Shaco"] = {400,
+425,
+625,
+0,},                                                                                                                                                                                                                       
+	["Shen"] = {475,
+0,
+600,
+0,},                                                                                                                                                                                                                       
+	["Shyvana"] = {0,
+325,
+925,
+1000,},                                                                                                                                                                                                                       
+	["Singed"] = {0,
+1000,
+125,
+0,},                                                                                                                                                                                                                       
+	["Sion"] = {10000,
+0,
+800,
+7500,},                                                                                                                                                                                                                       
+	["Sivir"] = {1200,
+0,
+0,
+1000,},                                                                                                                                                                                                                       
+	["Skarner"] = {350,
+0,
+980,
+350,},                                                                                                                                                                                                                       
+	["Sona"] = {825,
+1000,
+360,
+900,},                                                                                                                                                                                                                       
+	["Soraka"] = {810,
+550,
+925,
+0,},                                                                                                                                                                                                                       
+	["Swain"] = {625,
+900,
+625,
+0,},                                                                                                                                                                                                                       
+	["Syndra"] = {800,
+925,
+650,
+675,},                                                                                                                                                                                                                       
+	-- T
+	["TahmKench"] = {800,
+250,
+0,
+4500,},                                                                                                                                                                                                                                                                                           
+	["Taliyah"] = {1000, 900, 800, 3000},                                                                                                                                                                                                                                                                                           
+	["Talon"] = {300, 650, 700, 650},                                                                                                                                                                                                                                                                                           
+	["Taric"] = {750,
+400,
+625,
+400,},                                                                                                                                                                                                                                                                                           
+	["Teemo"] = {680,
+0,
+0,
+300,},                                                                                                                                                                                                                                                                                           
+	["Thresh"] = {1075,
+950,
+800,
+450,},                                                                                                                                                                                                                                                                                           
+	["Tristana"] = {0,
+900,
+550,
+550,},                                                                                                                                                                                                                                                                                           
+	["Trundle"] = {0,
+750,
+1000,
+650,},                                                                                                                                                                                                                                                                                           
+	["Tryndamere"] = {0,
+850,
+650,
+0,},                                                                                                                                                                                                                                                                                           
+	["TwistedFate"] = {10000,
+0,
+0,
+5500,},                                                                                                                                                                                                                                                                                           
+	["Twitch"] = {0,
+950,
+1200,
+0,},                                                                                                                                                                                                                                                                                           
+	-- U
+	["Udyr"] = {0,
+0,
+0,
+325,},                                                                                                                                                                                                                                                                                              
+	["Urgot"] = {1000,
+0,
+900,
+550,},                                                                                                                                                                                                                                                                                              
+	-- V
+	["Varus"] = {925,
+0,
+925,
+1100,},                                                                                                                                                                                                                                                                                              
+	["Vayne"] = {300,
+0,
+710,
+0,},                                                                                                                                                                                                                                                                                                             
+	["Veigar"] = {900,
+900,
+725,
+650,},                                                                                                                                                                                                                                                                                              
+	["Velkoz"] = {1050,
+1050,
+850,
+1575,},                                                                                                                                                                                                                                                                                              
+	["Vi"] = {250,
+0,
+0,
+800,},                                                                                                                                                                                                                                                                                              
+	["Viktor"] = {600,
+700,
+525,
+700,},                                                                                                                                                                                                                                                                                              
+	["Vladimir"] = {600,
+350,
+610,
+625,},                                                                                                                                                                                                                                                                                              
+	["Volibear"] = {0,
+350,
+425,
+500,},                                                                                                                                                                                                                                                                                              
+	-- W
+	["Warwick"] = {400,
+1250,
+1600,
+700,},                                                                                                                                                                                                                                                                                              
+	["MonkeyKing"] = {0,
+0,
+650,
+315,},                                                                                                                                                                                                                                                                                              
+	-- X
+	["Xerath"] = {750,
+1100,
+1050,
+3200,},                                                                                                                                                                                                              
+	["XinZhao"] = {0,
+0,
+650,
+500,},                                                                                                                                                                                                              
+	-- Y
+	["Yasuo"] = {475,
+400,
+475,
+1200,},                                                                                                                                                                                                              
+	["Yorick"] = {0,
+600,
+550,
+850,},                                                                                                                                                                                                              
+	-- Z
+	["Zac"] = {550,
+350,
+300,
+300,},                                                                                                                                                                                                                        
+	["Zed"] = {900,
+650,
+290,
+625,},                                                                                                                                                                                                                        
+	["Ziggs"] = {850,
+1000,
+900,
+5300,},                                                                                                                                                                                                                        
+	["Zilean"] = {900,
+0,
+700,
+900,},                                                                                                                                                                                                                        
+	["Zyra"] = {800,
+850,
+1100,
+700,},                  
+    };
+    
+
+AllSkins = { -- Updated all skins V0.04
+             --Added New Skins: Arcade skin, Yaso Skin, + CHroma
+    -- A
+	["Aatrox"] = {"Classic", "Justicar", "Mecha", "Sea Hunter"},
+	["Ahri"] = {"Classic", "Dynasty", "Midnight", "Foxfire", "Popstar", "Challenger", "Academy", "Arcade"},
+	["Akali"] = {"Classic", "Stinger", "Crimson", "All-star", "Nurse", "Blood Moon", "Silverfang", "Headhunter"},
+	["Alistar"] = {"Classic", "Black", "Golden", "Matador", "Longhorn", "Unchained", "Infernal", "Sweeper", "Marauder"},
+	["Amumu"] = {"Classic", "Pharaoh", "Vancouver", "Emumu", "Re-Gifted", "Almost-Prom King", "Little Knight", "Sad Robot", "Surprise Party"},
+	["Anivia"] = {"Classic", "Team Spirit", "Bird of Prey", "Noxus Hunter", "Hextech", "Blackfrost", "Prehistoric"},
+	["Annie"] = {"Classic", "Goth", "Red Riding", "Annie in Wonderland", "Prom Queen", "Frostfire", "Reverse", "FrankenTibbers", "Panda", "Sweetheart", "Hextech"},
+	["Ashe"] = {"Classic", "Freljord", "Sherwood Forest", "Woad", "Queen", "Amethyst", "Heartseeker", "Marauder", "PROJECT"},
+	["Azir"] = {"Classic", "Galactic", "Gravelord"},
+	["AurelionSol"] = {"Classic", "Ashen Lord"},
+	-- B
+	["Bard"] = {"Classic", "Elderwood", "Chroma Pack: Marigold", "Chroma Pack: Ivy", "Chroma Pack: Sage"},
+	["Blitzcrank"] = {"Classic", "Rusty", "Goalkeeper", "Boom Boom", "Piltover Customs", "Definitely Not", "iBlitzcrank", "Riot", "Chroma Pack: Molten", "Chroma Pack: Cobalt", "Chroma Pack: Gunmetal", "Battle Boss"},
+	["Brand"] = {"Classic", "Apocalyptic", "Vandal", "Cryocore", "Zombie", "Spirit Fire"},
+	["Braum"] = {"Classic", "Dragonslayer", "El Tigre", "Lionheart"},
+	-- C
+	["Caitlyn"] = {"Classic", "Resistance", "Sheriff", "Safari", "Arctic Warfare", "Officer", "Headhunter", "Chroma Pack: Pink", "Chroma Pack: Green", "Chroma Pack: Blue","Lunar"},
+	["Cassiopeia"] = {"Classic", "Desperada", "Siren", "Mythic", "Jade Fang", "Chroma Pack: Day", "Chroma Pack: Dusk", "Chroma Pack: Night"},
+	["Chogath"] = {"Classic", "Nightmare", "Gentleman", "Loch Ness", "Jurassic", "Battlecast Prime", "Prehistoric"},
+	["Corki"] = {"Classic", "UFO", "Ice Toboggan", "Red Baron", "Hot Rod", "Urfrider", "Dragonwing", "Fnatic", "Arcade"},
+	-- D
+	["Darius"] = {"Classic", "Lord", "Bioforge", "Woad King", "Dunkmaster", "Chroma Pack: Black Iron", "Chroma Pack: Bronze", "Chroma Pack: Copper", "Academy"},
+	["Diana"] = {"Classic", "Dark Valkyrie", "Lunar Goddess"},
+	["DrMundo"] = {"Classic", "Toxic", "Mr. Mundoverse", "Corporate Mundo", "Mundo Mundo", "Executioner Mundo", "Rageborn Mundo", "TPA Mundo", "Pool Party"},
+	["Draven"] = {"Classic", "Soul Reaver", "Gladiator", "Primetime", "Pool Party"},
+	-- E
+	["Ekko"] = {"Classic", "Sandstorm", "Academy", "PROJECT"},
+	["Elise"] = {"Classic", "Death Blossom", "Victorious", "Blood Moon"},
+	["Evelynn"] = {"Classic", "Shadow", "Masquerade", "Tango", "Safecracker"},
+	["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade"},
+	-- F
+	["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen"},
+	["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT"},
+	["Fizz"] = {"Classic", "Atlantean", "Tundra", "Fisherman", "Void", "Chroma Pack: Orange", "Chroma Pack: Black", "Chroma Pack: Red", "Cottontail"},
+	-- G
+	["Galio"] = {"Classic", "Enchanted", "Hextech", "Commando", "Gatekeeper", "Debonair"},
+	["Gangplank"] = {"Classic", "Spooky", "Minuteman", "Sailor", "Toy Soldier", "Special Forces", "Sultan", "Captain"},
+	["Garen"] = {"Classic", "Sanguine", "Desert Trooper", "Commando", "Dreadknight", "Rugged", "Steel Legion", "Chroma Pack: Garnet", "Chroma Pack: Plum", "Chroma Pack: Ivory", "Rogue Admiral"},
+	["Gnar"] = {"Classic", "Dino", "Gentleman"},
+	["Gragas"] = {"Classic", "Scuba", "Hillbilly", "Santa", "Gragas, Esq.", "Vandal", "Oktoberfest", "Superfan", "Fnatic", "Caskbreaker"},
+	["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat"},
+	-- H
+	["Hecarim"] = {"Classic", "Blood Knight", "Reaper", "Headless", "Arcade", "Elderwood"},
+	["Heimerdinger"] = {"Classic", "Alien Invader", "Blast Zone", "Piltover Customs", "Snowmerdinger", "Hazmat"},
+	-- I
+	["Illaoi"] = {"Classic", "Void Bringer"},
+	["Irelia"] = {"Classic", "Nightblade", "Aviator", "Infiltrator", "Frostblade", "Order of the Lotus"},
+	-- J
+	["Janna"] = {"Classic", "Tempest", "Hextech", "Frost Queen", "Victorious", "Forecast", "Fnatic"},
+	["JarvanIV"] = {"Classic", "Commando", "Dragonslayer", "Darkforge", "Victorious", "Warring Kingdoms", "Fnatic"},
+	["Jax"] = {"Classic", "The Mighty", "Vandal", "Angler", "PAX", "Jaximus", "Temple", "Nemesis", "SKT T1", "Chroma Pack: Cream", "Chroma Pack: Amber", "Chroma Pack: Brick", "Warden"},
+	["Jayce"] = {"Classic", "Full Metal", "Debonair", "Forsaken"},
+	["Jinx"] = {"Classic", "Mafia", "Firecracker", "Slayer"},
+	-- K
+	["Kalista"] = {"Classic", "Blood Moon", "Championship"},
+	["Karma"] = {"Classic", "Sun Goddess", "Sakura", "Traditional", "Order of the Lotus", "Warden"},
+	["Karthus"] = {"Classic", "Phantom", "Statue of", "Grim Reaper", "Pentakill", "Fnatic", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite"},
+	["Kassadin"] = {"Classic", "Festival", "Deep One", "Pre-Void", "Harbinger", "Cosmic Reaver"},
+	["Katarina"] = {"Classic", "Mercenary", "Red Card", "Bilgewater", "Kitty Cat", "High Command", "Sandstorm", "Slay Belle", "Warring Kingdoms", "PROJECT"},
+	["Kayle"] = {"Classic", "Silver", "Viridian", "Unmasked", "Battleborn", "Judgment", "Aether Wing", "Riot"},
+	["Kennen"] = {"Classic", "Deadly", "Swamp Master", "Karate", "Kennen M.D.", "Arctic Ops"},
+	["Khazix"] = {"Classic", "Mecha", "Guardian of the Sands"},
+	["Kindred"] = {"Classic", "Shadowfire"},
+	["KogMaw"] = {"Classic", "Caterpillar", "Sonoran", "Monarch", "Reindeer", "Lion Dance", "Deep Sea", "Jurassic", "Battlecast"},
+	["Kled"] = {"Classic", "Sir"},
+	-- L
+	["Leblanc"] = {"Classic", "Wicked", "Prestigious", "Mistletoe", "Ravenborn"},
+	["LeeSin"] = {"Classic", "Traditional", "Acolyte", "Dragon Fist", "Muay Thai", "Pool Party", "SKT T1", "Chroma Pack: Black", "Chroma Pack: Blue", "Chroma Pack: Yellow", "Knockout"},
+	["Leona"] = {"Classic", "Valkyrie", "Defender", "Iron Solari", "Pool Party", "Chroma Pack: Pink", "Chroma Pack: Azure", "Chroma Pack: Lemon", "PROJECT"},
+	["Lissandra"] = {"Classic", "Bloodstone", "Blade Queen"},
+	["Lucian"] = {"Classic", "Hired Gun", "Striker", "Chroma Pack: Yellow", "Chroma Pack: Red", "Chroma Pack: Blue", "PROJECT"},
+	["Lulu"] = {"Classic", "Bittersweet", "Wicked", "Dragon Trainer", "Winter Wonder", "Pool Party"},
+	["Lux"] = {"Classic", "Sorceress", "Spellthief", "Commando", "Imperial", "Steel Legion", "Star Guardian"},
+	-- M
+	["Malphite"] = {"Classic", "Shamrock", "Coral Reef", "Marble", "Obsidian", "Glacial", "Mecha", "Ironside"},
+	["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day"},
+	["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper"},
+	["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT"},
+	["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain"},
+	["Mordekaiser"] = {"Classic", "Dragon Knight", "Infernal", "Pentakill", "Lord", "King of Clubs"},
+	["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony","Lunar"},
+	-- N
+	["Nami"] = {"Classic", "Koi", "River Spirit", "Urf", "Chroma Pack: Sunbeam", "Chroma Pack: Smoke", "Chroma Pack: Twilight"},
+	["Nasus"] = {"Classic", "Galactic", "Pharaoh", "Dreadknight", "Riot K-9", "Infernal", "Archduke", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite",},
+	["Nautilus"] = {"Classic", "Abyssal", "Subterranean", "AstroNautilus", "Warden"},
+	["Nidalee"] = {"Classic", "Snow Bunny", "Leopard", "French Maid", "Pharaoh", "Bewitching", "Headhunter", "Warring Kingdoms"},
+	["Nocturne"] = {"Classic", "Frozen Terror", "Void", "Ravager", "Haunting", "Eternum"},
+	["Nunu"] = {"Classic", "Sasquatch", "Workshop", "Grungy", "Nunu Bot", "Demolisher", "TPA", "Zombie"},
+	-- O
+	["Olaf"] = {"Classic", "Forsaken", "Glacial", "Brolaf", "Pentakill", "Marauder"},
+	["Orianna"] = {"Classic", "Gothic", "Sewn Chaos", "Bladecraft", "TPA", "Winter Wonder"},
+	-- P
+	["Pantheon"] = {"Classic", "Myrmidon", "Ruthless", "Perseus", "Full Metal", "Glaive Warrior", "Dragonslayer", "Slayer"},
+	["Poppy"] = {"Classic", "Noxus", "Lollipoppy", "Blacksmith", "Ragdoll", "Battle Regalia", "Scarlet Hammer"},
+	-- Q
+	["Quinn"] = {"Classic", "Phoenix", "Woad Scout", "Corsair"},
+	-- R
+	["Rammus"] = {"Classic", "King", "Chrome", "Molten", "Freljord", "Ninja", "Full Metal", "Guardian of the Sands"},
+	["Reksai"] = {"Classic", "Eternum", "Pool Party"},
+	["Renekton"] = {"Classic", "Galactic", "Outback", "Bloodfury", "Rune Wars", "Scorched Earth", "Pool Party", "Scorched Earth", "Prehistoric"},
+	["Rengar"] = {"Classic", "Headhunter", "Night Hunter", "SSW"},
+	["Riven"] = {"Classic", "Redeemed", "Crimson Elite", "Battle Bunny", "Championship", "Dragonblade", "Arcade"},
+	["Rumble"] = {"Classic", "Rumble in the Jungle", "Bilgerat", "Super Galaxy"},
+	["Ryze"] = {"Classic", "Human", "Tribal", "Uncle", "Triumphant", "Professor", "Zombie", "Dark Crystal", "Pirate", "Whitebeard"},
+	-- S
+	["Sejuani"] = {"Classic", "Sabretusk", "Darkrider", "Traditional", "Bear Cavalry", "Poro Rider"},
+	["Shaco"] = {"Classic", "Mad Hatter", "Royal", "Nutcracko", "Workshop", "Asylum", "Masked", "Wild Card"},
+	["Shen"] = {"Classic", "Frozen", "Yellow Jacket", "Surgeon", "Blood Moon", "Warlord", "TPA"},
+	["Shyvana"] = {"Classic", "Ironscale", "Boneclaw", "Darkflame", "Ice Drake", "Championship"},
+	["Singed"] = {"Classic", "Riot Squad", "Hextech", "Surfer", "Mad Scientist", "Augmented", "Snow Day", "SSW"},
+	["Sion"] = {"Classic", "Hextech", "Barbarian", "Lumberjack", "Warmonger"},
+	["Sivir"] = {"Classic", "Warrior Princess", "Spectacular", "Huntress", "Bandit", "PAX", "Snowstorm", "Warden", "Victorious"},
+	["Skarner"] = {"Classic", "Sandscourge", "Earthrune", "Battlecast Alpha", "Guardian of the Sands"},
+	["Sona"] = {"Classic", "Muse", "Pentakill", "Silent Night", "Guqin", "Arcade", "DJ"},
+	["Soraka"] = {"Classic", "Dryad", "Divine", "Celestine", "Reaper", "Order of the Banana"},
+	["Swain"] = {"Classic", "Northern Front", "Bilgewater", "Tyrant"},
+	["Syndra"] = {"Classic", "Justicar", "Atlantean", "Queen of Diamonds"},
+	-- T
+	["TahmKench"] = {"Classic", "Master Chef"},
+	["Taliyah"] = {"Classic", "Freljord"},
+	["Talon"] = {"Classic", "Renegade", "Crimson Elite", "Dragonblade", "SSW"},
+	["Taric"] = {"Classic", "Emerald", "Armor of the Fifth Age", "Bloodstone"},
+	["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad"},
+	["Thresh"] = {"Classic", "Deep Terror", "Championship", "Blood Moon", "SSW"},
+	["Tristana"] = {"Classic", "Riot Girl", "Earnest Elf", "Firefighter", "Guerilla", "Buccaneer", "Rocket Girl", "Chroma Pack: Navy", "Chroma Pack: Purple", "Chroma Pack: Orange", "Dragon Trainer"},
+	["Trundle"] = {"Classic", "Lil' Slugger", "Junkyard", "Traditional", "Constable"},
+	["Tryndamere"] = {"Classic", "Highland", "King", "Viking", "Demonblade", "Sultan", "Warring Kingdoms", "Nightmare"},
+	["TwistedFate"] = {"Classic", "PAX", "Jack of Hearts", "The Magnificent", "Tango", "High Noon", "Musketeer", "Underworld", "Red Card", "Cutpurse"},
+	["Twitch"] = {"Classic", "Kingpin", "Whistler Village", "Medieval", "Gangster", "Vandal", "Pickpocket", "SSW"},
+	-- U
+	["Udyr"] = {"Classic", "Black Belt", "Primal", "Spirit Guard", "Definitely Not"},
+	["Urgot"] = {"Classic", "Giant Enemy Crabgot", "Butcher", "Battlecast"},
+	-- V
+	["Varus"] = {"Classic", "Blight Crystal", "Arclight", "Arctic Ops", "Heartseeker", "Swiftbolt"},
+	["Vayne"] = {"Classic", "Vindicator", "Aristocrat", "Dragonslayer", "Heartseeker", "SKT T1", "Arclight", "Chroma Pack: Green", "Chroma Pack: Red", "Chroma Pack: Silver", "Hextech"},
+	["Veigar"] = {"Classic", "White Mage", "Curling", "Veigar Greybeard", "Leprechaun", "Baron Von", "Superb Villain", "Bad Santa", "Final Boss"},
+	["Velkoz"] = {"Classic", "Battlecast", "Arclight"},
+	["Vi"] = {"Classic", "Neon Strike", "Officer", "Debonair", "Demon"},
+	["Viktor"] = {"Classic", "Full Machine", "Prototype", "Creator"},
+	["Vladimir"] = {"Classic", "Count", "Marquis", "Nosferatu", "Vandal", "Blood Lord", "Soulstealer", "Academy"},
+	["Volibear"] = {"Classic", "Thunder Lord", "Northern Storm", "Runeguard", "Captain"},
+	-- W
+	["Warwick"] = {"Classic", "Grey", "Urf the Manatee", "Big Bad", "Tundra Hunter", "Feral", "Firefang", "Hyena", "Marauder"},
+	["MonkeyKing"] = {"Classic", "Volcanic", "General", "Jade Dragon", "Underworld","Radiant"},
+	-- X
+	["Xerath"] = {"Classic", "Runeborn", "Battlecast", "Scorched Earth", "Guardian of the Sands"},
+	["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent"},
+	-- Y
+	["Yasuo"] = {"Classic", "High Noon", "PROJECT"},
+	["Yorick"] = {"Classic", "Undertaker", "Pentakill"},
+	-- Z
+	["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey"},
+	["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT"},
+	["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist"},
+	["Zilean"] = {"Classic", "Old Saint", "Groovy", "Shurima Desert", "Time Machine", "Blood Moon"},
+	["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1"},
+}
+
+----------------------
+--- AUTO LVL SPELL ---
+----------------------
+function Sequence()
+
+	if Config.uplvl.Priority.Mod == 1 then;
+		levelSequence =  {1, 2, 3, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3}
+	elseif Config.uplvl.Priority.Mod == 2 then
+		levelSequence =  {1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2}
+	elseif Config.uplvl.Priority.Mod == 3 then
+		levelSequence =  {2, 1, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3}
+	elseif Config.uplvl.Priority.Mod == 4 then
+		levelSequence =  {2, 3, 1, 2, 2, 4, 2, 3, 2, 3, 4, 3, 3, 1, 1, 4, 1, 1}
+	elseif Config.uplvl.Priority.Mod == 5 then
+		levelSequence =  {3, 1, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2}
+	elseif Config.uplvl.Priority.Mod == 6 then
+		levelSequence = {3, 2, 1, 3, 3, 4, 3, 2, 3, 2, 4, 2, 2, 1, 1, 4, 1, 1}
+	end
+	
+end
+function Print(SayHello)
+    print("<font color=\"#2E64FE\"><b>[Glaxy Utility!]</b></font> <font color=\"#FFFFFF\">" .. SayHello .. "</font>")
+end
+
+function SayHello()
+	print("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
+if GetGameVersion():sub(1,4) ~= "6.16" then
+  Print("<font color=\"#33ccff\"> -- Script is outdated, Be careful -- </b>")
+else
+  Print("<font color=\"#33ccff\">-- Script is updated to the latest version --</b>")
+end
+	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.05 - Working 6.16</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
+
+	Print("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
+
+
+	print("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")
+end
+
+
+
+
+function Human()
+	return math.random(0.2, 0.6)
+end
+
+----------------------
+--- AUTOBUY ----------
+----------------------
+
+function AutoBuy() -- AD + AP champ support	
+	local Table = {[""] = true, ["Yasuo"] = true,["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
+	local function Type()
+		return Table[myHero.charName]
+	end
+	if VIP_USER then
+		if Config.autobuy.Doran then
+			if Config.autobuy.Doran then
+				DelayAction(function()
+					if Type() then
+						BuyItem(1055);
+Print("<font color=\"#FFA07A\"><i> -- AutoBuy Loaded for: </i>" ..myHero.charName) 
+					else
+						BuyItem(1056)
+						Print("<font color=\"#FFA07A\"><i> -- AutoBuy Loaded for: </i>" ..myHero.charName) 
+					end
+					if Config.autobuy.Pots then
+						DelayAction(function()
+							BuyItem(2003);
+						end, 1);
+					end
+					if Config.autobuy.Pots then
+						DelayAction(function()
+							if not Type() then
+								BuyItem(2003);
+							end
+						end, 1);
+						if Config.autobuy.Trinket then
+							DelayAction(function()
+								BuyItem(3340);
+							end, 1);
+						end
+					end
+				end, 1);
+			end
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+----------------------
+--- AUto update ---
+----------------------
+function OnLoad()
+
+	local version = "0.05";
+	local author = "Prot0o";
+
+	local SCRIPT_NAME = "GlaxyUtility";
+	local UPDATE_HOST = "raw.githubusercontent.com";
+	local UPDATE_PATH = "/Prot0o/Scripts/master/GlaxyUtility.lua".."?rand="..math.random(1,10000);
+	local UPDATE_FILE_PATH = SCRIPT_PATH.._ENV.FILE_NAME;
+	local UPDATE_URL = "https://"..UPDATE_HOST..UPDATE_PATH;
+	local ServerData = GetWebResult(UPDATE_HOST, "/Prot0o/Scripts/master/GlaxyUtility.version");
+	if ServerData then
+		ServerVersion = type(tonumber(ServerData)) == "number" and tonumber(ServerData) or nil;
+		if ServerVersion then
+			if tonumber(version) < ServerVersion then
+				PrintChat("New version available "..ServerVersion);
+				PrintChat(">>Updating, please don't press F9<<");
+				DelayAction(function() DownloadFile(UPDATE_URL, UPDATE_FILE_PATH, function () PrintChat("Successfully updated. ("..version.." => "..ServerVersion.."), press F9 twice to load the updated version.") end) end, 3);
+			else
+				CustomLoad();
+			end
+		else
+			PrintChat("Error while downloading version info");
+		end
+	end
+end
