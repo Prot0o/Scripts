@@ -1,12 +1,22 @@
 -- Script Name: Glaxy Utility
--- Version: 0.6
+-- Version: 0.5 
 -- Autor: Glaxy
+ 
+----------------------
+--- ChangeLog Last Version ---
+----------------------
 
+--V0.07: 
+
+-- Added Bol Tracker
+-- Added Pool Party Skins( Taric, Fiora, Mf)
+-- Added New SKT T1 Skins ( Kalista & Azir )
+-- Added Draws OFF if champ dead
+
+----------------------
 -- http://bol-tools.com/ tracker
 assert(load(Base64Decode("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"), nil, "bt", _ENV))()
 TrackerLoad("xBNkwp2ydh4kMOo0")
-
-
 ----------------------
 --- MENU ---
 ----------------------
@@ -53,8 +63,7 @@ function CustomLoad()
 
   Config:addSubMenu("-- Skin Changer", "SkinChanger")
 
-	
-  if VIP_USER then Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, false)
+	  if VIP_USER then Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, false)
 
 	Config.SkinChanger:setCallback("Enablee", function (nV)
 	if nV then
@@ -102,9 +111,9 @@ end
 --- DRAW ---
 ----------------------
 function OnDraw()
-	if myHero.charName == 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' then 
+	if myHero.charName == 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' and not myHero.dead then 
 -- AA only
-	if Config.draw.AA then
+	if Config.draw.AA and not myHero.dead then
 		        DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draw.AAA[1], Config.draw.AAA[2], Config.draw.AAA[3], Config.draw.AAA[4]))
 		end
 	end
@@ -112,19 +121,19 @@ function OnDraw()
 --- Q W E R		
 
 		 for i = 1, 4 do
-  if (i == 1 and Config.draw.Q) then   
+  if (i == 1 and Config.draw.Q) and not myHero.dead then   
 
    DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.QQ[1], Config.draw.QQ[2], Config.draw.QQ[3], Config.draw.QQ[4]))
 
-  elseif (i == 2 and Config.draw.W) then
+  elseif (i == 2 and Config.draw.W) and not myHero.dead then
 
    DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.WW[1], Config.draw.WW[2], Config.draw.WW[3], Config.draw.WW[4]))
   
-  elseif (i == 3 and Config.draw.E) then
+  elseif (i == 3 and Config.draw.E) and not myHero.dead then
 
     DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.EE[1], Config.draw.EE[2], Config.draw.EE[3], Config.draw.EE[4]))
     
-  elseif (i == 4 and Config.draw.R) then
+  elseif (i == 4 and Config.draw.R) and not myHero.dead then
 
    DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.RR[1], Config.draw.RR[2], Config.draw.RR[3], Config.draw.RR[4]))
 
@@ -640,8 +649,8 @@ champions = {
     };
     
 
-AllSkins = { -- Updated all skins V0.04
-             --Added New Skins: Arcade skin, Yaso Skin, + CHroma
+AllSkins = { -- 
+
     -- A
 	["Aatrox"] = {"Classic", "Justicar", "Mecha", "Sea Hunter"},
 	["Ahri"] = {"Classic", "Dynasty", "Midnight", "Foxfire", "Popstar", "Challenger", "Academy", "Arcade"},
@@ -651,7 +660,7 @@ AllSkins = { -- Updated all skins V0.04
 	["Anivia"] = {"Classic", "Team Spirit", "Bird of Prey", "Noxus Hunter", "Hextech", "Blackfrost", "Prehistoric"},
 	["Annie"] = {"Classic", "Goth", "Red Riding", "Annie in Wonderland", "Prom Queen", "Frostfire", "Reverse", "FrankenTibbers", "Panda", "Sweetheart", "Hextech"},
 	["Ashe"] = {"Classic", "Freljord", "Sherwood Forest", "Woad", "Queen", "Amethyst", "Heartseeker", "Marauder", "PROJECT"},
-	["Azir"] = {"Classic", "Galactic", "Gravelord"},
+	["Azir"] = {"Classic", "Galactic", "Gravelord", "SKT T1"},
 	["AurelionSol"] = {"Classic", "Ashen Lord"},
 	-- B
 	["Bard"] = {"Classic", "Elderwood", "Chroma Pack: Marigold", "Chroma Pack: Ivy", "Chroma Pack: Sage"},
@@ -675,13 +684,13 @@ AllSkins = { -- Updated all skins V0.04
 	["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade"},
 	-- F
 	["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen"},
-	["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT"},
+	["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT", "Pool Party"},
 	["Fizz"] = {"Classic", "Atlantean", "Tundra", "Fisherman", "Void", "Chroma Pack: Orange", "Chroma Pack: Black", "Chroma Pack: Red", "Cottontail"},
 	-- G
 	["Galio"] = {"Classic", "Enchanted", "Hextech", "Commando", "Gatekeeper", "Debonair"},
 	["Gangplank"] = {"Classic", "Spooky", "Minuteman", "Sailor", "Toy Soldier", "Special Forces", "Sultan", "Captain"},
 	["Garen"] = {"Classic", "Sanguine", "Desert Trooper", "Commando", "Dreadknight", "Rugged", "Steel Legion", "Chroma Pack: Garnet", "Chroma Pack: Plum", "Chroma Pack: Ivory", "Rogue Admiral"},
-	["Gnar"] = {"Classic", "Dino", "Gentleman"},
+	["Gnar"] = {"Classic", "Dino", "Gentleman"},	
 	["Gragas"] = {"Classic", "Scuba", "Hillbilly", "Santa", "Gragas, Esq.", "Vandal", "Oktoberfest", "Superfan", "Fnatic", "Caskbreaker"},
 	["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat"},
 	-- H
@@ -697,7 +706,7 @@ AllSkins = { -- Updated all skins V0.04
 	["Jayce"] = {"Classic", "Full Metal", "Debonair", "Forsaken"},
 	["Jinx"] = {"Classic", "Mafia", "Firecracker", "Slayer"},
 	-- K
-	["Kalista"] = {"Classic", "Blood Moon", "Championship"},
+	["Kalista"] = {"Classic", "Blood Moon", "Championship", "SKT T1"},
 	["Karma"] = {"Classic", "Sun Goddess", "Sakura", "Traditional", "Order of the Lotus", "Warden"},
 	["Karthus"] = {"Classic", "Phantom", "Statue of", "Grim Reaper", "Pentakill", "Fnatic", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite"},
 	["Kassadin"] = {"Classic", "Festival", "Deep One", "Pre-Void", "Harbinger", "Cosmic Reaver"},
@@ -721,7 +730,7 @@ AllSkins = { -- Updated all skins V0.04
 	["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day"},
 	["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper"},
 	["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT"},
-	["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain"},
+	["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain", "Pool Party"},
 	["Mordekaiser"] = {"Classic", "Dragon Knight", "Infernal", "Pentakill", "Lord", "King of Clubs"},
 	["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony","Lunar"},
 	-- N
@@ -764,7 +773,7 @@ AllSkins = { -- Updated all skins V0.04
 	["TahmKench"] = {"Classic", "Master Chef"},
 	["Taliyah"] = {"Classic", "Freljord"},
 	["Talon"] = {"Classic", "Renegade", "Crimson Elite", "Dragonblade", "SSW"},
-	["Taric"] = {"Classic", "Emerald", "Armor of the Fifth Age", "Bloodstone"},
+	["Taric"] = {"Classic", "Emerald", "Armor of the Fifth Age", "Bloodstone", "Pool Party"},
 	["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad"},
 	["Thresh"] = {"Classic", "Deep Terror", "Championship", "Blood Moon", "SSW"},
 	["Tristana"] = {"Classic", "Riot Girl", "Earnest Elf", "Firefighter", "Guerilla", "Buccaneer", "Rocket Girl", "Chroma Pack: Navy", "Chroma Pack: Purple", "Chroma Pack: Orange", "Dragon Trainer"},
@@ -832,7 +841,7 @@ if GetGameVersion():sub(1,4) ~= "6.16" then
 else
   Print("<font color=\"#33ccff\">-- Script is updated to the latest version --</b>")
 end
-	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.06 - Working 6.16</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
+	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.07 - Working 6.16</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
 
 	Print("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
 
@@ -903,7 +912,7 @@ end
 ----------------------
 function OnLoad()
 
-	local version = "0.06";
+	local version = "0.07";
 	local author = "Prot0o";
 
 	local SCRIPT_NAME = "GlaxyUtility";
@@ -916,14 +925,14 @@ function OnLoad()
 		ServerVersion = type(tonumber(ServerData)) == "number" and tonumber(ServerData) or nil;
 		if ServerVersion then
 			if tonumber(version) < ServerVersion then
-				PrintChat("New version available "..ServerVersion);
-				PrintChat(">>Updating, please don't press F9<<");
-				DelayAction(function() DownloadFile(UPDATE_URL, UPDATE_FILE_PATH, function () PrintChat("Successfully updated. ("..version.." => "..ServerVersion.."), press F9 twice to load the updated version.") end) end, 3);
+				Print("New version available "..ServerVersion);
+				Print(">>Updating, please don't press F9<<");
+				DelayAction(function() DownloadFile(UPDATE_URL, UPDATE_FILE_PATH, function () Print("Successfully updated. ("..version.." => "..ServerVersion.."), press F9 twice to load the updated version.") end) end, 3);
 			else
 				CustomLoad();
 			end
 		else
-			PrintChat("Error while downloading version info");
+			Print("Error while downloading version info");
 		end
 	end
 end
