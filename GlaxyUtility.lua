@@ -1,5 +1,5 @@
 -- Script Name: Glaxy Utility
--- Version: 0.5 
+-- Version: 0.6
 -- Autor: Glaxy
 
 -- http://bol-tools.com/ tracker
