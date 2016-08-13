@@ -1,12 +1,10 @@
 -- Script Name: Glaxy Utility
--- Version: 0.5 
+-- Version: 0.7
 -- Autor: Glaxy
  
 ----------------------
 --- ChangeLog Last Version ---
 ----------------------
-
---V0.07: 
 
 -- Added Bol Tracker
 -- Added Pool Party Skins( Taric, Fiora, Mf)
