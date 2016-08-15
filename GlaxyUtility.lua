@@ -1,16 +1,21 @@
--- Script Name: Glaxy Utility
--- Version: 0.7
--- Autor: Glaxy
- 
+
+--  Ḡłα✖⑂ Ü☂їʟїт⑂
 ----------------------
 --- ChangeLog Last Version ---
 ----------------------
 
--- Added Bol Tracker
--- Added Pool Party Skins( Taric, Fiora, Mf)
--- Added New SKT T1 Skins ( Kalista & Azir )
--- Added Draws OFF if champ dead
+--V0.08: 
 
+-- Added AutoSave
+-- Added Some Text Changes
+-- Small changes in design
+-- Added Lag free draws  - AA/Q/W/E/R( Normal DrawCircle, deleted)
+
+	local version = "0.08";
+	local gameV = "6.16";
+	local scriptname = "Glaxy Utility";
+	local author ="Glaxy";
+	local contact = "dimitri.psarev";
 ----------------------
 -- http://bol-tools.com/ tracker
 assert(load(Base64Decode("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"), nil, "bt", _ENV))()
@@ -28,13 +33,40 @@ function OnUnload()
 
 	if Config.SkinChanger.Enablee then
 		SetSkin(myHero, -1)
-			PrintChat("<font color=\"#FFA07A\"><i> -- Utility Script Unload, BYE BYE! </i>" ..GetUser()) 
+			Print("<font color=\"#FFA07A\"><i> -- Utility Script Unload, BYE BYE! </i>" ..GetUser()) 
 	end
 	
 
 end
 
+
+
+
+
 function CustomLoad()
+
+local _saves, _initSave = {}, true
+function GetSave(name)
+    local save
+    if not _saves[name] then
+        if FileExist(LIB_PATH .. "Saves\\" .. name .. ".save") then
+            local f = loadfile(LIB_PATH .. "Saves\\" .. name .. ".save")
+            if type(f) == "function" then
+                _saves[name] = f()
+            end
+        else
+            _saves[name] = {}
+            MakeSurePathExists(LIB_PATH .. "Saves\\" .. name .. ".save")
+        end
+    end
+    save = _saves[name]
+    if not save then
+        print("SaveFile: " .. name .. " is broken. Reset.")
+        _saves[name] = {}
+        save = _saves[name]
+    end
+end
+
 	Config = scriptConfig("Glaxy - Utility ", "configname")
 
 	Config:addSubMenu("-- AutoLvlSpell", "uplvl")
@@ -48,43 +80,53 @@ function CustomLoad()
   Config.autobuy:addParam("Trinket", "Buy Trinket :", SCRIPT_PARAM_ONOFF, true)
 
   	Config:addSubMenu("-- Q-W-E-R Draws", "draw")	
-  Config.draw:addParam("AA", "AA Status", SCRIPT_PARAM_ONOFF, true)
-  Config.draw:addParam("AAA", "AA Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
-  Config.draw:addParam("Q", "Enable Q", SCRIPT_PARAM_ONOFF, true);
-  Config.draw:addParam("QQ", "Q Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
-  Config.draw:addParam("W", "Enable W", SCRIPT_PARAM_ONOFF, true);
-  Config.draw:addParam("WW", "W Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
-  Config.draw:addParam("E", "Enable E", SCRIPT_PARAM_ONOFF, true);
-  Config.draw:addParam("EE", "E Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
-  Config.draw:addParam("R", "Enable R", SCRIPT_PARAM_ONOFF, true);
-  Config.draw:addParam("RR", "R Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("ead", "Enable All Drawings (LFC: Q-W-E-R)", SCRIPT_PARAM_ONOFF, true)
+    Config.draw:addParam("line", "---------------------", SCRIPT_PARAM_INFO)
+  Config.draw:addParam("AA", "Enable [" .. myHero.charName.. "] AA", SCRIPT_PARAM_ONOFF, true)
+  Config.draw:addParam("AAA", "AA [" .. myHero.charName.. "] Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("line", "---------------------", SCRIPT_PARAM_INFO)
+  Config.draw:addParam("Q", "Enable  [" .. myHero.charName.. "] Q", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("QQ", "Q  [" .. myHero.charName.. "] Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("W", "Enable  [" .. myHero.charName.. "] W", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("WW", "W  [" .. myHero.charName.. "] Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("E", "Enable  [" .. myHero.charName.. "] E", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("EE", "E  [" .. myHero.charName.. "] Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+  Config.draw:addParam("R", "Enable  [" .. myHero.charName.. "] R", SCRIPT_PARAM_ONOFF, true);
+  Config.draw:addParam("RR", "R  [" .. myHero.charName.. "] Color", SCRIPT_PARAM_COLOR, { 255, 255, 255, 255 })
+
+
 
   Config:addSubMenu("-- Skin Changer", "SkinChanger")
 
-	  if VIP_USER then Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, false)
+	  if VIP_USER then Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, true)
 
 	Config.SkinChanger:setCallback("Enablee", function (nV)
 	if nV then
-		PrintChat("<font color=\"#FFA07A\"><i> -- SkinChanger Loaded for: </i>" ..myHero.charName) 
+		Print("<font color=\"#FFA07A\"><i> -- SkinChanger Loaded for: </i>" ..myHero.charName) 
 	SetSkin(myHero, Config.SkinChanger.skins -1)
 	else
 	SetSkin(myHero, -1)
 	end
 	end)
 	end
-if VIP_USER then Config.SkinChanger:addParam("skins", 'Which Skin :', SCRIPT_PARAM_LIST, 1, AllSkins[myHero.charName])
-Config.SkinChanger:setCallback("skins", function (nV)
-if nV then 
-if Config.SkinChanger.Enablee then
+if VIP_USER then Config.SkinChanger:addParam("skins", "Select [" .. myHero.charName.. "] Skin:", SCRIPT_PARAM_LIST, 1, AllSkins[myHero.charName])
+      Config.SkinChanger:setCallback("skins", function (nV)
+    if nV then 
+        if Config.SkinChanger.Enablee then
   SetSkin(myHero, Config.SkinChanger.skins -1)
-end
-end
-end)
+        end
+     end
+  end)
 end
 
 
 	Config.uplvl.ONOFF:addParam("levelSequence", "Status", SCRIPT_PARAM_ONOFF, false)
-  Config.uplvl.Priority:addParam("Mod", "Spell Order :", SCRIPT_PARAM_LIST, 1, {"R-Q-W-E", "R-Q-E-W", "R-W-Q-E", "R-W-E-Q", "R-E-Q-W", "R-E-W-Q"});
+    Config.uplvl.Priority:addParam("Mod", "Spell Order :", SCRIPT_PARAM_LIST, 1, {"R-Q-W-E", "R-Q-E-W", "R-W-Q-E", "R-W-E-Q", "R-E-Q-W", "R-E-W-Q"});
+
+    Config:addParam("info1", "", SCRIPT_PARAM_INFO, "")
+    Config:addParam("info2", ""..scriptname.." [ver. "..version.."]", SCRIPT_PARAM_INFO, "")
+    Config:addParam("info3", "Created by "..author.."", SCRIPT_PARAM_INFO, "")
+    Config:addParam("info4", "Contact me (SKYPE): "..contact.."", SCRIPT_PARAM_INFO, "")
 
 
 
@@ -112,35 +154,67 @@ function OnDraw()
 	if myHero.charName == 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' and not myHero.dead then 
 -- AA only
 	if Config.draw.AA and not myHero.dead then
-		        DrawCircle(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draw.AAA[1], Config.draw.AAA[2], Config.draw.AAA[3], Config.draw.AAA[4]))
+		        DrawCircleLFC(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draw.AAA[1], Config.draw.AAA[2], Config.draw.AAA[3], Config.draw.AAA[4]))
 		end
 	end
  i = 1, 4
 --- Q W E R		
-
+if  Config.draw and Config.draw.ead then
+	
+		 i = 1, 4
 		 for i = 1, 4 do
   if (i == 1 and Config.draw.Q) and not myHero.dead then   
 
-   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.QQ[1], Config.draw.QQ[2], Config.draw.QQ[3], Config.draw.QQ[4]))
+   DrawCircleLFC(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.QQ[1], Config.draw.QQ[2], Config.draw.QQ[3], Config.draw.QQ[4]))
 
   elseif (i == 2 and Config.draw.W) and not myHero.dead then
 
-   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.WW[1], Config.draw.WW[2], Config.draw.WW[3], Config.draw.WW[4]))
+   DrawCircleLFC(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.WW[1], Config.draw.WW[2], Config.draw.WW[3], Config.draw.WW[4]))
   
   elseif (i == 3 and Config.draw.E) and not myHero.dead then
 
-    DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.EE[1], Config.draw.EE[2], Config.draw.EE[3], Config.draw.EE[4]))
+    DrawCircleLFC(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.EE[1], Config.draw.EE[2], Config.draw.EE[3], Config.draw.EE[4]))
     
   elseif (i == 4 and Config.draw.R) and not myHero.dead then
 
-   DrawCircle(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.RR[1], Config.draw.RR[2], Config.draw.RR[3], Config.draw.RR[4]))
+   DrawCircleLFC(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.RR[1], Config.draw.RR[2], Config.draw.RR[3], Config.draw.RR[4]))
 
- end
+
 end
 end
+end
+end 
 
 
 
+
+
+function DrawCircleNextLvl(x, y, z, radius, width, color, chordlength)
+    radius = radius or 300
+  quality = math.max(8,round(180/math.deg((math.asin((chordlength/(2*radius)))))))
+  quality = 2 * math.pi / quality
+  radius = radius*.92
+    local points = {}
+    for theta = 0, 2 * math.pi + quality, quality do
+        local c = WorldToScreen(D3DXVECTOR3(x + radius * math.cos(theta), y, z - radius * math.sin(theta)))
+        points[#points + 1] = D3DXVECTOR2(c.x, c.y)
+    end
+    DrawLines2(points, width or 1, color or 4294967295)
+end
+
+function round(num) 
+ if num >= 0 then return math.floor(num+.5) else return math.ceil(num-.5) end
+end
+
+function DrawCircleLFC(x, y, z, radius, color)
+    local vPos1 = Vector(x, y, z)
+    local vPos2 = Vector(cameraPos.x, cameraPos.y, cameraPos.z)
+    local tPos = vPos1 - (vPos1 - vPos2):normalized() * radius
+    local sPos = WorldToScreen(D3DXVECTOR3(tPos.x, tPos.y, tPos.z))
+    if OnScreen({ x = sPos.x, y = sPos.y }, { x = sPos.x, y = sPos.y }) then
+        DrawCircleNextLvl(x, y, z, radius, 1, color, 75) 
+    end
+end
 
 ----------------------
 --- SKIN CHANGER ---
@@ -647,6 +721,9 @@ champions = {
     };
     
 
+MSkins = { 
+	["Minion"] = {"Classic", 	"PROJECT", "Beach", "Snow"},
+	};
 AllSkins = { -- 
 
     -- A
@@ -839,7 +916,7 @@ if GetGameVersion():sub(1,4) ~= "6.16" then
 else
   Print("<font color=\"#33ccff\">-- Script is updated to the latest version --</b>")
 end
-	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">0.07 - Working 6.16</font> - Utility </font><font color=\"#FFFF00\">By: Glaxy </font>")
+	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">"..version.." - Working "..gameV.." </font> - Utility </font><font color=\"#FFFF00\">By:"..author.." </font>")
 
 	Print("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
 
@@ -909,9 +986,6 @@ end
 --- AUto update ---
 ----------------------
 function OnLoad()
-
-	local version = "0.07";
-	local author = "Prot0o";
 
 	local SCRIPT_NAME = "GlaxyUtility";
 	local UPDATE_HOST = "raw.githubusercontent.com";
