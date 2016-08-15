@@ -11,7 +11,7 @@
 -- Small changes in design
 -- Added Lag free draws  - AA/Q/W/E/R( Normal DrawCircle, deleted)
 
-	local version = "0.09";
+	local version = "0.08";
 	local gameV = "6.16";
 	local scriptname = "Glaxy Utility";
 	local author ="Glaxy";
