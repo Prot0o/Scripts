@@ -689,7 +689,7 @@ end
 
 function AutoUpdater()
     local ToUpdate = {}
-    ToUpdate.Version = 0.8
+    ToUpdate.Version = 0.9
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/Prot0o/Scripts/master/GlaxyUtility.version" ---CHANGE THIS
