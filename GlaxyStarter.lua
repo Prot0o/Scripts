@@ -535,7 +535,7 @@ function OnDraw()
 			   	Order5Sprite:Draw(550, 735, 255)
 			   	Order5Sprite:SetScale(1, 1)
 			else
-			   	Order5Sprite:Draw(515, 735, 0)
+			   	Order5Sprite:Draw(550, 735, 0)
 			   	Order5Sprite:SetScale(1, 1)
 			end
 
