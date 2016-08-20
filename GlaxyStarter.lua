@@ -574,7 +574,7 @@ function GlaxyMenu()
 
 end
 function AutoUpdate()
-	local SCRIPT_NAME = "GlaxyStarters";
+	local SCRIPT_NAME = "GlaxyStarter";
 	local UPDATE_HOST = "raw.githubusercontent.com";
 	local UPDATE_PATH = "/Prot0o/Scripts/master/GlaxyStarter.lua".."?rand="..math.random(1,10000);
 	local UPDATE_FILE_PATH = SCRIPT_PATH.._ENV.FILE_NAME;
