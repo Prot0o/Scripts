@@ -109,8 +109,9 @@ function OnLoad()
 	RandomPrint2(6000, 1)
 	RandomPrint2(6300, 0)
 	RandomPrint2(6700, 1)
-GlaxyMenu()
+	GlaxyMenu()
 	CheckSprites()
+	AutoUpdate()
 
 	if myHero:GetSpellData(SUMMONER_1).name:find("SummonerSmite") then 
 		Smite = SUMMONER_1 
