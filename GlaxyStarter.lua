@@ -187,12 +187,12 @@ function CheckSprites()
 	local spriteSelect = "11select.png"
 	local spriteBanner = "banner.png"
 	--
-	local spriteOrder1 = "11.png"
-	local spriteOrder2 = "22.png"
-	local spriteOrder3 = "33.png"
-	local spriteOrder4 = "44.png"
-	local spriteOrder5 = "55.png"
-	local spriteOrder6 = "66.png"
+	local spriteOrder1 = "22.png"
+	local spriteOrder2 = "33.png"
+	local spriteOrder3 = "44.png"
+	local spriteOrder4 = "55.png"
+	local spriteOrder5 = "66.png"
+	local spriteOrder6 = "77.png"
 
   	if not FileExist(Path..spriteSword) or not 
 
