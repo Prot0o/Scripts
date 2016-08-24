@@ -4,8 +4,8 @@
 -------------------------------------------------------------------------------
 ----------------------------GLAXY STARTERS-------------------------------------
 -------------------------------------------------------------------------------
-local version = 0.03
-local gameV = "6.16";
+local version = 0.04
+local gameV = "6.17";
 local scriptname = "Glaxy Starters";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -36,6 +36,8 @@ local Order5 = true
 local Order6 = true
 local Banner = true
 local Banner1 = true
+local WardS = true
+local WardNS = true
 
 
 
@@ -77,6 +79,8 @@ Order3Sprite = createSprite("\\GlaxyAB\\44.png")
 Order4Sprite = createSprite("\\GlaxyAB\\55.png")
 Order5Sprite = createSprite("\\GlaxyAB\\66.png")
 Order6Sprite = createSprite("\\GlaxyAB\\77.png")
+WardSSprite = createSprite("\\GlaxyAB\\WardS.png")
+WardNSSprite = createSprite("\\GlaxyAB\\WardNS.png")
 --}
 assert(load(Base64Decode("G0x1YVIAAQQEBAgAGZMNChoKAAAAAAAAAAAAAQpQAAAABAAAAEYAQAClAAAAXUAAAUZAQAClQAAAXUAAAWWAAAAIQACBZcAAAAhAgIFLAAAAgQABAMZAQQDHgMEBAQEBAKGACoCGQUEAjMFBAwACgAKdgYABmwEAABcACYDHAUID2wEAABdACIDHQUIDGIDCAxeAB4DHwUIDzAHDA0FCAwDdgYAB2wEAABdAAoDGgUMAx8HDAxgAxAMXgACAwUEEANtBAAAXAACAwYEEAEqAgQMXgAOAx8FCA8wBwwNBwgQA3YGAAdsBAAAXAAKAxoFDAMfBwwMYAMUDF4AAgMFBBADbQQAAFwAAgMGBBABKgIEDoMD0f4ZARQDlAAEAnUAAAYaARQDBwAUAnUAAAYbARQDlQAEAisAAjIbARQDlgAEAisCAjIbARQDlwAEAisAAjYbARQDlAAIAisCAjR8AgAAcAAAABBIAAABBZGRVbmxvYWRDYWxsYmFjawAEFAAAAEFkZEJ1Z3NwbGF0Q2FsbGJhY2sABAwAAABUcmFja2VyTG9hZAAEDQAAAEJvbFRvb2xzVGltZQADAAAAAAAA8D8ECwAAAG9iak1hbmFnZXIABAsAAABtYXhPYmplY3RzAAQKAAAAZ2V0T2JqZWN0AAQGAAAAdmFsaWQABAUAAAB0eXBlAAQHAAAAb2JqX0hRAAQFAAAAbmFtZQAEBQAAAGZpbmQABAIAAAAxAAQHAAAAbXlIZXJvAAQFAAAAdGVhbQADAAAAAAAAWUAECAAAAE15TmV4dXMABAsAAABUaGVpck5leHVzAAQCAAAAMgADAAAAAAAAaUAEFQAAAEFkZERlbGV0ZU9iakNhbGxiYWNrAAQGAAAAY2xhc3MABA4AAABTY3JpcHRUcmFja2VyAAQHAAAAX19pbml0AAQSAAAAU2VuZFZhbHVlVG9TZXJ2ZXIABAoAAABzZW5kRGF0YXMABAsAAABHZXRXZWJQYWdlAAkAAAACAAAAAwAAAAAAAwkAAAAFAAAAGABAABcAAIAfAIAABQAAAAxAQACBgAAAHUCAAR8AgAADAAAAAAQSAAAAU2VuZFZhbHVlVG9TZXJ2ZXIABAcAAAB1bmxvYWQAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAABQAAAAAAAwkAAAAFAAAAGABAABcAAIAfAIAABQAAAAxAQACBgAAAHUCAAR8AgAADAAAAAAQSAAAAU2VuZFZhbHVlVG9TZXJ2ZXIABAkAAABidWdzcGxhdAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAQAEDQAAAEYAwACAAAAAXYAAAUkAAABFAAAATEDAAMGAAABdQIABRsDAAKUAAADBAAEAXUCAAR8AgAAFAAAABA4AAABTY3JpcHRUcmFja2VyAAQSAAAAU2VuZFZhbHVlVG9TZXJ2ZXIABAUAAABsb2FkAAQMAAAARGVsYXlBY3Rpb24AAwAAAAAAQHpAAQAAAAYAAAAHAAAAAAADBQAAAAUAAAAMAEAAgUAAAB1AgAEfAIAAAgAAAAQSAAAAU2VuZFZhbHVlVG9TZXJ2ZXIABAgAAAB3b3JraW5nAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA0AAAAAAAYyAAAABgBAAB2AgAAaQEAAF4AAgEGAAABfAAABF0AKgEYAQQBHQMEAgYABAMbAQQDHAMIBEEFCAN0AAAFdgAAACECAgUYAQQBHQMEAgYABAMbAQQDHAMIBEMFCAEbBQABPwcICDkEBAt0AAAFdgAAACEAAhUYAQQBHQMEAgYABAMbAQQDHAMIBBsFAAA9BQgIOAQEARoFCAE/BwgIOQQEC3QAAAV2AAAAIQACGRsBAAIFAAwDGgEIAAUEDAEYBQwBWQIEAXwAAAR8AgAAOAAAABA8AAABHZXRJbkdhbWVUaW1lcgADAAAAAAAAAAAECQAAADAwOjAwOjAwAAQGAAAAaG91cnMABAcAAABzdHJpbmcABAcAAABmb3JtYXQABAYAAAAlMDIuZgAEBQAAAG1hdGgABAYAAABmbG9vcgADAAAAAAAgrEAEBQAAAG1pbnMAAwAAAAAAAE5ABAUAAABzZWNzAAQCAAAAOgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABUAAAAcAAAAAQAFIwAAABsAAAAXwAeARwBAAFsAAAAXAAeARkBAAFtAAAAXQAaACIDAgEfAQABYAMEAF4AAgEfAQAAYQMEAF4AEgEaAwQCAAAAAxsBBAF2AgAGGgMEAwAAAAAYBQgCdgIABGUAAARcAAYBFAAABTEDCAMGAAgBdQIABF8AAgEUAAAFMQMIAwcACAF1AgAEfAIAADAAAAAQGAAAAdmFsaWQABAcAAABEaWRFbmQAAQEEBQAAAG5hbWUABB4AAABTUlVfT3JkZXJfbmV4dXNfc3dpcmxpZXMudHJveQAEHgAAAFNSVV9DaGFvc19uZXh1c19zd2lybGllcy50cm95AAQMAAAAR2V0RGlzdGFuY2UABAgAAABNeU5leHVzAAQLAAAAVGhlaXJOZXh1cwAEEgAAAFNlbmRWYWx1ZVRvU2VydmVyAAQEAAAAd2luAAQGAAAAbG9vc2UAAAAAAAMAAAABAQAAAQAAAAAAAAAAAAAAAAAAAAAAHQAAAB0AAAACAAICAAAACkAAgB8AgAABAAAABAoAAABzY3JpcHRLZXkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAAAB4AAAACAAUKAAAAhgBAAMAAgACdgAABGEBAARfAAICFAIAAjIBAAQABgACdQIABHwCAAAMAAAAEBQAAAHR5cGUABAcAAABzdHJpbmcABAoAAABzZW5kRGF0YXMAAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAB8AAAAuAAAAAgATPwAAAApAAICGgEAAnYCAAAqAgICGAEEAxkBBAAaBQQAHwUECQQECAB2BAAFGgUEAR8HBAoFBAgBdgQABhoFBAIfBQQPBgQIAnYEAAcaBQQDHwcEDAcICAN2BAAEGgkEAB8JBBEECAwAdggABFgECAt0AAAGdgAAACoCAgYaAQwCdgIAACoCAhgoAxIeGQEQAmwAAABdAAIAKgMSHFwAAgArAxIeGQEUAh4BFAQqAAIqFAIAAjMBFAQEBBgBBQQYAh4FGAMHBBgAAAoAAQQIHAIcCRQDBQgcAB0NAAEGDBwCHw0AAwcMHAAdEQwBBBAgAh8RDAFaBhAKdQAACHwCAACEAAAAEBwAAAGFjdGlvbgAECQAAAHVzZXJuYW1lAAQIAAAAR2V0VXNlcgAEBQAAAGh3aWQABA0AAABCYXNlNjRFbmNvZGUABAkAAAB0b3N0cmluZwAEAwAAAG9zAAQHAAAAZ2V0ZW52AAQVAAAAUFJPQ0VTU09SX0lERU5USUZJRVIABAkAAABVU0VSTkFNRQAEDQAAAENPTVBVVEVSTkFNRQAEEAAAAFBST0NFU1NPUl9MRVZFTAAEEwAAAFBST0NFU1NPUl9SRVZJU0lPTgAECwAAAGluZ2FtZVRpbWUABA0AAABCb2xUb29sc1RpbWUABAYAAABpc1ZpcAAEAQAAAAAECQAAAFZJUF9VU0VSAAMAAAAAAADwPwMAAAAAAAAAAAQJAAAAY2hhbXBpb24ABAcAAABteUhlcm8ABAkAAABjaGFyTmFtZQAECwAAAEdldFdlYlBhZ2UABA4AAABib2wtdG9vbHMuY29tAAQXAAAAL2FwaS9ldmVudHM/c2NyaXB0S2V5PQAECgAAAHNjcmlwdEtleQAECQAAACZhY3Rpb249AAQLAAAAJmNoYW1waW9uPQAEDgAAACZib2xVc2VybmFtZT0ABAcAAAAmaHdpZD0ABA0AAAAmaW5nYW1lVGltZT0ABAgAAAAmaXNWaXA9AAAAAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAvAAAAMwAAAAMACiEAAADGQEAAAYEAAN2AAAHHwMAB3YCAAArAAIDHAEAAzADBAUABgACBQQEA3UAAAscAQADMgMEBQcEBAIABAAHBAQIAAAKAAEFCAgBWQYIC3UCAAccAQADMgMIBQcECAIEBAwDdQAACxwBAAMyAwgFBQQMAgYEDAN1AAAIKAMSHCgDEiB8AgAASAAAABAcAAABTb2NrZXQABAgAAAByZXF1aXJlAAQHAAAAc29ja2V0AAQEAAAAdGNwAAQIAAAAY29ubmVjdAADAAAAAAAAVEAEBQAAAHNlbmQABAUAAABHRVQgAAQSAAAAIEhUVFAvMS4wDQpIb3N0OiAABAUAAAANCg0KAAQLAAAAc2V0dGltZW91dAADAAAAAAAAAAAEAgAAAGIAAwAAAPyD15dBBAIAAAB0AAQKAAAATGFzdFByaW50AAQBAAAAAAQFAAAARmlsZQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAA="), nil, "bt", _ENV))()
 TrackerLoad("jLBTYcuExAwGLJZH")
@@ -121,6 +125,9 @@ function OnLoad()
 		Smite = SUMMONER_2 
 		SSmite = true
 	end
+
+
+
 if SSmite then
  		sprites_list = {
 			{archivo = "1.png", name = "Doran Sword", posicion_x = 550, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1055, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
@@ -140,6 +147,10 @@ if SSmite then
 			{archivo = "15.png", name = "Machete", posicion_x = 1150, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 			{archivo = "16.png", name = "Talisman", posicion_x = 1250, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 		}
+		pink_list = {
+			{archivo = "WardS.png", name = "Pink Selected", posicion_x = 1270, posicion_y = 180, sizeX = 100, sizeY = 119, buy= 2043, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "WardNS.png", name = "Pink Non Selected", posicion_x = 1270, posicion_y = 180, sizeX = 100, sizeY = 119, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+		}
 	else
 		sprites_list = {
 			{archivo = "1.png", name = "Doran Sword", posicion_x = 550, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1055, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
@@ -158,10 +169,16 @@ if SSmite then
 			{archivo = "14.png", name = "Armor", posicion_x = 1050, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1029, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 
 		}
+		pink_list = {
+			{archivo = "WardNS.png", name = "Pink Ward", posicion_x = 1270, posicion_y = 180, sizeX = 64, sizeY = 104, buy= 2043},
+
+		}
+	
 		smite_list = {
 			{archivo = "15.png", name = "Machete", posicion_x = 1150, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 			{archivo = "16.png", name = "Talisman", posicion_x = 1250, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-		}
+				}
+
 	end
 end
 function CheckSprites()
@@ -186,13 +203,15 @@ function CheckSprites()
 	local spriteTalisman = "16.png"
 	local spriteSelect = "11select.png"
 	local spriteBanner = "banner.png"
+	local spriteWardS = "WardS.png"
+	local spriteWardNS = "WardNS.png"
 	--
-	local spriteOrder1 = "22.png"
-	local spriteOrder2 = "33.png"
-	local spriteOrder3 = "44.png"
-	local spriteOrder4 = "55.png"
-	local spriteOrder5 = "66.png"
-	local spriteOrder6 = "77.png"
+		local spriteOrder1 = "22.png"
+		local spriteOrder2 = "33.png"
+		local spriteOrder3 = "44.png"
+		local spriteOrder4 = "55.png"
+		local spriteOrder5 = "66.png"
+		local spriteOrder6 = "77.png"
 
   	if not FileExist(Path..spriteSword) or not 
 
@@ -218,6 +237,8 @@ function CheckSprites()
   		FileExist(Path..spriteOrder4) or not 
   		FileExist(Path..spriteOrder5) or not
   		FileExist(Path..spriteOrder6) or not 
+  		FileExist(Path..spriteWardS) or not 
+  		FileExist(Path..spriteWardNS) or not 
   		FileExist(Path..spriteTalisman) then
 
 	    Print("Downloading sprites, don't reload the script.")
@@ -241,6 +262,9 @@ function CheckSprites()
 	    DownloadFile(Url..spriteTalisman, Path..spriteTalisman, function() end)
 	    DownloadFile(Url..spriteMachete, Path..spriteMachete, function() end)
 	    DownloadFile(Url..spriteBanner, Path..spriteBanner, function() end)
+	    DownloadFile(Url..spriteWardS, Path..spriteWardS, function() end)
+	    DownloadFile(Url..spriteWardNS, Path..spriteWardNS, function() end)
+
 	    --
 	    DownloadFile(Url..spriteOrder1, Path..spriteOrder1, function() end)
 	    DownloadFile(Url..spriteOrder2, Path..spriteOrder2, function() end)
@@ -267,6 +291,8 @@ function CheckSprites()
 	MacheteSprite = createSprite("\\GlaxyAB\\15.png")
 	TalismanSprite = createSprite("\\GlaxyAB\\16.png")
 	BannerSprite = createSprite("\\GlaxyAB\\banner.png")
+	WardSSprite = createSprite("\\GlaxyAB\\WardS.png")
+    WardNSSprite = createSprite("\\GlaxyAB\\WardNS.png")
 				   -- 
 	SelectSprite = createSprite("\\GlaxyAB\\11select.png")			   
 	Order1Sprite = createSprite("\\GlaxyAB\\22.png") 
@@ -313,11 +339,11 @@ function OnWndMsg(msg, key)
 		                Armor =false
 		                Machete = false
 		                Talisman = false
-
 		                Banner = false
 		                Suppy = false
 		                Suppg = false
 		                Suppb = false
+		                WardNS = false
 		            
 		            	
 		            end
@@ -348,6 +374,19 @@ function OnWndMsg(msg, key)
 		            end
 		        end
 	   		end	
+	   		if key == 1 then
+				for u, spriteu in pairs(pink_list) do
+	                if CursorIsUnder(spriteu.posicion_x, spriteu.posicion_y, spriteu.sizeX, spriteu.sizeY) then 
+                       DelayAction(function() BuyItem(spriteu.buy) end, 0.5)
+                       Print("<font color=\"#FFA07A\"><i> Buying "..spriteu.name .."</i>")
+
+                       pink_list = {} 
+                       
+                       WardNS = false
+          
+		            end
+		        end
+	   		end	
 	end
 end
 
@@ -361,7 +400,7 @@ end
 
 function OnDraw()
 
-   if GetInGameTimer() < 60 then
+  if GetInGameTimer() < 60 then
 
 			if Banner1 then 
 				Banner1Sprite:Draw(550, 330, 255)
@@ -489,7 +528,16 @@ function OnDraw()
 				TalismanSprite:Draw(1250, 395, 0)
 				TalismanSprite:SetScale(1, 1)
 			end
+----------------------
+				if WardNS then
+				WardNSSprite:Draw(1270, 180, 255)
+				WardNSSprite:SetScale(1, 1)
+			elseif WardNS then
+				WardNSSprite:Draw(1270, 180, 0)
+				WardNSSprite:SetScale(1, 1)
+			end
 
+--------
 			if Select then 
 				SelectSprite:Draw(550, 510, 255)
 				SelectSprite:SetScale(1, 1)
