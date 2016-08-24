@@ -4,13 +4,6 @@
 --- ChangeLog Last Version ---
 ----------------------
 
---V0.09
- 
--- Little changes on design
--- Script structure (reorganized) 
--- Added Humanizer for LvlSpell. 1-3 sec (Menu) (On request from: lRK1K )
--- Added "Minion Skin Changer", Ally + Enemy team. (Thanks for big help: HeRoBaNd )
--- Fixed AutoSave
  
 local AllSkins = { -- 
 
@@ -93,7 +86,7 @@ local AllSkins = { --
   ["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day"},
   ["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper"},
   ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT"},
-  ["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain", "Pool Party"},
+  ["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain", "Pool Party", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
   ["Mordekaiser"] = {"Classic", "Dragon Knight", "Infernal", "Pentakill", "Lord", "King of Clubs"},
   ["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony","Lunar"},
   -- N
@@ -137,7 +130,7 @@ local AllSkins = { --
   ["Taliyah"] = {"Classic", "Freljord"},
   ["Talon"] = {"Classic", "Renegade", "Crimson Elite", "Dragonblade", "SSW"},
   ["Taric"] = {"Classic", "Emerald", "Armor of the Fifth Age", "Bloodstone", "Pool Party"},
-  ["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad"},
+  ["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
   ["Thresh"] = {"Classic", "Deep Terror", "Championship", "Blood Moon", "SSW"},
   ["Tristana"] = {"Classic", "Riot Girl", "Earnest Elf", "Firefighter", "Guerilla", "Buccaneer", "Rocket Girl", "Chroma Pack: Navy", "Chroma Pack: Purple", "Chroma Pack: Orange", "Dragon Trainer"},
   ["Trundle"] = {"Classic", "Lil' Slugger", "Junkyard", "Traditional", "Constable"},
@@ -161,13 +154,13 @@ local AllSkins = { --
   ["MonkeyKing"] = {"Classic", "Volcanic", "General", "Jade Dragon", "Underworld","Radiant"},
   -- X
   ["Xerath"] = {"Classic", "Runeborn", "Battlecast", "Scorched Earth", "Guardian of the Sands"},
-  ["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent"},
+  ["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6"},
   -- Y
-  ["Yasuo"] = {"Classic", "High Noon", "PROJECT"},
+  ["Yasuo"] = {"Classic", "High Noon", "PROJECT", "Blood Moon", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
   ["Yorick"] = {"Classic", "Undertaker", "Pentakill"},
   -- Z
   ["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey"},
-  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT"},
+  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6"},
   ["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist"},
   ["Zilean"] = {"Classic", "Old Saint", "Groovy", "Shurima Desert", "Time Machine", "Blood Moon"},
   ["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1"},               
@@ -331,8 +324,8 @@ local AllSkins = { --
 local Table = {["Aatrox"] = true, ["Yasuo"] = true,["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
 local SkinList100 = {"Blue Classic","Red Pool Party","Blue Pool Party","Red PROJECT","Blue PROJECT","Red Snow","Blue Snow","Red DRAVEN","Blue DRAVEN","Red Classic"}
 local SkinList200 = {"Red Classic","Blue Pool Party","Red Pool Party","Blue PROJECT","Red PROJECT","Blue Snow","Red Snow","Blue DRAVEN","Red DRAVEN","Blue Classic"}
-local version = 1.11
-local gameV = "6.16";
+local version = 1.12
+local gameV = "6.17";
 local scriptname = "Glaxy Utility";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -630,10 +623,10 @@ end
 
 function SayHello()
 	print("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
-  if GetGameVersion():sub(1,4) ~= "6.16" then
+  if GetGameVersion():sub(1,4) ~= "".. gameV .."" then
     Print("<font color=\"#33ccff\"> -- Script is outdated, Be careful -- </b>")
   else
-    Print("<font color=\"#33ccff\">-- Script is updated -> 6.16 --</b>")
+    Print("<font color=\"#33ccff\">-- Script is updated --</b>")
   end
 	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">"..version.." - Working "..gameV.." </font> - Utility </font><font color=\"#FFFF00\">By:"..author.." </font>")
 	Print("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
