@@ -1,4 +1,4 @@
-local version = 0.02
+local version = 0.021
 local gameV = "6.17";
 local scriptname = "Glaxy Motivator";
 local author ="Glaxy";
@@ -236,8 +236,6 @@ function AutoUpdate()
 				Print("New version available "..ServerVersion);
 				Print(">>Updating, please don't press F9<<");
 				DelayAction(function() DownloadFile(UPDATE_URL, UPDATE_FILE_PATH, function () Print("Successfully updated. ("..version.." => "..ServerVersion.."), press F9 twice to load the updated version.") end) end, 3);
-			else
-				CustomLoad();
 			end
 		else
 			Print("Error while downloading version info");
