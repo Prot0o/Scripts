@@ -11,7 +11,7 @@ local FR = true
 local CH = true
 local TUR = true
 local KOR = true
-local version = 0.033
+local version = 0.034
 local death = false
 local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Motivator"
@@ -33,11 +33,11 @@ KORSprite = createSprite("\\GlaxyMT\\12.png")
 
 local Support_list = {
 	{archivo = "4.png", name = "English", posicion_x = 1213, posicion_y = 200, sizeX = 284, sizeY = 110, Lan = "EN"},
+	{archivo = "6.png", name = "Spanish", posicion_x = 790, posicion_y = 310, sizeX = 213, sizeY = 160, Lan = "ES"},
 }
 
 local No_Support_list = {
 	{archivo = "5.png", name = "Portuguese", posicion_x = 500, posicion_y = 310, sizeX = 290, sizeY = 160, Lan = "POR"},
-	{archivo = "6.png", name = "Spanish", posicion_x = 790, posicion_y = 310, sizeX = 213, sizeY = 160, Lan = "SP"},
 	{archivo = "7.png", name = "German", posicion_x = 1000, posicion_y = 310, sizeX = 213, sizeY = 160, Lan = "GER"},
 	{archivo = "8.png", name = "Polish", posicion_x = 1213, posicion_y = 310, sizeX = 284, sizeY = 160, Lan = "PoL"},
 	{archivo = "9.png", name = "French", posicion_x = 500, posicion_y = 465, sizeX = 290, sizeY = 230, Lan = "FR"},
@@ -158,6 +158,9 @@ function OnAnimation(unit, animation)
     if unit.isMe and unit.type == myHero.type and animation == "Death" then
 		if _G.Language == "EN" then
 			Lan_EN()
+		elseif _G.Language == "ES" then
+			Lan_ES()
+
 	   	end
 	end
 end
@@ -266,6 +269,112 @@ function Lan_EN()
 		Print("I am in my period, dont disturb me. - Vladimir")
 	elseif v == 50 then
 		Print("Check ur built, maybe you need change some item for win the game.")
+	end
+end
+function Lan_ES()
+
+	if v == 0 then
+		Print("¡Thanks for use " ..scriptname.."!, Regards, Glaxy!")
+	elseif v == 1 then
+		Print("No es fácil llegar a la cima, pero las vistas son gloriosas.")
+	elseif v == 2 then
+		Print("Si te rindes estas dejando en evidencia todo tu esfuerzo por llegar hasta aqui, VAMOS !")
+	elseif v == 3 then
+		Print("No te preocupes si fallas una vez o dos veces... Solo fallas de verdad cuando dejas de intentarlo.")
+	elseif v == 4 then
+		Print("El minimapa si... Una herramienta muy util, miralo siempre que puedas y pushea todo lo que puedas.")
+	elseif v == 5 then
+		Print("A veces para ayudarte a ti mismo significa tener que ayudar al equipo para poder ganar.")
+	elseif v == 6 then
+		Print("Morir solo es un acontecimmiento, lo importante es darlo todo siempre que tengas oportunidad.")
+	elseif v == 7 then
+		Print("EL dolor y la muerte son muy reales, pero el miedo a perder i/o a morir otra vez es solo una opcion.")
+	elseif v == 8 then
+		Print("El dolor es temporal pero la victoria es infinita.")
+	elseif v == 9 then
+		Print("Si quieres ganar esta partida trabaja con tu equipo, guardea todo lo que puedas y pushea todo lo puedas.")
+	elseif v == 10 then
+		Print("Piensa por un momento antes luchar que talvez sea mejor defender para poder ganar.")
+	elseif v == 11 then
+		Print("Puedes dejar las cosas como estan o intentar hacer algo para cambiarlas.")
+	elseif v == 12 then
+		Print("Lo que no te mata ta hace mas habil en el campo de batalla.")
+	elseif v == 13 then
+		Print("Tu puedes ganar. Claro que si no me crees compruebalo tu mismo. Vamos Demuestralo !")
+	elseif v == 14 then
+		Print("La violencia lo arregla todo ! - Katarina")
+	elseif v == 15 then
+		Print("Las cosas no son siempre lo que parecen.")
+	elseif v == 16 then
+		Print("Todo el mundo es un heroe hasta que vuelas una... o dos piernas... jeje - Graves")
+	elseif v == 17 then
+		Print("La habilidad es solo una mera ilusion de la mente, tu solo haz lo que tienes que hacer en el momento oportuno.")
+	elseif v == 18 then
+		Print("Solo hay dos bufones en la baraja y me tocas tu. - Twisted Fate")
+	elseif v == 19 then
+		Print("La ceguera no es un problema contra un enemigo apestoso - Lee Sin")
+	elseif v == 20 then
+		Print("Podemos hacer esto por las buenas o... Espera no... Solo por las malas -Vi")
+	elseif v == 21 then
+		Print("¿Mi profesión? Bueno... Simpre quise ser panadero... Si panadero. - Pantheon")
+	elseif v == 22 then
+		Print("Solo tú puedes oírme invocador. ¿Que obra maestra vamos a tocar hoy? - Sona")
+	elseif v == 23 then
+		Print("La muerte.... Es solo el principio. - Yorick")
+	elseif v == 24 then
+		Print("No todo esta perdido, siempre hay alguna posibilidad.")
+	elseif v == 25 then
+		Print("No cometas el mismo error 2 veces, antes de eso encuentra una solucion y te llevaras la victoria.")
+	elseif v == 26 then
+		Print("Un guerrero solo para de luchar cuando la muerte se lo manda.")
+	elseif v == 27 then
+		Print("Es una hablidad muy importante, la de mantener la calma cuando todos la han perdido.")
+	elseif v == 28 then
+		Print("La muerte es solo una etapa hacia la victoria.")
+	elseif v == 29 then
+		Print("Cuando vivas... Haz que sufran de una manera inteligente.")
+	elseif v == 30 then
+		Print("Recuerda, no hay victoria sin un perdedor y eso no puedes serlo si haces las cosas bien.")
+	elseif v == 31 then
+		Print("La derrota es solo una etapa hacia la verdadera victoria.")
+	elseif v == 32 then
+		Print("La llave de la immortalidad ? ... No morir nunca... - Maestro Yi.")
+	elseif v == 33 then
+		Print("Cuando se acava el tiempo, solo queda observar lo sembrado, ya sea bueno... O malo....")
+	elseif v == 34 then
+		Print("Solo un espiritu fuerte puede alzarse con la victoria.")
+	elseif v == 35 then
+		Print("Solo hay una manera de ganar. Destruye el nexo enemigo !! jeje")
+	elseif v == 36 then
+		Print("La muerte no será el fin. - Cho'Gath")
+	elseif v == 37 then
+		Print("El solo hecho de pensar en la derrota es rendirse antes de tiempo.")
+	elseif v == 38 then
+		Print("La excelencia esta alla donde yo decida poner el liston cada día. - Draven")
+	elseif v == 39 then
+		Print("La llave del exito ? No rendirte nunca, y menos cuando toda la gente ha perdido la esperanza.")
+	elseif v == 40 then
+		Print("............ - Sona")
+	elseif v == 41 then
+		Print("OK - Rammus")
+	elseif v == 42 then
+		Print("Eso no significa que tengas que rendirte ahora eh....")
+	elseif v == 43 then
+		Print("Bueno pero que tenemos aqui ?? No pienses que estas solo en esto. Nosotros te daremos apoyo des de aqui ^^")
+	elseif v == 44 then
+		Print("Sometimes you're the catch, sometimes you're the bait. - Nami")
+	elseif v == 45 then
+		Print("Todo el mundo tiene buenos momentos t malos, quedate siempre los bueno.")
+	elseif v == 46 then
+		Print("No te pases, animo tu puedes ganar esto. Yo creo en ti.")
+	elseif v == 47 then
+		Print("Hay lo que se llama mala suerte.")
+	elseif v == 48 then
+		Print("El solo hecho de pensar en la derrota es rendirse antes de tiempo.")
+	elseif v == 49 then
+		Print("Antes muerta, que aburrida. - Katarina.")
+	elseif v == 50 then
+		Print("Solo en combate descubres quien eres en realidad.")
 	end
 end
 
