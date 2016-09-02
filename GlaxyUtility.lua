@@ -1,9 +1,15 @@
 
 --  Ḡłα✖⑂ Ü☂їʟїт⑂
 ----------------------
---- ChangeLog Last Version ---
 ----------------------
-
+----------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+----------------------
  
 local AllSkins = { -- 
 
@@ -321,6 +327,13 @@ local AllSkins = { --
   ["Zilean"] = {900, 0, 700, 900,},                                                                                                                                                                                                                        
   ["Zyra"] = {800, 850, 1100, 700,},             
       };
+  ENSprite = createSprite("\\GlaxyUT\\Change.png")
+local Sprite_SK = {
+  {posicion_x = 1150, posicion_y = 850, sizeX = 132, sizeY = 68},
+}
+
+
+local EN = true
 local Table = {["Aatrox"] = true, ["Yasuo"] = true,["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
 local SkinList100 = {"Blue Classic","Red Pool Party","Blue Pool Party","Red PROJECT","Blue PROJECT","Red Snow","Blue Snow","Red DRAVEN","Blue DRAVEN","Red Classic"}
 local SkinList200 = {"Red Classic","Blue Pool Party","Red Pool Party","Blue PROJECT","Red PROJECT","Blue Snow","Red Snow","Blue DRAVEN","Red DRAVEN","Blue Classic"}
@@ -337,6 +350,7 @@ TrackerLoad("xBNkwp2ydh4kMOo0")
 function OnLoad()  
   AutoUpdate()
   Menu()
+  CheckSprites()
   SayHello()
   if GetInGameTimer() < 60 then
    AutoBuy()
@@ -359,6 +373,79 @@ function OnUnload()
   end
   for i, minions in ipairs(Minion2.objects) do
     SetSkin(minions, -1)
+  end
+end
+
+function CheckSprites()
+  local Path = SPRITE_PATH.."\\GlaxyUT\\"
+  local Url = "http://dmitrypsarev.com\\GlaxyUT\\" 
+  local spriteEN = "Change.png"
+  
+  if not FileExist(Path..spriteEN)  then
+    Print("Downloading sprites, don't reload the script.")
+        CreateDirectory(Path)
+       
+        DownloadFile(Url..spriteEN, Path..spriteEN, function() Print("Download was successful, please reload the script by pressing F9 twice.") end)
+        return
+  else
+
+    ENSprite = createSprite("\\GlaxyUT\\Change.png")
+
+  end
+end
+
+function OnWndMsg(msg, key)
+if Config.SkinChanger.EnableSprite then
+    if key == 1 then
+      for n, sprite in pairs(Sprite_SK) do
+          if CursorIsUnder(sprite.posicion_x, sprite.posicion_y, sprite.sizeX, sprite.sizeY) then 
+            Config.SkinChanger.skins = Config.SkinChanger.skins >= 20 and 1 or (Config.SkinChanger.skins + 1)
+            
+            ------------------------------
+              if Config.SkinChanger.skins >= 20 then 
+                Print("Skin <font color=\"#ff66a3\"><u>Nº20</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+              elseif Config.SkinChanger.skins >= 19 then
+                  Print("Skin <font color=\"#ff66a3\"><u>Nº19</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+              elseif Config.SkinChanger.skins >= 18 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº18</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 17 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº17</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 16 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº16</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 15 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº15</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 14 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº14</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 13 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº13</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 12 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº12</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 11 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº11</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 10 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº10</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 9 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº9</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 8 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº8</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 7 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº7</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 6 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº6</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 5 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº5</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 4 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº4</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 3 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº3</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 2 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº2</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+            elseif Config.SkinChanger.skins >= 1 then
+              Print("Skin <font color=\"#ff66a3\"><u>Nº1 (Basic)</u></font>,  Loaded for  <font color=\"#ff66a3\"><u>"..myHero.charName.."</u></font>  (if has)")
+              end 
+        end
+        end
+    end
   end
 end
 
@@ -427,6 +514,7 @@ function SkinLoad()
   if VIP_USER then  
     Config:addSubMenu("-- Skin Changer", "SkinChanger")
       Config.SkinChanger:addParam("Enablee", "Enable S.C: ", SCRIPT_PARAM_ONOFF, true)
+      Config.SkinChanger:addParam("EnableSprite", "Enable S.C Sprite:", SCRIPT_PARAM_ONOFF, true)
       Config.SkinChanger:setCallback("Enablee", function (nV)
         if nV then
           Print("<font color=\"#FFA07A\"><i> -- SkinChanger Loaded for: </i>" ..myHero.charName) 
@@ -568,6 +656,15 @@ function OnDraw()
       elseif (i == 4 and Config.draw.R) and not myHero.dead then
         DrawCircleLFC(myHero.x, myHero.y, myHero.z, champions[myHero.charName][i], ARGB(Config.draw.RR[1], Config.draw.RR[2], Config.draw.RR[3], Config.draw.RR[4]))
       end
+    end
+  end
+    if Config.SkinChanger.EnableSprite then
+    if EN then 
+      ENSprite:Draw(1150, 850, 255)
+      ENSprite:SetScale(1, 1  )
+    else
+      ENSprite:Draw(1150, 850, 0)
+      ENSprite:SetScale(1, 1)
     end
   end
 end 
