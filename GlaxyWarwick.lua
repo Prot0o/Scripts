@@ -38,6 +38,7 @@ function OnLoad()
 		Smite = SUMMONER_2 
 		SSmite = true
 	end
+	AutoUpdate()
 	Menu()
 	LoadLib()
 	if VIP_USER then
