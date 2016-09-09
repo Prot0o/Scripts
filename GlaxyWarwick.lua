@@ -1,5 +1,5 @@
 if (myHero.charName ~= "Warwick") then return 	end
-local version = 0.2
+local version = 0.3
 local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Warwick"
 local author ="Glaxy"
