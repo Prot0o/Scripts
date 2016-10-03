@@ -36,14 +36,14 @@ local AllSkins = { --
   ["Corki"] = {"Classic", "UFO", "Ice Toboggan", "Red Baron", "Hot Rod", "Urfrider", "Dragonwing", "Fnatic", "Arcade"},
   -- D
   ["Darius"] = {"Classic", "Lord", "Bioforge", "Woad King", "Dunkmaster", "Chroma Pack: Black Iron", "Chroma Pack: Bronze", "Chroma Pack: Copper", "Academy"},
-  ["Diana"] = {"Classic", "Dark Valkyrie", "Lunar Goddess"},
+  ["Diana"] = {"Classic", "Dark Valkyrie", "Lunar Goddess", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7"},
   ["DrMundo"] = {"Classic", "Toxic", "Mr. Mundoverse", "Corporate Mundo", "Mundo Mundo", "Executioner Mundo", "Rageborn Mundo", "TPA Mundo", "Pool Party"},
   ["Draven"] = {"Classic", "Soul Reaver", "Gladiator", "Primetime", "Pool Party"},
   -- E
   ["Ekko"] = {"Classic", "Sandstorm", "Academy", "PROJECT"},
   ["Elise"] = {"Classic", "Death Blossom", "Victorious", "Blood Moon", "SKT 1"},
   ["Evelynn"] = {"Classic", "Shadow", "Masquerade", "Tango", "Safecracker"},
-  ["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade"},
+  ["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   -- F
   ["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen"},
   ["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT", "Pool Party"},
@@ -88,7 +88,7 @@ local AllSkins = { --
   ["Lulu"] = {"Classic", "Bittersweet", "Wicked", "Dragon Trainer", "Winter Wonder", "Pool Party"},
   ["Lux"] = {"Classic", "Sorceress", "Spellthief", "Commando", "Imperial", "Steel Legion", "Star Guardian"},
   -- M
-  ["Malphite"] = {"Classic", "Shamrock", "Coral Reef", "Marble", "Obsidian", "Glacial", "Mecha", "Ironside"},
+  ["Malphite"] = {"Classic", "Shamrock", "Coral Reef", "Marble", "Obsidian", "Glacial", "Mecha", "Ironside", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   ["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day"},
   ["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper"},
   ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT"},
@@ -115,7 +115,7 @@ local AllSkins = { --
   ["Reksai"] = {"Classic", "Eternum", "Pool Party"},
   ["Renekton"] = {"Classic", "Galactic", "Outback", "Bloodfury", "Rune Wars", "Scorched Earth", "Pool Party", "Scorched Earth", "Prehistoric", "SKT 1 "},
   ["Rengar"] = {"Classic", "Headhunter", "Night Hunter", "SSW"},
-  ["Riven"] = {"Classic", "Redeemed", "Crimson Elite", "Battle Bunny", "Championship", "Dragonblade", "Arcade"},
+  ["Riven"] = {"Classic", "Redeemed", "Crimson Elite", "Battle Bunny", "Championship", "Dragonblade", "Arcade", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   ["Rumble"] = {"Classic", "Rumble in the Jungle", "Bilgerat", "Super Galaxy"},
   ["Ryze"] = {"Classic", "Human", "Tribal", "Uncle", "Triumphant", "Professor", "Zombie", "Dark Crystal", "Pirate", "Whitebeard", "SKT 1"},
   -- S
@@ -166,7 +166,7 @@ local AllSkins = { --
   ["Yorick"] = {"Classic", "Undertaker", "Pentakill"},
   -- Z
   ["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey"},
-  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6"},
+  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Championship"},
   ["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist"},
   ["Zilean"] = {"Classic", "Old Saint", "Groovy", "Shurima Desert", "Time Machine", "Blood Moon"},
   ["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1"},               
@@ -337,8 +337,8 @@ local EN = true
 local Table = {["Aatrox"] = true, ["Yasuo"] = true,["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
 local SkinList100 = {"Blue Classic","Red Pool Party","Blue Pool Party","Red PROJECT","Blue PROJECT","Red Snow","Blue Snow","Red DRAVEN","Blue DRAVEN","Red Classic"}
 local SkinList200 = {"Red Classic","Blue Pool Party","Red Pool Party","Blue PROJECT","Red PROJECT","Blue Snow","Red Snow","Blue DRAVEN","Red DRAVEN","Blue Classic"}
-local version = 1.16
-local gameV = "6.18";
+local version = 1.20
+local gameV = "6.19";
 local scriptname = "Glaxy Utility";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
