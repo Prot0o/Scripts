@@ -4,8 +4,8 @@
 -------------------------------------------------------------------------------
 ----------------------------GLAXY STARTERS-------------------------------------
 -------------------------------------------------------------------------------
-local version = 0.04
-local gameV = "6.17";
+local version = 0.05
+local gameV = "6.24";
 local scriptname = "Glaxy Starters";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
