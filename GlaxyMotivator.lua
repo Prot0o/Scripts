@@ -11,7 +11,7 @@ local FR = true
 local CH = true
 local TUR = true
 local KOR = true
-local version = 0.036
+local version = 0.037
 local death = false
 local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Motivator"
@@ -71,7 +71,7 @@ end
 
 function CheckSprites()
 	local Path = SPRITE_PATH.."\\GlaxyMT\\"
-	local Url = "http://dmitrypsarev.com\\GlaxyMT\\" 
+	local Url = "http://glaxy.000webhostapp.com\\GlaxyMT\\" 
 	local spriteP1 = "1.png"
 	local spriteP2 = "2.png"
 	local spriteP3 = "3.png"
@@ -380,7 +380,7 @@ end
 
 function OnDraw()
 	if P1 then 
-		P1Sprite:Draw(500, 200, 255)
+		P1Sprite:Draw(515, 200, 255)
 		P1Sprite:SetScale(1, 1)
 	else
 		P1Sprite:Draw(500, 200, 0)
@@ -388,10 +388,10 @@ function OnDraw()
 	end
 
 	if P2 then 
-		P2Sprite:Draw(790, 200, 255)
+		P2Sprite:Draw(795, 200, 255)
 		P2Sprite:SetScale(1, 1)
 	else
-		P2Sprite:Draw(790, 200, 0)
+		P2Sprite:Draw(795, 200, 0)
 		P2Sprite:SetScale(1, 1)
 	end
 	
@@ -404,74 +404,74 @@ function OnDraw()
 	end
 
 	if EN then 
-		ENSprite:Draw(1213, 200, 255)
+		ENSprite:Draw(1209, 200, 255)
 		ENSprite:SetScale(1, 1)
 	else
-		ENSprite:Draw(550, 200, 0)
+		ENSprite:Draw(1209, 200, 0)
 		ENSprite:SetScale(1, 1)
 	end
 
 	if POR then 
-		PORSprite:Draw(500, 310, 255)
+		PORSprite:Draw(515, 299, 255)
 		PORSprite:SetScale(1, 1)
 	else
-		PORSprite:Draw(500, 310, 0)
+		PORSprite:Draw(515, 299, 0)
 		PORSprite:SetScale(1, 1)
 	end
 
 	if ES then 
-		ESSprite:Draw(790, 310, 255)
+		ESSprite:Draw(794, 299, 255)
 		ESSprite:SetScale(1, 1)
 	else
-		ESSprite:Draw(790, 310, 0)
+		ESSprite:Draw(790, 299, 0)
 		ESSprite:SetScale(1, 1)
 	end
 
 	if ALE then 
-		ALESprite:Draw(1000, 310, 255)
+		ALESprite:Draw(1000, 299, 255)
 		ALESprite:SetScale(1, 1)
 	else
-		ALESprite:Draw(1000, 310, 0)
+		ALESprite:Draw(1000, 299, 0)
 		ALESprite:SetScale(1, 1)
 	end
 
 	if POL then 
-		POLSprite:Draw(1213, 310, 255)
+		POLSprite:Draw(1209, 299, 255)
 		POLSprite:SetScale(1, 1)
 	else
-		POLSprite:Draw(1213, 310, 0)
+		POLSprite:Draw(1209, 299, 0)
 		POLSprite:SetScale(1, 1)
 	end
 
 	if FR then 
-		FRSprite:Draw(500, 465, 255)
+		FRSprite:Draw(515, 462, 255)
 		FRSprite:SetScale(1, 1)
 	else
-		FRSprite:Draw(500, 465, 0)
+		FRSprite:Draw(515, 462, 0)
 		FRSprite:SetScale(1, 1)
 	end
 
 	if CH then 
-		CHSprite:Draw(790, 465, 255)
+		CHSprite:Draw(794, 462, 255)
 		CHSprite:SetScale(1, 1)
 	else
-		CHSprite:Draw(790, 465, 0)
+		CHSprite:Draw(794, 462, 0)
 		CHSprite:SetScale(1, 1)
 	end
 
 	if TUR then 
-		TURSprite:Draw(1000, 465, 255)
+		TURSprite:Draw(1000, 462, 255)
 		TURSprite:SetScale(1, 1)
 	else
-		TURSprite:Draw(1000, 465, 0)
+		TURSprite:Draw(1000, 462, 0)
 		TURSprite:SetScale(1, 1)
 	end
 
 	if KOR then
-		KORSprite:Draw(1213, 465, 255)
+		KORSprite:Draw(1209, 462, 255)
 		KORSprite:SetScale(1, 1)
 	else
-		KORSprite:Draw(1213, 465, 0)
+		KORSprite:Draw(1209, 462, 0)
 		KORSprite:SetScale(1, 1)
 	end
 end
