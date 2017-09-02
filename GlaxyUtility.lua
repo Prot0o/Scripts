@@ -10,6 +10,8 @@
 --------------------------------------------
 --------------------------------------------
 ----------------------
+
+
  
 local AllSkins = { -- 
 
@@ -17,141 +19,147 @@ local AllSkins = { --
   ["Aatrox"] = {"Classic", "Justicar", "Mecha", "Sea Hunter"},
   ["Ahri"] = {"Classic", "Dynasty", "Midnight", "Foxfire", "Popstar", "Challenger", "Academy", "Arcade"},
   ["Akali"] = {"Classic", "Stinger", "Crimson", "All-star", "Nurse", "Blood Moon", "Silverfang", "Headhunter", "Shashimi"},
-  ["Alistar"] = {"Classic", "Black", "Golden", "Matador", "Longhorn", "Unchained", "Infernal", "Sweeper", "Marauder", "SKT 1"},
+  ["Alistar"] = {"Classic", "Black", "Golden", "Matador", "Longhorn", "Unchained", "Infernal", "Sweeper", "Marauder", "SKT 1", "Moo Cow"},
   ["Amumu"] = {"Classic", "Pharaoh", "Vancouver", "Emumu", "Re-Gifted", "Almost-Prom King", "Little Knight", "Sad Robot", "Surprise Party"},
-  ["Anivia"] = {"Classic", "Team Spirit", "Bird of Prey", "Noxus Hunter", "Hextech", "Blackfrost", "Prehistoric"},
+  ["Anivia"] = {"Classic", "Team Spirit", "Bird of Prey", "Noxus Hunter", "Hextech", "Blackfrost", "Prehistoric", "Festival Queen"},
   ["Annie"] = {"Classic", "Goth", "Red Riding", "Annie in Wonderland", "Prom Queen", "Frostfire", "Reverse", "FrankenTibbers", "Panda", "Sweetheart", "Hextech"},
   ["Ashe"] = {"Classic", "Freljord", "Sherwood Forest", "Woad", "Queen", "Amethyst", "Heartseeker", "Marauder", "PROJECT"},
-  ["Azir"] = {"Classic", "Galactic", "Gravelord", "SKT T1"},
+  ["Azir"] = {"Classic", "Galactic", "Gravelord", "SKT T1", "Warring Kingdoms"},
   ["AurelionSol"] = {"Classic", "Ashen Lord"},
   -- B
-  ["Bard"] = {"Classic", "Elderwood", "Chroma Pack: Marigold", "Chroma Pack: Ivy", "Chroma Pack: Sage"},
+  ["Bard"] = {"Classic", "Elderwood", "Chroma Pack: Marigold", "Chroma Pack: Ivy", "Chroma Pack: Sage", "Bard"},
   ["Blitzcrank"] = {"Classic", "Rusty", "Goalkeeper", "Boom Boom", "Piltover Customs", "Definitely Not", "iBlitzcrank", "Riot", "Chroma Pack: Molten", "Chroma Pack: Cobalt", "Chroma Pack: Gunmetal", "Battle Boss"},
-  ["Brand"] = {"Classic", "Apocalyptic", "Vandal", "Cryocore", "Zombie", "Spirit Fire"},
-  ["Braum"] = {"Classic", "Dragonslayer", "El Tigre", "Lionheart"},
+  ["Brand"] = {"Classic", "Apocalyptic", "Vandal", "Cryocore", "Zombie", "Spirit Fire", "Battle Boss"},
+  ["Braum"] = {"Classic", "Dragonslayer", "El Tigre", "Lionheart", "Santa"},
   -- C
-  ["Caitlyn"] = {"Classic", "Resistance", "Sheriff", "Safari", "Arctic Warfare", "Officer", "Headhunter", "Chroma Pack: Pink", "Chroma Pack: Green", "Chroma Pack: Blue","Lunar"},
+  ["Caitlyn"] = {"Classic", "Resistance", "Sheriff", "Safari", "Arctic Warfare", "Officer", "Headhunter", "Chroma Pack: Pink", "Chroma Pack: Green", "Chroma Pack: Blue","Lunar", "Pulsefire"},
   ["Cassiopeia"] = {"Classic", "Desperada", "Siren", "Mythic", "Jade Fang", "Chroma Pack: Day", "Chroma Pack: Dusk", "Chroma Pack: Night"},
   ["Chogath"] = {"Classic", "Nightmare", "Gentleman", "Loch Ness", "Jurassic", "Battlecast Prime", "Prehistoric"},
   ["Corki"] = {"Classic", "UFO", "Ice Toboggan", "Red Baron", "Hot Rod", "Urfrider", "Dragonwing", "Fnatic", "Arcade"},
+  ["Camille"] = {"Classic", "Program"},
   -- D
-  ["Darius"] = {"Classic", "Lord", "Bioforge", "Woad King", "Dunkmaster", "Chroma Pack: Black Iron", "Chroma Pack: Bronze", "Chroma Pack: Copper", "Academy"},
-  ["Diana"] = {"Classic", "Dark Valkyrie", "Lunar Goddess", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7"},
+  ["Darius"] = {"Classic", "Lord", "Bioforge", "Woad King", "Dunkmaster", "Chroma Pack: Black Iron", "Chroma Pack: Bronze", "Chroma Pack: Copper", "Academy", "Dreadnova Darius"},
+  ["Diana"] = {"Classic", "Dark Valkyrie", "Lunar Goddess", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Blood Moon"},
   ["DrMundo"] = {"Classic", "Toxic", "Mr. Mundoverse", "Corporate Mundo", "Mundo Mundo", "Executioner Mundo", "Rageborn Mundo", "TPA Mundo", "Pool Party"},
   ["Draven"] = {"Classic", "Soul Reaver", "Gladiator", "Primetime", "Pool Party"},
   -- E
-  ["Ekko"] = {"Classic", "Sandstorm", "Academy", "PROJECT"},
+  ["Ekko"] = {"Classic", "Sandstorm", "Academy", "PROJECT", "SKT T1"},
   ["Elise"] = {"Classic", "Death Blossom", "Victorious", "Blood Moon", "SKT 1"},
   ["Evelynn"] = {"Classic", "Shadow", "Masquerade", "Tango", "Safecracker"},
   ["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   -- F
   ["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen"},
   ["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT", "Pool Party"},
-  ["Fizz"] = {"Classic", "Atlantean", "Tundra", "Fisherman", "Void", "Chroma Pack: Orange", "Chroma Pack: Black", "Chroma Pack: Red", "Cottontail"},
+  ["Fizz"] = {"Classic", "Atlantean", "Tundra", "Fisherman", "Void", "Chroma Pack: Orange", "Chroma Pack: Black", "Chroma Pack: Red", "Cottontail", "Omega Squad"},
   -- G
   ["Galio"] = {"Classic", "Enchanted", "Hextech", "Commando", "Gatekeeper", "Debonair"},
-  ["Gangplank"] = {"Classic", "Spooky", "Minuteman", "Sailor", "Toy Soldier", "Special Forces", "Sultan", "Captain"},
-  ["Garen"] = {"Classic", "Sanguine", "Desert Trooper", "Commando", "Dreadknight", "Rugged", "Steel Legion", "Chroma Pack: Garnet", "Chroma Pack: Plum", "Chroma Pack: Ivory", "Rogue Admiral"},
+  ["Gangplank"] = {"Classic", "Spooky", "Minuteman", "Sailor", "Toy Soldier", "Special Forces", "Sultan", "Captain", "Dreadnova"},
+  ["Garen"] = {"Classic", "Sanguine", "Desert Trooper", "Commando", "Dreadknight", "Rugged", "Steel Legion", "Chroma Pack: Garnet", "Chroma Pack: Plum", "Chroma Pack: Ivory", "Rogue Admiral", "Warring Kingdoms"},
   ["Gnar"] = {"Classic", "Dino", "Gentleman"},  
   ["Gragas"] = {"Classic", "Scuba", "Hillbilly", "Santa", "Gragas, Esq.", "Vandal", "Oktoberfest", "Superfan", "Fnatic", "Caskbreaker"},
-  ["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat"},
+  ["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat", "Snow Day"},
   -- H
-  ["Hecarim"] = {"Classic", "Blood Knight", "Reaper", "Headless", "Arcade", "Elderwood"},
+  ["Hecarim"] = {"Classic", "Blood Knight", "Reaper", "Headless", "Arcade", "Elderwood", "Worldbreaker", "Lancer Zero"},
   ["Heimerdinger"] = {"Classic", "Alien Invader", "Blast Zone", "Piltover Customs", "Snowmerdinger", "Hazmat"},
   -- I
+  ["Ivern"] = {"Classic", "Candy King"},
   ["Illaoi"] = {"Classic", "Void Bringer"},
   ["Irelia"] = {"Classic", "Nightblade", "Aviator", "Infiltrator", "Frostblade", "Order of the Lotus"},
   -- J
-  ["Janna"] = {"Classic", "Tempest", "Hextech", "Frost Queen", "Victorious", "Forecast", "Fnatic"},
+  ["Janna"] = {"Classic", "Tempest", "Hextech", "Frost Queen", "Victorious", "Forecast", "Fnatic", "Star Guardian"},
   ["JarvanIV"] = {"Classic", "Commando", "Dragonslayer", "Darkforge", "Victorious", "Warring Kingdoms", "Fnatic"},
   ["Jax"] = {"Classic", "The Mighty", "Vandal", "Angler", "PAX", "Jaximus", "Temple", "Nemesis", "SKT T1", "Chroma Pack: Cream", "Chroma Pack: Amber", "Chroma Pack: Brick", "Warden"},
-  ["Jayce"] = {"Classic", "Full Metal", "Debonair", "Forsaken"},
-  ["Jinx"] = {"Classic", "Mafia", "Firecracker", "Slayer"},
+  ["Jayce"] = {"Classic", "Full Metal", "Debonair", "Forsaken", "Brighthammer"},
+  ["Jinx"] = {"Classic", "Mafia", "Firecracker", "Slayer", "Star Guardian"},
+  ["Jhin"] = {"Classic", "High Noon", "Blood Moon", "SKT T1"},
   -- K
   ["Kalista"] = {"Classic", "Blood Moon", "Championship", "SKT T1"},
-  ["Karma"] = {"Classic", "Sun Goddess", "Sakura", "Traditional", "Order of the Lotus", "Warden"},
-  ["Karthus"] = {"Classic", "Phantom", "Statue of", "Grim Reaper", "Pentakill", "Fnatic", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite"},
+  ["Karma"] = {"Classic", "Sun Goddess", "Sakura", "Traditional", "Order of the Lotus", "Warden", "Winter Wonder", "Conqueror"},
+  ["Karthus"] = {"Classic", "Phantom", "Statue of", "Grim Reaper", "Pentakill", "Fnatic", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite", "Lightbane"},
   ["Kassadin"] = {"Classic", "Festival", "Deep One", "Pre-Void", "Harbinger", "Cosmic Reaver"},
   ["Katarina"] = {"Classic", "Mercenary", "Red Card", "Bilgewater", "Kitty Cat", "High Command", "Sandstorm", "Slay Belle", "Warring Kingdoms", "PROJECT"},
-  ["Kayle"] = {"Classic", "Silver", "Viridian", "Unmasked", "Battleborn", "Judgment", "Aether Wing", "Riot"},
-  ["Kennen"] = {"Classic", "Deadly", "Swamp Master", "Karate", "Kennen M.D.", "Arctic Ops"},
-  ["Khazix"] = {"Classic", "Mecha", "Guardian of the Sands"},
+  ["Kayle"] = {"Classic", "Silver", "Viridian", "Unmasked", "Battleborn", "Judgment", "Aether Wing", "Riot", "Pentakill"},
+  ["Kennen"] = {"Classic", "Deadly", "Swamp Master", "Karate", "Kennen M.D.", "Arctic Ops", "Superhero"},
+  ["Khazix"] = {"Classic", "Mecha", "Guardian of the Sands", "Dark Star"},
   ["Kindred"] = {"Classic", "Shadowfire"},
-  ["KogMaw"] = {"Classic", "Caterpillar", "Sonoran", "Monarch", "Reindeer", "Lion Dance", "Deep Sea", "Jurassic", "Battlecast"},
+  ["KogMaw"] = {"Classic", "Caterpillar", "Sonoran", "Monarch", "Reindeer", "Lion Dance", "Deep Sea", "Jurassic", "Battlecast", "Pug Maw"},
   ["Kled"] = {"Classic", "Sir"},
+  ["Kayn"] = {"Classic", "Soulhunter"},
   -- L
   ["Leblanc"] = {"Classic", "Wicked", "Prestigious", "Mistletoe", "Ravenborn"},
-  ["LeeSin"] = {"Classic", "Traditional", "Acolyte", "Dragon Fist", "Muay Thai", "Pool Party", "SKT T1", "Chroma Pack: Black", "Chroma Pack: Blue", "Chroma Pack: Yellow", "Knockout"},
+  ["LeeSin"] = {"Classic", "Traditional", "Acolyte", "Dragon Fist", "Muay Thai", "Pool Party", "SKT T1", "Chroma Pack: Black", "Chroma Pack: Blue", "Chroma Pack: Yellow", "Knockout", "God Fist"},
   ["Leona"] = {"Classic", "Valkyrie", "Defender", "Iron Solari", "Pool Party", "Chroma Pack: Pink", "Chroma Pack: Azure", "Chroma Pack: Lemon", "PROJECT", "Barbecue"},
   ["Lissandra"] = {"Classic", "Bloodstone", "Blade Queen"},
-  ["Lucian"] = {"Classic", "Hired Gun", "Striker", "Chroma Pack: Yellow", "Chroma Pack: Red", "Chroma Pack: Blue", "PROJECT"},
-  ["Lulu"] = {"Classic", "Bittersweet", "Wicked", "Dragon Trainer", "Winter Wonder", "Pool Party"},
+  ["Lucian"] = {"Classic", "Hired Gun", "Striker", "Chroma Pack: Yellow", "Chroma Pack: Red", "Chroma Pack: Blue", "PROJECT", "Heartseeker"},
+  ["Lulu"] = {"Classic", "Bittersweet", "Wicked", "Dragon Trainer", "Winter Wonder", "Pool Party", "Star Guardian"},
   ["Lux"] = {"Classic", "Sorceress", "Spellthief", "Commando", "Imperial", "Steel Legion", "Star Guardian"},
   -- M
   ["Malphite"] = {"Classic", "Shamrock", "Coral Reef", "Marble", "Obsidian", "Glacial", "Mecha", "Ironside", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
-  ["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day"},
-  ["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper"},
-  ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT"},
+  ["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day", "Battle Boss"},
+  ["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper", "Victorious"},
+  ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT", "Cosmic Blade"},
   ["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain", "Pool Party", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
   ["Mordekaiser"] = {"Classic", "Dragon Knight", "Infernal", "Pentakill", "Lord", "King of Clubs"},
-  ["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony","Lunar"},
+  ["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony", "Lunar", "Bewitching"},
   -- N
-  ["Nami"] = {"Classic", "Koi", "River Spirit", "Urf", "Chroma Pack: Sunbeam", "Chroma Pack: Smoke", "Chroma Pack: Twilight"},
-  ["Nasus"] = {"Classic", "Galactic", "Pharaoh", "Dreadknight", "Riot K-9", "Infernal", "Archduke", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite",},
-  ["Nautilus"] = {"Classic", "Abyssal", "Subterranean", "AstroNautilus", "Warden"},
+  ["Nami"] = {"Classic", "Koi", "River Spirit", "Urf", "Chroma Pack: Sunbeam", "Chroma Pack: Smoke", "Chroma Pack: Twilight", "SKT T1"},
+  ["Nasus"] = {"Classic", "Galactic", "Pharaoh", "Dreadknight", "Riot K-9", "Infernal", "Archduke", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite", "Worldbreaker"},
+  ["Nautilus"] = {"Classic", "Abyssal", "Subterranean", "AstroNautilus", "Warden", "Worldbreaker"},
   ["Nidalee"] = {"Classic", "Snow Bunny", "Leopard", "French Maid", "Pharaoh", "Bewitching", "Headhunter", "Warring Kingdoms"},
   ["Nocturne"] = {"Classic", "Frozen Terror", "Void", "Ravager", "Haunting", "Eternum"},
   ["Nunu"] = {"Classic", "Sasquatch", "Workshop", "Grungy", "Nunu Bot", "Demolisher", "TPA", "Zombie"},
   -- O
-  ["Olaf"] = {"Classic", "Forsaken", "Glacial", "Brolaf", "Pentakill", "Marauder", "Butcher"},
-  ["Orianna"] = {"Classic", "Gothic", "Sewn Chaos", "Bladecraft", "TPA", "Winter Wonder"},
+  ["Olaf"] = {"Classic", "Forsaken", "Glacial", "Brolaf", "Pentakill", "Marauder", "Butcher", "SKT T1"},
+  ["Orianna"] = {"Classic", "Gothic", "Sewn Chaos", "Bladecraft", "TPA", "Winter Wonder", "Dark Star"},
+  ["Ornn"] = {"Classic", "Thunder Lord"},
   -- P
   ["Pantheon"] = {"Classic", "Myrmidon", "Ruthless", "Perseus", "Full Metal", "Glaive Warrior", "Dragonslayer", "Slayer", "Baker"},
-  ["Poppy"] = {"Classic", "Noxus", "Lollipoppy", "Blacksmith", "Ragdoll", "Battle Regalia", "Scarlet Hammer"},
+  ["Poppy"] = {"Classic", "Noxus", "Lollipoppy", "Blacksmith", "Ragdoll", "Battle Regalia", "Scarlet Hammer", "Star Guardian"},
   -- Q
-  ["Quinn"] = {"Classic", "Phoenix", "Woad Scout", "Corsair"},
+  ["Quinn"] = {"Classic", "Phoenix", "Woad Scout", "Corsair", "Heartseeker"},
   -- R
   ["Rammus"] = {"Classic", "King", "Chrome", "Molten", "Freljord", "Ninja", "Full Metal", "Guardian of the Sands"},
   ["Reksai"] = {"Classic", "Eternum", "Pool Party"},
-  ["Renekton"] = {"Classic", "Galactic", "Outback", "Bloodfury", "Rune Wars", "Scorched Earth", "Pool Party", "Scorched Earth", "Prehistoric", "SKT 1 "},
+  ["Renekton"] = {"Classic", "Galactic", "Outback", "Bloodfury", "Rune Wars", "Scorched Earth", "Pool Party", "Scorched Earth", "Prehistoric", "SKT 1", "Renektoy"},
   ["Rengar"] = {"Classic", "Headhunter", "Night Hunter", "SSW"},
-  ["Riven"] = {"Classic", "Redeemed", "Crimson Elite", "Battle Bunny", "Championship", "Dragonblade", "Arcade", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
+  ["Riven"] = {"Classic", "Redeemed", "Crimson Elite", "Battle Bunny", "Championship", "Dragonblade", "Arcade", "Dawnbringer"},
   ["Rumble"] = {"Classic", "Rumble in the Jungle", "Bilgerat", "Super Galaxy"},
+  ["Rakan"] = {"Classic", "Cosmic Dawn"},
   ["Ryze"] = {"Classic", "Human", "Tribal", "Uncle", "Triumphant", "Professor", "Zombie", "Dark Crystal", "Pirate", "Whitebeard", "SKT 1"},
   -- S
-  ["Sejuani"] = {"Classic", "Sabretusk", "Darkrider", "Traditional", "Bear Cavalry", "Poro Rider"},
+  ["Sejuani"] = {"Classic", "Sabretusk", "Darkrider", "Traditional", "Bear Cavalry", "Poro Rider", "Dawnchaser"},
   ["Shaco"] = {"Classic", "Mad Hatter", "Royal", "Nutcracko", "Workshop", "Asylum", "Masked", "Wild Card"},
   ["Shen"] = {"Classic", "Frozen", "Yellow Jacket", "Surgeon", "Blood Moon", "Warlord", "TPA"},
   ["Shyvana"] = {"Classic", "Ironscale", "Boneclaw", "Darkflame", "Ice Drake", "Championship"},
   ["Singed"] = {"Classic", "Riot Squad", "Hextech", "Surfer", "Mad Scientist", "Augmented", "Snow Day", "SSW"},
   ["Sion"] = {"Classic", "Hextech", "Barbarian", "Lumberjack", "Warmonger"},
-  ["Sivir"] = {"Classic", "Warrior Princess", "Spectacular", "Huntress", "Bandit", "PAX", "Snowstorm", "Warden", "Victorious"},
+  ["Sivir"] = {"Classic", "Warrior Princess", "Spectacular", "Huntress", "Bandit", "PAX", "Snowstorm", "Warden", "Victorious", "Neo PAX"},
   ["Skarner"] = {"Classic", "Sandscourge", "Earthrune", "Battlecast Alpha", "Guardian of the Sands"},
   ["Sona"] = {"Classic", "Muse", "Pentakill", "Silent Night", "Guqin", "Arcade", "DJ"},
   ["Soraka"] = {"Classic", "Dryad", "Divine", "Celestine", "Reaper", "Order of the Banana"},
   ["Swain"] = {"Classic", "Northern Front", "Bilgewater", "Tyrant"},
-  ["Syndra"] = {"Classic", "Justicar", "Atlantean", "Queen of Diamonds"},
+  ["Syndra"] = {"Classic", "Justicar", "Atlantean", "Queen of Diamonds", "SKT T1"},
   -- T
   ["TahmKench"] = {"Classic", "Master Chef"},
   ["Taliyah"] = {"Classic", "Freljord"},
-  ["Talon"] = {"Classic", "Renegade", "Crimson Elite", "Dragonblade", "SSW"},
+  ["Talon"] = {"Classic", "Renegade", "Crimson Elite", "Dragonblade", "SSW", "Blood Moon"},
   ["Taric"] = {"Classic", "Emerald", "Armor of the Fifth Age", "Bloodstone", "Pool Party"},
-  ["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
+  ["Teemo"] = {"Classic", "Happy Elf", "Recon", "Badger", "Astronaut", "Cottontail", "Super", "Panda", "Omega Squad", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Little Devil"},
   ["Thresh"] = {"Classic", "Deep Terror", "Championship", "Blood Moon", "SSW"},
-  ["Tristana"] = {"Classic", "Riot Girl", "Earnest Elf", "Firefighter", "Guerilla", "Buccaneer", "Rocket Girl", "Chroma Pack: Navy", "Chroma Pack: Purple", "Chroma Pack: Orange", "Dragon Trainer"},
-  ["Trundle"] = {"Classic", "Lil' Slugger", "Junkyard", "Traditional", "Constable"},
-  ["Tryndamere"] = {"Classic", "Highland", "King", "Viking", "Demonblade", "Sultan", "Warring Kingdoms", "Nightmare"},
-  ["TwistedFate"] = {"Classic", "PAX", "Jack of Hearts", "The Magnificent", "Tango", "High Noon", "Musketeer", "Underworld", "Red Card", "Cutpurse"},
-  ["Twitch"] = {"Classic", "Kingpin", "Whistler Village", "Medieval", "Gangster", "Vandal", "Pickpocket", "SSW"},
+  ["Tristana"] = {"Classic", "Riot Girl", "Earnest Elf", "Firefighter", "Guerilla", "Buccaneer", "Rocket Girl", "Chroma Pack: Navy", "Chroma Pack: Purple", "Chroma Pack: Orange", "Dragon Trainer", "Bewitching", "Omega Squad"},
+  ["Trundle"] = {"Classic", "Lil' Slugger", "Junkyard", "Traditional", "Constable", "Worldbreaker"},
+  ["Tryndamere"] = {"Classic", "Highland", "King", "Viking", "Demonblade", "Sultan", "Warring Kingdoms", "Nightmare", "Chemtech"},
+  ["TwistedFate"] = {"Classic", "PAX", "Jack of Hearts", "The Magnificent", "Tango", "High Noon", "Musketeer", "Underworld", "Red Card", "Cutpurse", "Blood Moon"},
+  ["Twitch"] = {"Classic", "Kingpin", "Whistler Village", "Medieval", "Gangster", "Vandal", "Pickpocket", "SSW", "Omega Squad"},
   -- U
   ["Udyr"] = {"Classic", "Black Belt", "Primal", "Spirit Guard", "Definitely Not"},
   ["Urgot"] = {"Classic", "Giant Enemy Crabgot", "Butcher", "Battlecast"},
   -- V
   ["Varus"] = {"Classic", "Blight Crystal", "Arclight", "Arctic Ops", "Heartseeker", "Swiftbolt"},
   ["Vayne"] = {"Classic", "Vindicator", "Aristocrat", "Dragonslayer", "Heartseeker", "SKT T1", "Arclight", "Chroma Pack: Green", "Chroma Pack: Red", "Chroma Pack: Silver", "Hextech"},
-  ["Veigar"] = {"Classic", "White Mage", "Curling", "Veigar Greybeard", "Leprechaun", "Baron Von", "Superb Villain", "Bad Santa", "Final Boss"},
+  ["Veigar"] = {"Classic", "White Mage", "Curling", "Veigar Greybeard", "Leprechaun", "Baron Von", "Superb Villain", "Bad Santa", "Final Boss", "Omega Squad"},
   ["Velkoz"] = {"Classic", "Battlecast", "Arclight"},
-  ["Vi"] = {"Classic", "Neon Strike", "Officer", "Debonair", "Demon"},
+  ["Vi"] = {"Classic", "Neon Strike", "Officer", "Debonair", "Demon", "Warring Kingdoms"},
   ["Viktor"] = {"Classic", "Full Machine", "Prototype", "Creator"},
   ["Vladimir"] = {"Classic", "Count", "Marquis", "Nosferatu", "Vandal", "Blood Lord", "Soulstealer", "Academy"},
   ["Volibear"] = {"Classic", "Thunder Lord", "Northern Storm", "Runeguard", "Captain"},
@@ -159,17 +167,18 @@ local AllSkins = { --
   ["Warwick"] = {"Classic", "Grey", "Urf the Manatee", "Big Bad", "Tundra Hunter", "Feral", "Firefang", "Hyena", "Marauder"},
   ["MonkeyKing"] = {"Classic", "Volcanic", "General", "Jade Dragon", "Underworld","Radiant"},
   -- X
+  ["Xayah"] = {"Classic", "Cosmic Dusk"},
   ["Xerath"] = {"Classic", "Runeborn", "Battlecast", "Scorched Earth", "Guardian of the Sands"},
-  ["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6"},
+  ["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Dragonslayer"},
   -- Y
-  ["Yasuo"] = {"Classic", "High Noon", "PROJECT", "Blood Moon", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
+  ["Yasuo"] = {"Classic", "High Noon", "PROJECT", "Blood Moon", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Nightbringer"},
   ["Yorick"] = {"Classic", "Undertaker", "Pentakill"},
   -- Z
-  ["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey"},
+  ["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey", "SKT T1"},
   ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Championship"},
-  ["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist"},
+  ["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist", "Battle Boss"},
   ["Zilean"] = {"Classic", "Old Saint", "Groovy", "Shurima Desert", "Time Machine", "Blood Moon"},
-  ["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1"},               
+  ["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1", "Dragon Sorceress"},               
     };
     local champions = {
   ["Aatrox"] = {600, 1, 1000, 550},  
@@ -222,7 +231,9 @@ local AllSkins = { --
   ["JarvanIV"] = {770, 525, 800, 650,},                                                                                                                                                                                                                
   ["Jax"] = {700, 0, 0, 0,},                                                                                                                                                                                                                                                                                                                         
   ["Jayce"] = {600, 285, 240, 0,},                                                                                                                                                                                                               
-  ["Jinx"] = {0, 1450, 900, 25000,},                                                                                                                                                                                                                                                                                                             
+  ["Jinx"] = {0, 1450, 900, 25000,}, 
+  ["Jhin"] = {550, 3000, 750, 25000,}, 
+
   -- K                                                                                                                                                                                                                        
   ["Kalista"] = {1150, 5000, 1000, 0,},                                                                                                                                                                                                               
   ["Karma"] = {950, 675, 800, 0,},                                                                                                                                                                                                              
@@ -325,20 +336,28 @@ local AllSkins = { --
   ["Zed"] = {900, 650, 290, 625,},                                                                                                                                                                                                                        
   ["Ziggs"] = {850, 1000, 900, 5300,},                                                                                                                                                                                                                        
   ["Zilean"] = {900, 0, 700, 900,},                                                                                                                                                                                                                        
-  ["Zyra"] = {800, 850, 1100, 700,},             
+  ["Zyra"] = {800, 850, 1100, 700,},
+  --NEWS
+  ["Ornn"] = {800, 400, 800, 2500,},
+  ["Kayn"] = {350, 700, 0, 550,},
+  ["Ivern"] = {1075, 800, 750, 0,},
+  ["Xayah"] = {1100, 0, 0, 1100,},
+  ["Camille"] = {0, 610, 800, 475,},
+  ["Rakan"] = {900, 600, 550, 200,},
+
       };
   ENSprite = createSprite("\\GlaxyUT\\Change.png")
 local Sprite_SK = {
-  {posicion_x = 1150, posicion_y = 850, sizeX = 132, sizeY = 68},
+  {posicion_x = 1080, posicion_y = 880, sizeX = 132, sizeY = 68},
 }
 
 
 local EN = true
-local Table = {["Aatrox"] = true, ["Yasuo"] = true,["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
+local Table = {["Ornn"] = true, ["Kayn"] = true, ["Rakan"] = true, ["Xayah"] = true, ["Camille"] = true, ["Ivern"] = true, ["Illaoi"] = true, ["Kindred"] = true, ["Aatrox"] = true, ["Yasuo"] = true, ["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
 local SkinList100 = {"Blue Classic","Red Pool Party","Blue Pool Party","Red PROJECT","Blue PROJECT","Red Snow","Blue Snow","Red DRAVEN","Blue DRAVEN","Red Classic"}
 local SkinList200 = {"Red Classic","Blue Pool Party","Red Pool Party","Blue PROJECT","Red PROJECT","Blue Snow","Red Snow","Blue DRAVEN","Red DRAVEN","Blue Classic"}
-local version = 1.20
-local gameV = "6.19";
+local version = 1.22
+local gameV = "7.17";
 local scriptname = "Glaxy Utility";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -366,7 +385,7 @@ end
 function OnUnload()
 	if Config.SkinChanger.Enablee then
 		SetSkin(myHero, -1)
-		Print("<font color=\"#FFA07A\"><i> -- Utility Script Unload, BYE BYE! </i>" ..GetUser()) 
+		Print("<font color=\"#FFA07A\"><i> -- Glaxy Utility Script Unload, BYE BYE! </i>" ..GetUser()) 
 	end
   for i, minion in ipairs(Minion.objects) do
     SetSkin(minion, -1)
@@ -378,7 +397,7 @@ end
 
 function CheckSprites()
   local Path = SPRITE_PATH.."\\GlaxyUT\\"
-  local Url = "http://dmitrypsarev.com\\GlaxyUT\\" 
+  local Url = "http://glaxy.000webhostapp.com\\GlaxyUT\\" 
   local spriteEN = "Change.png"
   
   if not FileExist(Path..spriteEN)  then
@@ -640,7 +659,7 @@ local _saves, _initSave = {}, true
 --- DRAW ---
 ----------------------
 function OnDraw()
-	if myHero.charName == 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' and not myHero.dead then 
+	if myHero.charName == 'Ornn' or 'Kayn' or 'Rakan' or 'Xayah' or 'Camille' or 'Ivern' or 'Aatrox' or 'Ahri' or 'Akali' or 'Alitar' or 'Amumu' or 'Anivia' or 'Annie' or 'Ashe' or 'AurelionSol' or 'Azir' or 'Bard' or 'Blitzcrank' or 'Brand' or 'Braum' or 'Caitlyn' or 'Cassiopeia' or 'Chogath' or 'Corki' or 'Darius' or 'Diana' or 'DrMundo' or 'Draven' or 'Ekko' or 'Elise' or 'Evelynn' or 'Ezreal' or 'Fiddlesticks' or 'Fiora' or 'Fizz' or 'Galio' or 'Gangplank' or 'Garen' or 'Gnar' or 'Gragas' or 'Graves' or 'Hecarim' or 'Heimerdinger' or 'Illaoi' or 'Irelia' or 'Janna' or 'JarvanIV' or 'Jax' or 'Jayce' or 'Jhin' or 'Jinx' or 'Kalista' or 'Karma' or 'Karthus' or 'Kassadin' or 'Katarina' or 'Kayle' or 'Kennen' or 'Khazix' or 'Kindred' or 'KogMaw' or 'Kled' or 'Leona' or 'Leblanc' or 'LeeSin' or 'Lissandra' or 'Lucian' or 'Lulu' or 'Lux' or 'Malphite' or 'Malzahar' or 'Maokai' or 'MasterYi' or 'MissFortune' or 'Mordekaiser' or 'Morgana' or 'Nami' or 'Nautilus' or 'Nidalee' or 'Nocturne' or 'Nunu' or 'Olaf' or 'Orianna' or 'Pantheon' or 'Poppy' or 'Quinn' or 'Rammus' or 'Reksai' or 'Renekton' or 'Rengar' or 'Riven' or 'Rumble' or 'Ryze' or 'Sejuani' or 'Shaco' or 'Shen' or 'Shyvana' or 'Sion' or 'Singed' or 'Sivir' or 'Skarner' or 'Sona' or 'Soraka' or 'Swain' or 'Syndra' or 'TahmKench' or 'Taliyah' or 'Talon' or 'Taric' or 'Teemo' or 'Thresh' or 'Tristana' or 'Trundle' or 'Tryndamere' or 'TwistedFate' or 'Twitch' or 'Udyr' or 'Urgot' or 'Varus' or 'Veigar' or 'Vayne' or 'Velkoz' or 'Vi' or 'Viktor' or 'Volibear' or 'Warwick' or 'Wukong' or 'Xerath' or 'XinZhao' or 'Yasuo' or 'Yorick' or 'Zac' or 'Zed' or 'Ziggs' or 'Zilean' or 'Zyra' and not myHero.dead then 
   	if Config.draw.AA and not myHero.dead then
   		DrawCircleLFC(myHero.x, myHero.y, myHero.z, myHero.range + myHero.boundingRadius, ARGB(Config.draw.AAA[1], Config.draw.AAA[2], Config.draw.AAA[3], Config.draw.AAA[4]))
   	end
@@ -660,10 +679,10 @@ function OnDraw()
   end
     if Config.SkinChanger.EnableSprite then
     if EN then 
-      ENSprite:Draw(1150, 850, 255)
+      ENSprite:Draw(1070, 880, 255)
       ENSprite:SetScale(1, 1  )
     else
-      ENSprite:Draw(1150, 850, 0)
+      ENSprite:Draw(1070, 880, 0)
       ENSprite:SetScale(1, 1)
     end
   end
