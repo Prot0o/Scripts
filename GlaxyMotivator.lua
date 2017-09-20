@@ -11,7 +11,7 @@ local FR = true
 local CH = true
 local TUR = true
 local KOR = true
-local version = 0.037
+local version = 0.038
 local death = false
 local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Motivator"
@@ -54,7 +54,7 @@ function OnLoad()
 	GMMenu()
 	CheckSprites()
  	Print("¡Thanks for use " ..scriptname.."!. Regards, Glaxy!")
- 	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">"..version.." </font>Loaded. Have fun!")
+ 	Print("<font color=\"#FFFFFF\">VerScript: <font color=\"#FFFF00\">"..version.." </font>VerGame: <font color=\"#FFFF00\">"..gameV.." - </font>Loaded. Have fun!")
 end
 
 function GMMenu()
