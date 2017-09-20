@@ -7,10 +7,11 @@
 --..######...########.##.....##.##.....##....##.......########....###....########.########.########.##.....##
 
 
-local version = 0.1
-local gameV = "7.17";
+local version = 0.2
+local gameV = "7.18";
 local scriptname = "Glaxy Leveler";
 local author ="Glaxy";
+local gameV = GetGameVersion():split(' ')[1]
 local contact = "dimitri.psarev";
 
 local Img1 = true
@@ -22,6 +23,15 @@ local Img6 = true
 local Img7 = true
 local Img8 = true
 
+function Print(v)
+    print("<font color=\"#FFBF00\"><b>[Glaxy Leveler!]</b></font> <font color=\"#FFFFFF\">" .. v .. "</font>")
+end
+
+   if NONVIP_USER then return
+   		Print("Impossible to load this Script. You need VIP Subscription for use this tool. Att: "..author.."")
+   end
+
+   
 function RandomPrint2(x, v)
 	if v == 0 then
 		DelayAction(function() Print("¡Thanks for use this script!, Regards, Glaxy!") end, x)
@@ -30,6 +40,7 @@ function RandomPrint2(x, v)
 	elseif v == 2 then
 		DelayAction(function() Print("¡Script was loaded, Good luck! -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
 	end
+
 end
 
 Img1Sprite = createSprite("\\GlaxyST\\1.png")
@@ -128,9 +139,6 @@ function CheckSprites()
   	end
 end
 
-function Print(v)
-    print("<font color=\"#FFBF00\"><b>[Glaxy Leveler!]</b></font> <font color=\"#FFFFFF\">" .. v .. "</font>")
-end
 
 function OnWndMsg(msg, key)
 	if GetInGameTimer() < 60 then 
@@ -140,7 +148,9 @@ function OnWndMsg(msg, key)
 				for x, sprites in pairs(lvlspell) do
 	                if CursorIsUnder(sprites.posicion_x, sprites.posicion_y, sprites.sizeX, sprites.sizeY) then 
 		                levelSequence = sprites.levelSequence
-		                Print("You select: "..sprites.names..", Loading... ")
+		                DelayAction(function() Print("You select: "..sprites.names..", Loading... ") end, 0)
+		                DelayAction(function() Print("Loaded 100%" )end, 1.5)
+
 		                lvlspell = {} 
 		                Img1 = false
 		                Img2 = false
@@ -246,8 +256,9 @@ function GlaxyLevelerMenu()
     GlaxyLeveler:addParam("info4", "Contact me (SKYPE): "..contact.."", SCRIPT_PARAM_INFO, "")
     GlaxyLeveler:permaShow("info2")
 
-end
 
+
+end
 function AutoUpdate()
 	local SCRIPT_NAME = "GlaxyLeveler";
 	local UPDATE_HOST = "raw.githubusercontent.com";
