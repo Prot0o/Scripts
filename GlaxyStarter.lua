@@ -1,11 +1,16 @@
 
-
+  -- ____   _          _     __  __ __   __    ____    _____      _      ____    _____   _____   ____    ____  
+ -- / ___| | |        / \    \ \/ / \ \ / /   / ___|  |_   _|    / \    |  _ \  |_   _| | ____| |  _ \  / ___| 
+ --| |  _  | |       / _ \    \  /   \ V /    \___ \    | |     / _ \   | |_) |   | |   |  _|   | |_) | \___ \ 
+-- | |_| | | |___   / ___ \   /  \    | |      ___) |   | |    / ___ \  |  _ <    | |   | |___  |  _ <   ___) |
+ --  \____| |_____| /_/   \_\ /_/\_\   |_|     |____/    |_|   /_/   \_\ |_| \_\   |_|   |_____| |_| \_\ |____/ ---
+                                                                                                             
 
 -------------------------------------------------------------------------------
 ----------------------------GLAXY STARTERS-------------------------------------
 -------------------------------------------------------------------------------
-local version = 0.05
-local gameV = "6.24";
+local version = 0.07
+local gameV = "7.18";
 local scriptname = "Glaxy Starters";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -41,13 +46,19 @@ local WardNS = true
 
 
 
+
+
 function RandomPrint2(x, v)
 	if v == 0 then
 		DelayAction(function() Print("¡Thanks for use this script!, Regards, Glaxy!") end, x)
 	elseif v == 1 then
 		DelayAction(function() Print("If you want more awesome features, Check <font color=\"#2E64FE\"><b>Glaxy Utility</b></font> script.") end, x)
 	elseif v == 2 then
+		if GetInGameTimer() < 60 then
+
+
 		DelayAction(function() Print("¡Script was loaded, Good luck! -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
+	end
 	end
 end
 
@@ -86,16 +97,18 @@ assert(load(Base64Decode("G0x1YVIAAQQEBAgAGZMNChoKAAAAAAAAAAAAAQpQAAAABAAAAEYAQA
 TrackerLoad("jLBTYcuExAwGLJZH")
 
 local lvlspell = {
-	{archivo = "22.png", names = "R-Q-W-E", posicion_x = 550, posicion_y = 555, sizeX = 800, sizeY = 47, levelSequence = {1, 2, 3, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3}},
-	{archivo = "33.png", names = "R-Q-E-W", posicion_x = 550, posicion_y = 600, sizeX = 800, sizeY = 47, levelSequence =  {1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2}},
-	{archivo = "44.png", names = "R-W-Q-E", posicion_x = 550, posicion_y = 645, sizeX = 800, sizeY = 47, levelSequence =  {2, 1, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3}},
-	{archivo = "55.png", names = "R-W-E-Q", posicion_x = 550, posicion_y = 690, sizeX = 800, sizeY = 47, levelSequence =  {2, 3, 1, 2, 2, 4, 2, 3, 2, 3, 4, 3, 3, 1, 1, 4, 1, 1}},
-	{archivo = "66.png", names = "R-E-Q-W", posicion_x = 550, posicion_y = 735, sizeX = 800, sizeY = 47, levelSequence =  {3, 1, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2}},
-	{archivo = "77.png", names = "R-E-W-Q", posicion_x = 550, posicion_y = 780, sizeX = 800, sizeY = 47, levelSequence = {3, 2, 1, 3, 3, 4, 3, 2, 3, 2, 4, 2, 2, 1, 1, 4, 1, 1}},
+	{archivo = "22.png", names = "R-Q-W-E", posicion_x = 550, posicion_y = 502, sizeX = 306, sizeY = 81, levelSequence = {1, 2, 3, 1, 1, 4, 1, 2, 1, 2, 4, 2, 2, 3, 3, 4, 3, 3}},
+	{archivo = "33.png", names = "R-Q-E-W", posicion_x = 856, posicion_y = 502, sizeX = 232, sizeY = 81, levelSequence =  {1, 3, 2, 1, 1, 4, 1, 3, 1, 3, 4, 3, 3, 2, 2, 4, 2, 2}},
+	{archivo = "44.png", names = "R-W-Q-E", posicion_x = 1088, posicion_y = 502, sizeX = 262, sizeY = 81, levelSequence =  {2, 1, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3}},
+	{archivo = "55.png", names = "R-W-E-Q", posicion_x = 550, posicion_y = 583, sizeX = 306, sizeY = 116, levelSequence =  {2, 3, 1, 2, 2, 4, 2, 3, 2, 3, 4, 3, 3, 1, 1, 4, 1, 1}},
+	{archivo = "66.png", names = "R-E-Q-W", posicion_x = 856, posicion_y = 583, sizeX = 232, sizeY = 116, levelSequence =  {3, 1, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2}},
+	{archivo = "77.png", names = "R-E-W-Q", posicion_x = 1088, posicion_y = 583, sizeX = 262, sizeY = 116, levelSequence = {3, 2, 1, 3, 3, 4, 3, 2, 3, 2, 4, 2, 2, 1, 1, 4, 1, 1}},
 }
 
 function OnLoad()
-
+if GetInGameTimer() > 60 then
+	Print("Script is disabled. Please use it only in the first minut.")
+end
 	RandomPrint2(1, 2)
 	RandomPrint2(300, 0)
 	RandomPrint2(600, 1)
@@ -130,27 +143,27 @@ function OnLoad()
 
 if SSmite then
  		sprites_list = {
-			{archivo = "1.png", name = "Doran Sword", posicion_x = 550, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1055, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "2.png", name = "Normal Sword", posicion_x = 650, posicion_y = 280, sizeX = 100, sizeY = 119,  buy=1036, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "3.png", name = "Doran Ring", posicion_x = 750, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1056, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "4.png", name = "Book", posicion_x = 850, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1052, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "5.png", name = "Darkseal", posicion_x = 950, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1082, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "6.png", name = "Shield", posicion_x = 1050, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1054, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "7.png", name = "Boots", posicion_x = 1150, posicion_y = 280, sizeX = 100, sizeY = 119, buy= 1001, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "8.png", name = "Cull", posicion_x = 1250, posicion_y = 280, sizeX = 100, sizeY = 119, buy= 1083, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "9.png", name = "Ancient Coin", posicion_x = 550, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3302, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "10.png", name = "Relic Shield", posicion_x = 650, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3301, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "11.png", name = "Spellthief Edge", posicion_x = 750, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3303, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "12.png", name = "Hunter Potion", posicion_x = 850, posicion_y = 395, sizeX = 100, sizeY = 119, buy=2032, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "13.png", name = "Corrupting Potion", posicion_x = 950, posicion_y = 395, sizeX = 100, sizeY = 119, buy=2033, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "14.png", name = "Armor", posicion_x = 1050, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1029, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "15.png", name = "Machete", posicion_x = 1150, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "16.png", name = "Talisman", posicion_x = 1250, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "1.png", name = "Doran Sword", posicion_x = 550, posicion_y = 280, sizeX = 134, sizeY = 81, buy= 1055, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "2.png", name = "Normal Sword", posicion_x = 684, posicion_y = 280, sizeX = 96, sizeY = 81,  buy= 1036, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "3.png", name = "Doran Ring", posicion_x = 780, posicion_y = 280, sizeX = 90, sizeY = 81, buy= 1056, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "4.png", name = "Book", posicion_x = 870, posicion_y = 280, sizeX = 87, sizeY = 81, buy= 1052, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "5.png", name = "Darkseal", posicion_x = 957, posicion_y = 280, sizeX = 89, sizeY = 81, buy= 1082, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "6.png", name = "Shield", posicion_x = 1046, posicion_y = 280, sizeX = 89, sizeY = 81, buy= 1054, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "7.png", name = "Boots", posicion_x = 1135, posicion_y = 280, sizeX = 92, sizeY = 81, buy= 1001, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "8.png", name = "Cull", posicion_x = 1227, posicion_y = 280, sizeX = 123, sizeY = 81, buy= 1083, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "9.png", name = "Ancient Coin", posicion_x = 550, posicion_y = 361, sizeX = 134, sizeY = 80, buy=3302, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "10.png", name = "Relic Shield", posicion_x = 684, posicion_y = 361, sizeX = 96, sizeY = 80, buy=3301, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "11.png", name = "Spellthief Edge", posicion_x = 780, posicion_y = 361, sizeX = 90, sizeY = 80, buy=3303, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "12.png", name = "Hunter Potion", posicion_x = 870, posicion_y = 361, sizeX = 85, sizeY = 80, buy=2032, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "13.png", name = "Corrupting Potion", posicion_x = 955, posicion_y = 361, sizeX = 91, sizeY = 80, buy=2033, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "14.png", name = "Armor", posicion_x = 1046, posicion_y = 361, sizeX = 89, sizeY = 80, buy=1029, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "15.png", name = "Machete", posicion_x = 1135, posicion_y = 361, sizeX = 92, sizeY = 80, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "16.png", name = "Talisman", posicion_x = 1227, posicion_y = 361, sizeX = 123, sizeY = 80, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 		}
-		pink_list = {
-			{archivo = "WardS.png", name = "Pink Selected", posicion_x = 1270, posicion_y = 180, sizeX = 100, sizeY = 119, buy= 2043, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "WardNS.png", name = "Pink Non Selected", posicion_x = 1270, posicion_y = 180, sizeX = 100, sizeY = 119, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-		}
+	--	pink_list = {
+		--	{archivo = "WardS.png", name = "Pink Selected", posicion_x = 1236, posicion_y = 181, sizeX = 113, sizeY = 179, buy= 2043, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+		--	{archivo = "WardNS.png", name = "Pink Non Selected", posicion_x = 1236, posicion_y = 181, sizeX = 113, sizeY = 179, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+	--	}
 	else
 		sprites_list = {
 			{archivo = "1.png", name = "Doran Sword", posicion_x = 550, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1055, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
@@ -161,22 +174,22 @@ if SSmite then
 			{archivo = "6.png", name = "Shield", posicion_x = 1050, posicion_y = 280, sizeX = 100, sizeY = 119, buy=1054, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 			{archivo = "7.png", name = "Boots", posicion_x = 1150, posicion_y = 280, sizeX = 100, sizeY = 119, buy= 1001, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 			{archivo = "8.png", name = "Cull", posicion_x = 1250, posicion_y = 280, sizeX = 100, sizeY = 119, buy= 1083, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "9.png", name = "Ancient Coin", posicion_x = 550, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3302, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "10.png", name = "Relic Shield", posicion_x = 650, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3301, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "11.png", name = "Spellthief Edge", posicion_x = 750, posicion_y = 395, sizeX = 100, sizeY = 119, buy=3303, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "12.png", name = "Hunter Potion", posicion_x = 850, posicion_y = 395, sizeX = 100, sizeY = 119, buy=2032, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "13.png", name = "Corrupting Potion", posicion_x = 950, posicion_y = 395, sizeX = 100, sizeY = 119, buy=2033, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "14.png", name = "Armor", posicion_x = 1050, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1029, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "9.png", name = "Ancient Coin", posicion_x = 550, posicion_y = 361, sizeX = 100, sizeY = 119, buy=3302, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "10.png", name = "Relic Shield", posicion_x = 650, posicion_y = 361, sizeX = 100, sizeY = 119, buy=3301, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "11.png", name = "Spellthief Edge", posicion_x = 750, posicion_y = 361, sizeX = 100, sizeY = 119, buy=3303, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "12.png", name = "Hunter Potion", posicion_x = 850, posicion_y = 361, sizeX = 100, sizeY = 119, buy=2032, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "13.png", name = "Corrupting Potion", posicion_x = 950, posicion_y = 361, sizeX = 100, sizeY = 119, buy=2033, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "14.png", name = "Armor", posicion_x = 1050, posicion_y = 361, sizeX = 100, sizeY = 119, buy=1029, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 
 		}
-		pink_list = {
-			{archivo = "WardNS.png", name = "Pink Ward", posicion_x = 1270, posicion_y = 180, sizeX = 64, sizeY = 104, buy= 2043},
-
-		}
+	--	pink_list = {
+	--		{archivo = "WardS.png", name = "Pink Ward", posicion_x = 1236, posicion_y = 181, sizeX = 113, sizeY = 179, buy= 2043},
+--
+	--	}
 	
 		smite_list = {
-			{archivo = "15.png", name = "Machete", posicion_x = 1150, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
-			{archivo = "16.png", name = "Talisman", posicion_x = 1250, posicion_y = 395, sizeX = 100, sizeY = 119, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "15.png", name = "Machete", posicion_x = 1150, posicion_y = 361, sizeX = 100, sizeY = 119, buy=1041, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
+			{archivo = "16.png", name = "Talisman", posicion_x = 1250, posicion_y = 361, sizeX = 100, sizeY = 119, buy=1039, buy1 = 2003, buy2 = 2003, buy3 = 2003, buy4 = 3340},
 				}
 
 	end
@@ -184,7 +197,7 @@ end
 function CheckSprites()
 
 	local Path = SPRITE_PATH.."\\GlaxyAB\\"
-	local Url = "http://dmitrypsarev.com\\GlaxyAB\\" 
+	local Url = "http://glaxy.000webhostapp.com\\GlaxyAB\\" 
 	local spriteSword = "1.png"
 	local spriteSwordN = "2.png"
 	local spriteRing = "3.png"
@@ -374,19 +387,19 @@ function OnWndMsg(msg, key)
 		            end
 		        end
 	   		end	
-	   		if key == 1 then
-				for u, spriteu in pairs(pink_list) do
-	                if CursorIsUnder(spriteu.posicion_x, spriteu.posicion_y, spriteu.sizeX, spriteu.sizeY) then 
-                       DelayAction(function() BuyItem(spriteu.buy) end, 0.5)
-                       Print("<font color=\"#FFA07A\"><i> Buying "..spriteu.name .."</i>")
+	   	--	if key == 1 then
+			--	for u, spriteu in pairs(pink_list) do
+	           --     if CursorIsUnder(spriteu.posicion_x, spriteu.posicion_y, spriteu.sizeX, spriteu.sizeY) then 
+                  --    DelayAction(function() BuyItem(spriteu.buy) end, 0.5)
+                  --     Print("<font color=\"#FFA07A\"><i> Buying "..spriteu.name .."</i>")
 
-                       pink_list = {} 
+                  --     pink_list = {} 
                        
-                       WardNS = false
+                   --    WardNS = false
           
-		            end
-		        end
-	   		end	
+		          --  end
+		     --   end
+	   	--	end	
 	end
 end
 
@@ -403,17 +416,17 @@ function OnDraw()
   if GetInGameTimer() < 60 then
 
 			if Banner1 then 
-				Banner1Sprite:Draw(550, 330, 255)
+				Banner1Sprite:Draw(550, 262, 255)
 				Banner1Sprite:SetScale(1, 1)
 			else
-				Banner1Sprite:Draw(550, 395, 0)
+				Banner1Sprite:Draw(550, 262, 0)
 				Banner1Sprite:SetScale(1, 1)
 			end
 			if Banner then 
-				BannerSprite:Draw(550, 100, 255)
+				BannerSprite:Draw(550, 101, 255)
 				BannerSprite:SetScale(1, 1)
 			else
-				BannerSprite:Draw(550, 100, 0)
+				BannerSprite:Draw(550, 101, 0)
 				BannerSprite:SetScale(1, 1)
 			end
 			if Sword then
@@ -424,177 +437,178 @@ function OnDraw()
 			   	SwordSprite:SetScale(1, 1) 
 			end
 			if SwordN then
-			   	SwordNSprite:Draw(650, 280, 255)
+			   	SwordNSprite:Draw(684, 280, 255)
 			   	SwordNSprite:SetScale(1, 1)
 			else
-			   	SwordNSprite:Draw(650, 280, 0)
+			   	SwordNSprite:Draw(648, 280, 0)
 			   	SwordNSprite:SetScale(1, 1)
 			end
 			if Ring then
-				RingSprite:Draw(750, 280, 255)
+				RingSprite:Draw(780, 280, 255)
 				RingSprite:SetScale(1, 1)
 			else
-				RingSprite:Draw(750, 280, 0)
+				RingSprite:Draw(780, 280, 0)
 				RingSprite:SetScale(1, 1)
 			end
 			if Book then
-				BookSprite:Draw(850, 280, 255)
+				BookSprite:Draw(870, 280, 255)
 				BookSprite:SetScale(1, 1)
 			else
-				BookSprite:Draw(850, 280, 0)
+				BookSprite:Draw(870, 280, 0)
 				BookSprite:SetScale(1, 1)
 			end
 			if Darkseal then
-				DarksealSprite:Draw(950, 280, 255)
+				DarksealSprite:Draw(957, 280, 255)
 				DarksealSprite:SetScale(1, 1)
 			else
-				DarksealSprite:Draw(950, 280, 0)
+				DarksealSprite:Draw(957, 280, 0)
 				DarksealSprite:SetScale(1, 1)
 			end
 			if Shield then
-				ShieldSprite:Draw(1050, 280, 255)
+				ShieldSprite:Draw(1046, 280, 255)
 				ShieldSprite:SetScale(1, 1)
 			else
-				ShieldSprite:Draw(1050, 280, 0)
+				ShieldSprite:Draw(1046, 280, 0)
 				ShieldSprite:SetScale(1, 1)
 			end
 			if Boots then
-				BootsSprite:Draw(1150, 280, 255)
+				BootsSprite:Draw(1135, 280, 255)
 				BootsSprite:SetScale(1, 1)
 			else
-				BootsSprite:Draw(1150, 280, 0)
+				BootsSprite:Draw(1135, 280, 0)
 				BootsSprite:SetScale(1, 1)
 			end
 			if Cull then
-				CullSprite:Draw(1250, 280, 255)
+				CullSprite:Draw(1227, 280, 255)
 				CullSprite:SetScale(1, 1)
 			else
-				CullSprite:Draw(1250, 280, 0)
+				CullSprite:Draw(1227, 280, 0)
 				CullSprite:SetScale(1, 1)
 			end
 			if Suppy then
-				SuppySprite:Draw(550, 395, 255)
+				SuppySprite:Draw(550, 360, 255)
 				SuppySprite:SetScale(1, 1)
 			else
-				SuppySprite:Draw(550, 395, 0)
+				SuppySprite:Draw(550, 360, 0)
 				SuppySprite:SetScale(1, 1)
 			end
 			if Suppg then
-				SuppgSprite:Draw(650, 395, 255)
+				SuppgSprite:Draw(684, 361, 255)
 				SuppgSprite:SetScale(1, 1)
 			else
-				SuppgSprite:Draw(650, 280, 0)
+				SuppgSprite:Draw(684, 361, 0)
 				SuppgSprite:SetScale(1, 1)
 			end
 			if Suppb then
-				SuppbSprite:Draw(750, 395, 255)
+				SuppbSprite:Draw(780, 361, 255)
 				SuppbSprite:SetScale(1, 1)
 			else
-				SuppbSprite:Draw(750, 395, 0)
+				SuppbSprite:Draw(780, 361, 0)
 				SuppbSprite:SetScale(1, 1)
 			end
 			if Pot1 then
-				Pot1Sprite:Draw(850, 395, 255)
+				Pot1Sprite:Draw(870, 361, 255)
 				Pot1Sprite:SetScale(1, 1)
 			else
-				Pot1Sprite:Draw(850, 395, 0)
+				Pot1Sprite:Draw(870, 361, 0)
 				Pot1Sprite:SetScale(1, 1)
 			end
 			if Pot2 then
-				Pot2Sprite:Draw(950, 395, 255)
+				Pot2Sprite:Draw(955, 361, 255)
 				Pot2Sprite:SetScale(1, 1)
 			else
-				Pot2Sprite:Draw(950, 395, 0)
+				Pot2Sprite:Draw(955, 361, 0)
 				Pot2Sprite:SetScale(1, 1)
 			end
 			if Armor then
-				ArmorSprite:Draw(1050, 395, 255)
+				ArmorSprite:Draw(1046, 361, 255)
 				ArmorSprite:SetScale(1, 1)
 			else
-				ArmorSprite:Draw(1050, 395, 0)
+				ArmorSprite:Draw(1046, 361, 0)
 				ArmorSprite:SetScale(1, 1)
 			end
 			if Machete then
-				MacheteSprite:Draw(1150, 395, 255)
+				MacheteSprite:Draw(1135, 361, 255)
 				MacheteSprite:SetScale(1, 1)
 			else
-				MacheteSprite:Draw(1150, 395, 0)
+				MacheteSprite:Draw(1135, 361, 0)
 				MacheteSprite:SetScale(1, 1)
 			end
 			if Talisman then
-				TalismanSprite:Draw(1250, 395, 255)
+				TalismanSprite:Draw(1227, 361, 255)
 				TalismanSprite:SetScale(1, 1)
 			else
-				TalismanSprite:Draw(1250, 395, 0)
+				TalismanSprite:Draw(1227, 361, 0)
 				TalismanSprite:SetScale(1, 1)
 			end
 ----------------------
-				if WardNS then
-				WardNSSprite:Draw(1270, 180, 255)
+			if WardNS then
+				WardNSSprite:Draw(1236, 101, 255)
 				WardNSSprite:SetScale(1, 1)
 			elseif WardNS then
-				WardNSSprite:Draw(1270, 180, 0)
+				WardNSSprite:Draw(1236, 101, 0)
 				WardNSSprite:SetScale(1, 1)
-			end
+		end
 
 --------
 			if Select then 
-				SelectSprite:Draw(550, 510, 255)
+				SelectSprite:Draw(550, 440, 255)
 				SelectSprite:SetScale(1, 1)
 			else
-				SelectSprite:Draw(550, 510, 0)
+				SelectSprite:Draw(550, 440, 0)
 				SelectSprite:SetScale(1, 1)
 			end
 
 			----------------------------
 			if Order1 then
-			   	Order1Sprite:Draw(550, 555, 255)
+			   	Order1Sprite:Draw(550, 502, 255)
 			   	Order1Sprite:SetScale(1, 1)
 			else
-			   	Order1Sprite:Draw(550, 555, 0)
+			   	Order1Sprite:Draw(550, 502, 0)
 			   	Order1Sprite:SetScale(1, 1)
 			end
 
 			if Order2 then
-			   	Order2Sprite:Draw(550, 600, 255)
+			   	Order2Sprite:Draw(856, 502, 255)
 			   	Order2Sprite:SetScale(1, 1)
 			else
-			   	Order2Sprite:Draw(550, 600, 0)
+			   	Order2Sprite:Draw(856, 502, 0)
 			   	Order2Sprite:SetScale(1, 1)
 			end
 
 			if Order3 then
-			   	Order3Sprite:Draw(550, 645, 255)
+			   	Order3Sprite:Draw(1088, 502, 255)
 			   	Order3Sprite:SetScale(1, 1)
 			else
-			   	Order3Sprite:Draw(550, 645, 0)
+			   	Order3Sprite:Draw(1088, 502, 0)
 			   	Order3Sprite:SetScale(1, 1)
 			end
 
 			if Order4 then
-			   	Order4Sprite:Draw(550, 690, 255)
+			   	Order4Sprite:Draw(550, 583, 255)
 			   	Order4Sprite:SetScale(1, 1)
 			else
-			   	Order4Sprite:Draw(550, 690, 0)
+			   	Order4Sprite:Draw(550, 583, 0)
 			   	Order4Sprite:SetScale(1, 1)
 			end
 
 			if Order5 then
-			   	Order5Sprite:Draw(550, 735, 255)
+			   	Order5Sprite:Draw(856, 583, 255)
 			   	Order5Sprite:SetScale(1, 1)
 			else
-			   	Order5Sprite:Draw(550, 735, 0)
+			   	Order5Sprite:Draw(856, 583, 0)
 			   	Order5Sprite:SetScale(1, 1)
 			end
 
 			if Order6 then
-			   	Order6Sprite:Draw(550, 780, 255)
+			   	Order6Sprite:Draw(1088, 583, 255)
 			   	Order6Sprite:SetScale(1, 1)
 			else
-			   	Order6Sprite:Draw(550, 780, 0)
+			   	Order6Sprite:Draw(1088, 583, 0)
 			   	Order6Sprite:SetScale(1, 1)
 			end
 	end
+
 end
 
 
