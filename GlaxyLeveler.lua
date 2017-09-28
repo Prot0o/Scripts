@@ -7,8 +7,8 @@
 --..######...########.##.....##.##.....##....##.......########....###....########.########.########.##.....##
 
 
-local version = 0.3
-local gameV = "7.18";
+local version = 0.4
+local gameV = "7.19";
 local scriptname = "Glaxy Leveler";
 local author ="Glaxy";
 local gameV = GetGameVersion():split(' ')[1]
@@ -42,9 +42,10 @@ function RandomPrint2(x, v)
 	elseif v == 1 then
 		DelayAction(function() Print("If you want more awesome features, Check <font color=\"#2E64FE\"><b>Glaxy Utility</b></font> script.") end, x)
 	elseif v == 2 then
-		DelayAction(function() Print("¡Script was loaded, Good luck! -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
+		if GetInGameTimer() < 60 then
+		DelayAction(function() Print("¡Script was loaded, Good luck <font color=\"#58FAD0\">"..myHero.charName.."!</font> -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> - VerGame:  </font>"..gameV.." <font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
 	end
-
+	end
 end
 
 Img1Sprite = createSprite("\\GlaxyST\\1.png")
@@ -62,7 +63,7 @@ local lvlspell = {
 	{archivo = "5.png", names = "R-W-Q-E", posicion_x = 1043, posicion_y = 525, sizeX = 184, sizeY = 74, levelSequence =  {2, 1, 3, 2, 2, 4, 2, 1, 2, 1, 4, 1, 1, 3, 3, 4, 3, 3}},
 	{archivo = "6.png", names = "R-W-E-Q", posicion_x = 1043, posicion_y = 599, sizeX = 184, sizeY = 74, levelSequence =  {2, 3, 1, 2, 2, 4, 2, 3, 2, 3, 4, 3, 3, 1, 1, 4, 1, 1}},
 	{archivo = "7.png", names = "R-E-Q-W", posicion_x = 1043, posicion_y = 673, sizeX = 184, sizeY = 74, levelSequence =  {3, 1, 2, 3, 3, 4, 3, 1, 3, 1, 4, 1, 1, 2, 2, 4, 2, 2}},
-	{archivo = "8.png", names = "R-E-W-Q", posicion_x = 1043, posicion_y = 747, sizeX = 184, sizeY = 97, levelSequence = {3, 2, 1, 3, 3, 4, 3, 2, 3, 2, 4, 2, 2, 1, 1, 4, 1, 1}},
+	{archivo = "8.png", names = "R-E-W-Q", posicion_x = 1043, posicion_y = 747, sizeX = 184, sizeY = 97, levelSequence =  {3, 2, 1, 3, 3, 4, 3, 2, 3, 2, 4, 2, 2, 1, 1, 4, 1, 1}},
 
 }
 
