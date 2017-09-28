@@ -9,8 +9,8 @@
 -------------------------------------------------------------------------------
 ----------------------------GLAXY STARTERS-------------------------------------
 -------------------------------------------------------------------------------
-local version = 0.07
-local gameV = "7.18";
+local version = 0.08
+local gameV = "7.19";
 local scriptname = "Glaxy Starters";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -57,7 +57,7 @@ function RandomPrint2(x, v)
 		if GetInGameTimer() < 60 then
 
 
-		DelayAction(function() Print("¡Script was loaded, Good luck! -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
+		DelayAction(function() Print("¡Script was loaded, Good luck! -><font color=\"#58FAD0\"> Ver: </font>"..version.."<font color=\"#58FAD0\"> - VerGame:  </font>"..gameV.." <font color=\"#58FAD0\"> By</font> "..author.." <-") end, x)
 	end
 	end
 end
