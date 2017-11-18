@@ -9,8 +9,8 @@
 -------------------------------------------------------------------------------
 ----------------------------GLAXY STARTERS-------------------------------------
 -------------------------------------------------------------------------------
-local version = 0.08
-local gameV = "7.19";
+local version = 0.09
+local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Starters";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
