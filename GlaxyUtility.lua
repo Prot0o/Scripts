@@ -31,13 +31,13 @@ local AllSkins = { --
   ["Alistar"] = {"Classic", "Black", "Golden", "Matador", "Longhorn", "Unchained", "Infernal", "Sweeper", "Marauder", "SKT 1", "Moo Cow"},
   ["Amumu"] = {"Classic", "Pharaoh", "Vancouver", "Emumu", "Re-Gifted", "Almost-Prom King", "Little Knight", "Sad Robot", "Surprise Party"},
   ["Anivia"] = {"Classic", "Team Spirit", "Bird of Prey", "Noxus Hunter", "Hextech", "Blackfrost", "Prehistoric", "Festival Queen"},
-  ["Annie"] = {"Classic", "Goth", "Red Riding", "Annie in Wonderland", "Prom Queen", "Frostfire", "Reverse", "FrankenTibbers", "Panda", "Sweetheart", "Hextech"},
+  ["Annie"] = {"Classic", "Goth", "Red Riding", "Annie in Wonderland", "Prom Queen", "Frostfire", "Reverse", "FrankenTibbers", "Panda", "Sweetheart", "Hextech", "Super Galaxy"},
   ["Ashe"] = {"Classic", "Freljord", "Sherwood Forest", "Woad", "Queen", "Amethyst", "Heartseeker", "Marauder", "PROJECT"},
   ["Azir"] = {"Classic", "Galactic", "Gravelord", "SKT T1", "Warring Kingdoms"},
   ["AurelionSol"] = {"Classic", "Ashen Lord"},
   -- B
   ["Bard"] = {"Classic", "Elderwood", "Chroma Pack: Marigold", "Chroma Pack: Ivy", "Chroma Pack: Sage", "Bard"},
-  ["Blitzcrank"] = {"Classic", "Rusty", "Goalkeeper", "Boom Boom", "Piltover Customs", "Definitely Not", "iBlitzcrank", "Riot", "Chroma Pack: Molten", "Chroma Pack: Cobalt", "Chroma Pack: Gunmetal", "Battle Boss"},
+  ["Blitzcrank"] = {"Classic", "Rusty", "Goalkeeper", "Boom Boom", "Piltover Customs", "Definitely Not", "iBlitzcrank", "Riot", "Chroma Pack: Molten", "Chroma Pack: Cobalt", "Chroma Pack: Gunmetal", "Battle Boss", "Lancer Rogue", "Lancer Paragon"},
   ["Brand"] = {"Classic", "Apocalyptic", "Vandal", "Cryocore", "Zombie", "Spirit Fire", "Battle Boss"},
   ["Braum"] = {"Classic", "Dragonslayer", "El Tigre", "Lionheart", "Santa"},
   -- C
@@ -53,20 +53,20 @@ local AllSkins = { --
   ["Draven"] = {"Classic", "Soul Reaver", "Gladiator", "Primetime", "Pool Party"},
   -- E
   ["Ekko"] = {"Classic", "Sandstorm", "Academy", "PROJECT", "SKT T1"},
-  ["Elise"] = {"Classic", "Death Blossom", "Victorious", "Blood Moon", "SKT 1"},
+  ["Elise"] = {"Classic", "Death Blossom", "Victorious", "Blood Moon", "SKT 1", "Super Galaxy"},
   ["Evelynn"] = {"Classic", "Shadow", "Masquerade", "Tango", "Safecracker"},
   ["Ezreal"] = {"Classic", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire", "TPA", "Debonair", "Ace of Spades", "Arcade", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   -- F
-  ["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen"},
+  ["FiddleSticks"] = {"Classic", "Spectral", "Union Jack", "Bandito", "Pumpkinhead", "Fiddle Me Timbers", "Surprise Party", "Dark Candy", "Risen", "Soaring Sword"},
   ["Fiora"] = {"Classic", "Royal Guard", "Nightraven", "Headmistress", "PROJECT", "Pool Party"},
   ["Fizz"] = {"Classic", "Atlantean", "Tundra", "Fisherman", "Void", "Chroma Pack: Orange", "Chroma Pack: Black", "Chroma Pack: Red", "Cottontail", "Omega Squad"},
   -- G
   ["Galio"] = {"Classic", "Enchanted", "Hextech", "Commando", "Gatekeeper", "Debonair"},
   ["Gangplank"] = {"Classic", "Spooky", "Minuteman", "Sailor", "Toy Soldier", "Special Forces", "Sultan", "Captain", "Dreadnova"},
   ["Garen"] = {"Classic", "Sanguine", "Desert Trooper", "Commando", "Dreadknight", "Rugged", "Steel Legion", "Chroma Pack: Garnet", "Chroma Pack: Plum", "Chroma Pack: Ivory", "Rogue Admiral", "Warring Kingdoms"},
-  ["Gnar"] = {"Classic", "Dino", "Gentleman"},  
+  ["Gnar"] = {"Classic", "Dino", "Gentleman", "Super Galaxy"},  
   ["Gragas"] = {"Classic", "Scuba", "Hillbilly", "Santa", "Gragas, Esq.", "Vandal", "Oktoberfest", "Superfan", "Fnatic", "Caskbreaker"},
-  ["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat", "Snow Day"},
+  ["Graves"] = {"Classic", "Hired Gun", "Jailbreak", "Mafia", "Riot", "Pool Party", "Cutthroat", "Snow Day", "Victorious"},
   -- H
   ["Hecarim"] = {"Classic", "Blood Knight", "Reaper", "Headless", "Arcade", "Elderwood", "Worldbreaker", "Lancer Zero"},
   ["Heimerdinger"] = {"Classic", "Alien Invader", "Blast Zone", "Piltover Customs", "Snowmerdinger", "Hazmat"},
@@ -75,7 +75,7 @@ local AllSkins = { --
   ["Illaoi"] = {"Classic", "Void Bringer"},
   ["Irelia"] = {"Classic", "Nightblade", "Aviator", "Infiltrator", "Frostblade", "Order of the Lotus"},
   -- J
-  ["Janna"] = {"Classic", "Tempest", "Hextech", "Frost Queen", "Victorious", "Forecast", "Fnatic", "Star Guardian"},
+  ["Janna"] = {"Classic", "Tempest", "Hextech", "Frost Queen", "Victorious", "Forecast", "Fnatic", "Star Guardian", "Sacred Sword"},
   ["JarvanIV"] = {"Classic", "Commando", "Dragonslayer", "Darkforge", "Victorious", "Warring Kingdoms", "Fnatic"},
   ["Jax"] = {"Classic", "The Mighty", "Vandal", "Angler", "PAX", "Jaximus", "Temple", "Nemesis", "SKT T1", "Chroma Pack: Cream", "Chroma Pack: Amber", "Chroma Pack: Brick", "Warden"},
   ["Jayce"] = {"Classic", "Full Metal", "Debonair", "Forsaken", "Brighthammer"},
@@ -86,7 +86,7 @@ local AllSkins = { --
   ["Karma"] = {"Classic", "Sun Goddess", "Sakura", "Traditional", "Order of the Lotus", "Warden", "Winter Wonder", "Conqueror"},
   ["Karthus"] = {"Classic", "Phantom", "Statue of", "Grim Reaper", "Pentakill", "Fnatic", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite", "Lightbane"},
   ["Kassadin"] = {"Classic", "Festival", "Deep One", "Pre-Void", "Harbinger", "Cosmic Reaver"},
-  ["Katarina"] = {"Classic", "Mercenary", "Red Card", "Bilgewater", "Kitty Cat", "High Command", "Sandstorm", "Slay Belle", "Warring Kingdoms", "PROJECT"},
+  ["Katarina"] = {"Classic", "Mercenary", "Red Card", "Bilgewater", "Kitty Cat", "High Command", "Sandstorm", "Slay Belle", "Warring Kingdoms", "PROJECT", "Deathsworn"},
   ["Kayle"] = {"Classic", "Silver", "Viridian", "Unmasked", "Battleborn", "Judgment", "Aether Wing", "Riot", "Pentakill"},
   ["Kennen"] = {"Classic", "Deadly", "Swamp Master", "Karate", "Kennen M.D.", "Arctic Ops", "Superhero"},
   ["Khazix"] = {"Classic", "Mecha", "Guardian of the Sands", "Dark Star"},
@@ -106,7 +106,7 @@ local AllSkins = { --
   ["Malphite"] = {"Classic", "Shamrock", "Coral Reef", "Marble", "Obsidian", "Glacial", "Mecha", "Ironside", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Chroma Pack: 7", "Chroma Pack: 8"},
   ["Malzahar"] = {"Classic", "Vizier", "Shadow Prince", "Djinn", "Overlord", "Snow Day", "Battle Boss"},
   ["Maokai"] = {"Classic", "Charred", "Totemic", "Festive", "Haunted", "Goalkeeper", "Victorious"},
-  ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT", "Cosmic Blade"},
+  ["MasterYi"] = {"Classic", "Assassin", "Chosen", "Ionia", "Samurai Yi", "Headhunter", "Chroma Pack: Gold", "Chroma Pack: Aqua", "Chroma Pack: Crimson", "PROJECT", "Cosmic Blade", "Eternal Sword"},
   ["MissFortune"] = {"Classic", "Cowgirl", "Waterloo", "Secret Agent", "Candy Cane", "Road Warrior", "Mafia", "Arcade", "Captain", "Pool Party", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5"},
   ["Mordekaiser"] = {"Classic", "Dragon Knight", "Infernal", "Pentakill", "Lord", "King of Clubs"},
   ["Morgana"] = {"Classic", "Exiled", "Sinful Succulence", "Blade Mistress", "Blackthorn", "Ghost Bride", "Victorious", "Chroma Pack: Toxic", "Chroma Pack: Pale", "Chroma Pack: Ebony", "Lunar", "Bewitching"},
@@ -114,7 +114,7 @@ local AllSkins = { --
   ["Nami"] = {"Classic", "Koi", "River Spirit", "Urf", "Chroma Pack: Sunbeam", "Chroma Pack: Smoke", "Chroma Pack: Twilight", "SKT T1"},
   ["Nasus"] = {"Classic", "Galactic", "Pharaoh", "Dreadknight", "Riot K-9", "Infernal", "Archduke", "Chroma Pack: Burn", "Chroma Pack: Blight", "Chroma Pack: Frostbite", "Worldbreaker"},
   ["Nautilus"] = {"Classic", "Abyssal", "Subterranean", "AstroNautilus", "Warden", "Worldbreaker"},
-  ["Nidalee"] = {"Classic", "Snow Bunny", "Leopard", "French Maid", "Pharaoh", "Bewitching", "Headhunter", "Warring Kingdoms"},
+  ["Nidalee"] = {"Classic", "Snow Bunny", "Leopard", "French Maid", "Pharaoh", "Bewitching", "Headhunter", "Warring Kingdoms", "Super Galaxy"},
   ["Nocturne"] = {"Classic", "Frozen Terror", "Void", "Ravager", "Haunting", "Eternum"},
   ["Nunu"] = {"Classic", "Sasquatch", "Workshop", "Grungy", "Nunu Bot", "Demolisher", "TPA", "Zombie"},
   -- O
@@ -140,7 +140,7 @@ local AllSkins = { --
   ["Shaco"] = {"Classic", "Mad Hatter", "Royal", "Nutcracko", "Workshop", "Asylum", "Masked", "Wild Card"},
   ["Shen"] = {"Classic", "Frozen", "Yellow Jacket", "Surgeon", "Blood Moon", "Warlord", "TPA"},
   ["Shyvana"] = {"Classic", "Ironscale", "Boneclaw", "Darkflame", "Ice Drake", "Championship"},
-  ["Singed"] = {"Classic", "Riot Squad", "Hextech", "Surfer", "Mad Scientist", "Augmented", "Snow Day", "SSW"},
+  ["Singed"] = {"Classic", "Riot Squad", "Hextech", "Surfer", "Mad Scientist", "Augmented", "Snow Day", "SSW", "Beekeeper"},
   ["Sion"] = {"Classic", "Hextech", "Barbarian", "Lumberjack", "Warmonger"},
   ["Sivir"] = {"Classic", "Warrior Princess", "Spectacular", "Huntress", "Bandit", "PAX", "Snowstorm", "Warden", "Victorious", "Neo PAX"},
   ["Skarner"] = {"Classic", "Sandscourge", "Earthrune", "Battlecast Alpha", "Guardian of the Sands"},
@@ -169,7 +169,7 @@ local AllSkins = { --
   ["Veigar"] = {"Classic", "White Mage", "Curling", "Veigar Greybeard", "Leprechaun", "Baron Von", "Superb Villain", "Bad Santa", "Final Boss", "Omega Squad"},
   ["Velkoz"] = {"Classic", "Battlecast", "Arclight"},
   ["Vi"] = {"Classic", "Neon Strike", "Officer", "Debonair", "Demon", "Warring Kingdoms"},
-  ["Viktor"] = {"Classic", "Full Machine", "Prototype", "Creator"},
+  ["Viktor"] = {"Classic", "Full Machine", "Prototype", "Creator", "Deathsworn"},
   ["Vladimir"] = {"Classic", "Count", "Marquis", "Nosferatu", "Vandal", "Blood Lord", "Soulstealer", "Academy"},
   ["Volibear"] = {"Classic", "Thunder Lord", "Northern Storm", "Runeguard", "Captain"},
   -- W
@@ -181,10 +181,10 @@ local AllSkins = { --
   ["XinZhao"] = {"Classic", "Commando", "Imperial", "Viscero", "Winged Hussar", "Warring Kingdoms", "Secret Agent", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Dragonslayer"},
   -- Y
   ["Yasuo"] = {"Classic", "High Noon", "PROJECT", "Blood Moon", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Nightbringer"},
-  ["Yorick"] = {"Classic", "Undertaker", "Pentakill"},
+  ["Yorick"] = {"Classic", "Undertaker", "Pentakill", "Arclight"},
   -- Z
   ["Zac"] = {"Classic", "Special Weapon", "Pool Party", "Chroma Pack: Orange", "Chroma Pack: Bubblegum", "Chroma Pack: Honey", "SKT T1"},
-  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Championship"},
+  ["Zed"] = {"Classic", "Shockblade", "SKT T1", "PROJECT", "Chroma Pack: 1", "Chroma Pack: 2", "Chroma Pack: 3", "Chroma Pack: 4", "Chroma Pack: 5", "Chroma Pack: 6", "Championship", "Deathsworn"},
   ["Ziggs"] = {"Classic", "Mad Scientist", "Major", "Pool Party", "Snow Day", "Master Arcanist", "Battle Boss"},
   ["Zilean"] = {"Classic", "Old Saint", "Groovy", "Shurima Desert", "Time Machine", "Blood Moon"},
   ["Zyra"] = {"Classic", "Wildfire", "Haunted", "SKT T1", "Dragon Sorceress"},               
@@ -365,8 +365,8 @@ local EN = true
 local Table = {["Ornn"] = true, ["Kayn"] = true, ["Rakan"] = true, ["Xayah"] = true, ["Camille"] = true, ["Ivern"] = true, ["Illaoi"] = true, ["Kindred"] = true, ["Aatrox"] = true, ["Yasuo"] = true, ["Kled"] = true, ["Wukong"] = true, ["Urgot"] = true, ["Varus"] = true, ["Talon"] = true, ["Vayne"] = true, ["Trundle"] = true, ["Twitch"] = true, ["Tristana"] = true, ["Shyvana"] = true, ["Riven"] = true, ["Rengar"] = true, ["Renekton"] = true, ["Quinn"] = true, ["Pantheon"] = true, ["Lucian"] = true, ["LeeSin"] = true, ["KogMaw"] = true, ["Jinx"] = true, ["Jhin"] = true, ["Jayce"] = true, ["Jax"] = true, ["Irelia"] = true, ["Graves"] = true, ["Gnar"] = true, ["Gangplank"] = true, ["Fiora"] = true, ["Ezreal"] = true, ["Draven"] = true, ["Aatrox"] = true, ["Ashe"] = true, ["Corki"] = true, ["Kalista"] = true, ["Caitlyn"] = true, ["Zyra"] = false, ["Xerath"] = false, ["Ziggs"] = false, ["Zilean"] = false, ["Viktor"] = false, ["VelKoz"] = false, ["Veigar"] = false, ["Taliyah"] = false, ["TwistedFate"] = false, ["Syndra"] = false, ["Swain"] = false, ["Ryze"] = false, ["Orianna"] = false, ["Morgana"] = false, ["Malzahar"] = false, ["Lux"] = false, ["Lulu"] = false, ["Kayle"] = false, ["LeBlanc"] = false, ["Lissandra"] = false, ["Kassadin"] = false, ["Karthus"] = false, ["Karma"] = false, ["Heimerdinger"] = false, ["Galio"] = false, ["Fizz"] = false, ["Fiddlesticks"] = false, ["Ekko"] = false, ["Diana"] = false, ["Cassiopeia"] = false, ["Brand"] = false, ["Ahri"] = false, ["Annie"] = false, ["Azir"] = false, ["AurelionSol"] = false, ["Anivia"] = false};
 local SkinList100 = {"Blue Classic","Red Pool Party","Blue Pool Party","Red PROJECT","Blue PROJECT","Red Snow","Blue Snow","Red DRAVEN","Blue DRAVEN","Red Classic"}
 local SkinList200 = {"Red Classic","Blue Pool Party","Red Pool Party","Blue PROJECT","Red PROJECT","Blue Snow","Red Snow","Blue DRAVEN","Red DRAVEN","Blue Classic"}
-local version = 1.24
-local gameV = "7.18";
+local version = 1.25
+local gameV = GetGameVersion():split(' ')[1]
 local scriptname = "Glaxy Utility";
 local author ="Glaxy";
 local contact = "dimitri.psarev";
@@ -748,11 +748,11 @@ end
 
 function SayHello()
 	print("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")	
-  if GetGameVersion():sub(1,4) ~= "".. gameV .."" then
-    Print("<font color=\"#33ccff\"> -- Script is outdated, Be careful -- </b>")
-  else
-    Print("<font color=\"#33ccff\">-- Script is updated --</b>")
-  end
+ -- if GetGameVersion():sub(1,4) ~= "".. gameV .."" then
+  --  Print("<font color=\"#33ccff\"> -- Script is outdated, Be careful -- </b>")
+ -- else
+ --   Print("<font color=\"#33ccff\">-- Script is updated --</b>")
+  --end
 	Print("<font color=\"#FFFFFF\">Ver: <font color=\"#FFFF00\">"..version.." - Working "..gameV.." </font> - Utility </font><font color=\"#FFFF00\">By:"..author.." </font>")
 	Print("<font color=\"#40FF00\">Welcome & GL!</b>: <font color=\"#FEFEE2\">"..GetUser().."</font> thanks for been using this script.")
 	print("<font color=\"#BF00FF\">:----------------------------------------------------------------------------------:</b> ")
